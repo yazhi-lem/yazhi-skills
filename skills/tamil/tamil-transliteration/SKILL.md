@@ -24,6 +24,19 @@ Transliteration between Tamil (U+0B80–U+0BFF) and Latin script is not one oper
 | Simplified ASCII (search/URL slugs) | No diacritics, ASCII-only | vanakkam | No — loses retroflex vs. dental distinction |
 | Tanglish (user-generated, chat/SMS) | Fast informal typing | vanakkam / vannakam / vanaikkam | No — many spellings per word, ambiguous both ways |
 
+## Glyph → ISO 15919 reference
+
+| Native class | Glyphs | ISO 15919 |
+|---|---|---|
+| உயிர் vowels (12) | அ ஆ இ ஈ உ ஊ எ ஏ ஐ ஒ ஓ ஔ | a ā i ī u ū e ē ai o ō au |
+| வல்லினம் (hard) | க ச ட த ப ற | k c ṭ t p ṟ |
+| மெல்லினம் (nasal) | ங ஞ ண ந ம ன | ṅ ñ ṇ n m ṉ |
+| இடையினம் (medium) | ய ர ல வ ழ ள | y r l v ḻ ḷ |
+| Grantha (loanwords) | ஜ ஶ ஷ ஸ ஹ | j ś ṣ s h |
+| ஆய்தம் | ஃ | ḵ |
+
+Note the three "l"-like and two "n"-like distinctions the simplified/Tanglish schemes collapse: ல l vs ள ḷ vs ழ ḻ, and ந n vs ன ṉ (plus ண ṇ). These rows are exactly where reverse transliteration loses information. The full letter grid these bases generate is in `tamil-aksharas`; vowel-length (kuril/nedil) folding decisions are covered in `tamil-swaram-vowels`.
+
 ## Ambiguity example
 
 The Latin string "kali" could map to கலி, காலி ("empty," long a), or களி (retroflex ள, different word/meaning) — a plain consonant-by-consonant reverse map cannot disambiguate; distinguishing dental ல, retroflex ள, and alveolar ழ all commonly collapse to "l" or "zh" in casual typing. Treat reverse transliteration as a ranking/search problem, not a function.
@@ -36,4 +49,4 @@ The Latin string "kali" could map to கலி, காலி ("empty," long a), 
 - **Assuming all digits in Tamil text are Tamil numerals** — most real-world Tamil content uses Western Arabic digits; a transliteration pass that "helpfully" converts 10 → Tamil numeral glyphs will look wrong to native readers, who rarely use the Tamil numeral system.
 - **Not normalizing before search matching**, so "தமிழ்" indexed as "tamil" fails to match a user query typed "thamizh" — apply the same folding rules on both index and query sides.
 
-See `tamil-text-processing` for cluster-boundary mechanics needed to transliterate correctly, and `tamil-localization` for when transliterated slugs/labels appear in UI.
+See `tamil-text-processing` for cluster-boundary mechanics needed to transliterate correctly, `tamil-aksharas` for the complete letter inventory behind the mapping tables, and `tamil-localization` for when transliterated slugs/labels appear in UI.

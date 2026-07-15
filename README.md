@@ -3,7 +3,7 @@ Curated list of skills powering Yazhi
 
 Each skill lives at `skills/<category>/<skill-name>/SKILL.md` and follows a common contract: YAML frontmatter with a `name` (matching its directory) and a `description` starting with "Use when...", followed by a procedural, checklist-driven body. See [`skill-authoring`](skills/tools/skill-authoring/SKILL.md) for the contribution guide.
 
-## Catalog (30 skills)
+## Catalog (32 skills)
 
 ### Forward-Deployed Engineering (fde)
 
@@ -52,6 +52,8 @@ Each skill lives at `skills/<category>/<skill-name>/SKILL.md` and follows a comm
 | [`tamil-transliteration`](skills/tamil/tamil-transliteration/SKILL.md) | Converting between Tamil script and Latin/"Tanglish" romanization |
 | [`tamil-localization`](skills/tamil/tamil-localization/SKILL.md) | Adapting UI text, layout, fonts, and formatting for Tamil-speaking users |
 | [`tamil-content-writing`](skills/tamil/tamil-content-writing/SKILL.md) | Writing natural, idiomatic Tamil copy instead of literal translation |
+| [`tamil-swaram-vowels`](skills/tamil/tamil-swaram-vowels/SKILL.md) | The 12 vowels (swaram/உயிரெழுத்து): independent glyphs, dependent signs, and encoding order |
+| [`tamil-aksharas`](skills/tamil/tamil-aksharas/SKILL.md) | The full 247-letter inventory: uyir, mei, uyirmei, aytham, Grantha, and numerals |
 
 ### Computer Use (computer-use)
 
