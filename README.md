@@ -3,7 +3,7 @@ Curated list of skills powering Yazhi
 
 Each skill lives at `skills/<category>/<skill-name>/SKILL.md` and follows a common contract: YAML frontmatter with a `name` (matching its directory) and a `description` starting with "Use when...", followed by a procedural, checklist-driven body. See [`skill-authoring`](skills/tools/skill-authoring/SKILL.md) for the contribution guide.
 
-## Catalog (32 skills)
+## Catalog (37 skills)
 
 ### Forward-Deployed Engineering (fde)
 
@@ -54,6 +54,11 @@ Each skill lives at `skills/<category>/<skill-name>/SKILL.md` and follows a comm
 | [`tamil-content-writing`](skills/tamil/tamil-content-writing/SKILL.md) | Writing natural, idiomatic Tamil copy instead of literal translation |
 | [`tamil-swaram-vowels`](skills/tamil/tamil-swaram-vowels/SKILL.md) | The 12 vowels (swaram/உயிரெழுத்து): independent glyphs, dependent signs, and encoding order |
 | [`tamil-aksharas`](skills/tamil/tamil-aksharas/SKILL.md) | The full 247-letter inventory: uyir, mei, uyirmei, aytham, Grantha, and numerals |
+| [`tamil-numerals-symbols`](skills/tamil/tamil-numerals-symbols/SKILL.md) | Native numerals (௦–௲) and clerical symbols: when to use them and how they compose |
+| [`tamil-legacy-encodings`](skills/tamil/tamil-legacy-encodings/SKILL.md) | Detecting and migrating TSCII/TAB/Bamini-era text to Unicode without corruption |
+| [`tamil-input-methods`](skills/tamil/tamil-input-methods/SKILL.md) | Keyboard/IME design: Tamil99, phonetic input, auto-pulli, and backspace behavior |
+| [`tamil-swaram-notation`](skills/tamil/tamil-swaram-notation/SKILL.md) | Encoding Carnatic swaram notation (ஸ ரி க ம ப த நி) as searchable Unicode text |
+| [`tamil-morphology-nlp`](skills/tamil/tamil-morphology-nlp/SKILL.md) | Agglutinative morphology, sandhi, and lemma-level matching for NLP and search |
 
 ### Computer Use (computer-use)
 
