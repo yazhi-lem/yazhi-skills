@@ -25,6 +25,10 @@ Tamil has a well-documented diglossia: செந்தமிழ் (formal/liter
 | Loanwords | Often Tamil-coined equivalents preferred | English loanwords common, often left in Latin script |
 | Reader perception if mismatched | Colloquial in formal doc reads unprofessional | Overly formal in chat reads cold/robotic |
 
+## Letter classes and sandhi (புணர்ச்சி)
+
+Tamil's native letter classes (வல்லினம் hard க ச ட த ப ற, மெல்லினம் nasal, இடையினம் medium — full inventory in `tamil-aksharas`) drive a spelling rule writers get wrong constantly: at word joins and in compounds, a vallinam consonant often doubles (வல்லினம் மிகும்). மரம் + கிளை is written மரக்கிளை, and case-suffixed forms insert the doubled consonant (அதைக் கேட்டேன், not அதை கேட்டேன்). Omitted or over-applied doubling is the single most common spelling error in otherwise fluent copy — make it an explicit item on the native-review checklist, since spell-checkers frequently miss it.
+
 ## Common English-calque mistakes
 
 | English-influenced (avoid) | Natural Tamil pattern |
@@ -42,4 +46,4 @@ Tamil has a well-documented diglossia: செந்தமிழ் (formal/liter
 - **Ignoring agglutinative suffix correctness** — bolting the wrong case/plural suffix onto a borrowed or coined term produces a word that's technically parseable but marked as "off" by native readers.
 - **Skipping a native-speaker review because the text "translated cleanly"** — clean translation and natural Tamil are different bars; only a native reviewer reliably catches the gap.
 
-See `tamil-localization` for how register/terminology choices interact with UI space and formatting constraints, `tamil-transliteration` for decisions about when to romanize versus coin/borrow terms, and `tamil-text-processing` for safe programmatic handling of the Tamil strings this content produces.
+See `tamil-localization` for how register/terminology choices interact with UI space and formatting constraints, `tamil-transliteration` for decisions about when to romanize versus coin/borrow terms, `tamil-aksharas` for the letter classes behind the sandhi rules, and `tamil-text-processing` for safe programmatic handling of the Tamil strings this content produces.

@@ -25,6 +25,19 @@ Tamil script is encoded in Unicode block U+0B80–U+0BFF, but a single "letter" 
 
 `மி` alone is a two-code-point sequence (ம U+0BAE + ி U+0BBF) that renders as one visual glyph — `"மி".length` is 2 in JS even though a reader sees one letter. `ழ்` (ழ + pulli U+0BCD) similarly is two code points rendering as one glyph with a dot below.
 
+## Native letter classes and their code-point shapes
+
+Every grapheme cluster you segment corresponds to one letter in Tamil's native classification — knowing the class tells you how many code points to expect:
+
+| Native class | Example glyphs | Code points per letter |
+|---|---|---|
+| உயிர் (uyir) — 12 vowels | அ, ஈ, ஔ | 1 (U+0B85–U+0B94) |
+| மெய் (mei) — 18 pure consonants | க், ழ், ன் | 2 (consonant + pulli U+0BCD) |
+| உயிர்மெய் (uyirmei) — 216 compounds | க, கா, கொ | 1 (inherent a) or 2 (consonant + vowel sign) |
+| ஆய்தம் (aytham) | ஃ | 1 (U+0B83) |
+
+The full 247-letter inventory and how to generate it is in `tamil-aksharas`; the vowel-sign placement rules (including the left-side and split signs that make visual order differ from logical order) are in `tamil-swaram-vowels`.
+
 ## Anti-patterns / common failure modes
 
 - **Truncating by code unit/point count** (`str.slice(0, 20)`, `str[:20]`): can cut a vowel sign or pulli off its base consonant, leaving an orphaned combining mark that renders as a floating dot or broken glyph, or that fails to round-trip when re-parsed.
@@ -33,4 +46,4 @@ Tamil script is encoded in Unicode block U+0B80–U+0BFF, but a single "letter" 
 - **Regex `.` or `[^x]` assumed to match "one Tamil letter"** — it matches one code point and can split a cluster mid-match, corrupting replacements done with matched groups.
 - **Reversing a string by code point** (`str.split('').reverse().join('')`) — breaks every multi-code-point cluster into disconnected, unrenderable fragments.
 
-For romanizing this text see `tamil-transliteration`; for how truncation/length limits interact with UI space budgeting see `tamil-localization`; for writing the actual Tamil copy being processed see `tamil-content-writing`.
+For romanizing this text see `tamil-transliteration`; for how truncation/length limits interact with UI space budgeting see `tamil-localization`; for writing the actual Tamil copy being processed see `tamil-content-writing`; for the letter inventory itself see `tamil-aksharas` and `tamil-swaram-vowels`.

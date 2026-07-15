@@ -27,6 +27,20 @@ Localizing into Tamil is not a find-and-replace of English strings — Tamil is 
 | Date order (common) | MM/DD/YYYY | DD/MM/YYYY, often with Tamil month names in formal contexts |
 | Pluralization | Singular/plural suffix | Often no plural marking required on nouns; don't assume an English-style plural template maps 1:1 |
 
+## Glyph behaviors a Tamil font must shape correctly
+
+Test each of these five geometries with the specific font file before shipping — a font can pass four and still break the fifth:
+
+| Behavior | Marks | Example (base க) | What failure looks like |
+|---|---|---|---|
+| Right-side vowel sign | ா ி ீ | கா, கி, கீ | sign detached or overlapping |
+| Ligated/below sign (shape varies per consonant) | ு ூ | கு vs டு vs று | generic hook instead of the consonant-specific ligature |
+| Left-side reordered sign | ெ ே ை | கெ (encoded க+ெ) | sign renders *after* the consonant |
+| Two-part split sign | ொ ோ ௌ | கொ (one code point, two pieces) | only one half renders, or halves misplaced |
+| Pulli and conjuncts | ், க்ஷ, ஸ்ரீ | க், க்ஷ, ஸ்ரீ | dot missing/floating; conjunct renders as separate letters |
+
+The complete sign inventory with code points is in `tamil-swaram-vowels`; the full 247-letter grid for coverage testing is in `tamil-aksharas`.
+
 ## Anti-patterns / common failure modes
 
 - **Fixed-width UI elements sized only for English text length** — Tamil labels get clipped or wrap awkwardly; always test with actual translated strings, not the English source length.
@@ -35,4 +49,4 @@ Localizing into Tamil is not a find-and-replace of English strings — Tamil is 
 - **Assuming Tamil UI numerals/dates match Western formatting conventions** — Indian digit grouping and DD/MM/YYYY ordering differ from US defaults even without script differences.
 - **Truncating localized strings with code-unit-based ellipsis logic** — inherits every pitfall from `tamil-text-processing`; a truncated label can end mid-conjunct and render broken.
 
-For the string-manipulation mechanics behind safe truncation and sorting, see `tamil-text-processing`; for romanized fallbacks/slugs, see `tamil-transliteration`; for writing idiomatic copy rather than literal translation, see `tamil-content-writing`.
+For the string-manipulation mechanics behind safe truncation and sorting, see `tamil-text-processing`; for romanized fallbacks/slugs, see `tamil-transliteration`; for writing idiomatic copy rather than literal translation, see `tamil-content-writing`; for the glyph and letter inventories behind the shaping table, see `tamil-swaram-vowels` and `tamil-aksharas`.
