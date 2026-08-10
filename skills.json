@@ -1,0 +1,367 @@
+{
+  "name": "yazhi-skills",
+  "description": "Curated Agent Skills powering Yazhi.",
+  "repository": "https://github.com/yazhi-lem/yazhi-skills",
+  "license": "GPL-3.0-or-later",
+  "skillFormat": "SKILL.md with YAML frontmatter (name, description)",
+  "generatedBy": "scripts/build_index.py — do not edit by hand",
+  "count": 51,
+  "categories": [
+    {
+      "id": "fde",
+      "title": "Forward-Deployed Engineering",
+      "path": "skills/fde",
+      "count": 5
+    },
+    {
+      "id": "ai-ml",
+      "title": "AI/ML",
+      "path": "skills/ai-ml",
+      "count": 5
+    },
+    {
+      "id": "sovereign",
+      "title": "Sovereign",
+      "path": "skills/sovereign",
+      "count": 4
+    },
+    {
+      "id": "security",
+      "title": "Security",
+      "path": "skills/security",
+      "count": 5
+    },
+    {
+      "id": "tamil",
+      "title": "Tamil",
+      "path": "skills/tamil",
+      "count": 11
+    },
+    {
+      "id": "computer-use",
+      "title": "Computer Use",
+      "path": "skills/computer-use",
+      "count": 3
+    },
+    {
+      "id": "tools",
+      "title": "Tools",
+      "path": "skills/tools",
+      "count": 4
+    },
+    {
+      "id": "yazh-life",
+      "title": "Yazh Life Skills",
+      "path": "skills/yazh-life",
+      "count": 14
+    }
+  ],
+  "skills": [
+    {
+      "name": "customer-discovery",
+      "category": "fde",
+      "path": "skills/fde/customer-discovery/SKILL.md",
+      "description": "Use when starting an engagement with a new enterprise customer and you need to turn vague asks (\"we want AI in our workflow\") into a scoped, buildable problem statement before writing code. Helps you run a tight discovery process that surfaces real requirements, technical constraints, and the actual decision-makers, instead of building the wrong thing fast."
+    },
+    {
+      "name": "deployment-runbook",
+      "category": "fde",
+      "path": "skills/fde/deployment-runbook/SKILL.md",
+      "description": "Use when you're about to deploy a system into a customer's environment — especially production — and need a written, repeatable procedure rather than tribal knowledge in your head. Helps you structure pre-flight checks, rollback steps, and sign-off gates so a deployment doesn't depend on you personally being awake and reachable."
+    },
+    {
+      "name": "enterprise-integration",
+      "category": "fde",
+      "path": "skills/fde/enterprise-integration/SKILL.md",
+      "description": "Use when your system needs to connect to a customer's existing SSO/SAML provider, data pipeline, legacy API, or message queue, and you have to negotiate access through their IT/security process rather than just configuring it yourself. Helps you plan integration patterns and access requests so enterprise IT constraints don't become last-week surprises."
+    },
+    {
+      "name": "poc-to-production",
+      "category": "fde",
+      "path": "skills/fde/poc-to-production/SKILL.md",
+      "description": "Use when a customer POC has proven the concept works and stakeholders are asking \"when can this go live?\" Helps you decide what must change before a demo-quality prototype can carry real production traffic and real business risk."
+    },
+    {
+      "name": "stakeholder-reporting",
+      "category": "fde",
+      "path": "skills/fde/stakeholder-reporting/SKILL.md",
+      "description": "Use when you need to keep both technical and non-technical customer stakeholders informed of progress, risk, and blockers throughout an engagement without either burying them in detail or blindsiding them with a late surprise. Helps you set a reporting cadence and format that builds trust and surfaces risk early without triggering unnecessary alarm."
+    },
+    {
+      "name": "fine-tuning-workflow",
+      "category": "ai-ml",
+      "path": "skills/ai-ml/fine-tuning-workflow/SKILL.md",
+      "description": "Use when considering fine-tuning a model for a task, or when a fine-tuning run has finished and you need to know if it actually helped without breaking other capabilities. Helps you decide if fine-tuning is warranted and run the data prep, training, and regression-check workflow correctly."
+    },
+    {
+      "name": "llm-evaluation",
+      "category": "ai-ml",
+      "path": "skills/ai-ml/llm-evaluation/SKILL.md",
+      "description": "Use when you need to know whether a prompt, model, or pipeline change actually made things better, or when you're shipping LLM-backed features without any regression safety net. Helps you build eval sets and choose evaluation methods that produce trustworthy, statistically defensible signal."
+    },
+    {
+      "name": "model-monitoring",
+      "category": "ai-ml",
+      "path": "skills/ai-ml/model-monitoring/SKILL.md",
+      "description": "Use when an LLM-backed feature is live in production and you need to know it's working — not just that it returns 200s, but that latency, cost, and answer quality stay within bounds and you find out about drift before users complain. Helps you set up the metrics, alerting thresholds, and feedback loops specific to LLM systems."
+    },
+    {
+      "name": "prompt-engineering",
+      "category": "ai-ml",
+      "path": "skills/ai-ml/prompt-engineering/SKILL.md",
+      "description": "Use when writing or iterating on prompts for an LLM feature and outputs are inconsistent, ignoring instructions, or vulnerable to user-supplied text overriding your intent. Helps you structure, version, and systematically iterate on prompts instead of hand-tweaking wording until it feels right."
+    },
+    {
+      "name": "rag-pipeline-design",
+      "category": "ai-ml",
+      "path": "skills/ai-ml/rag-pipeline-design/SKILL.md",
+      "description": "Use when building or debugging a retrieval-augmented generation system and answers are missing context, hallucinating, or retrieval feels like guesswork. Helps you design chunking, embedding, retrieval, and reranking stages that can be evaluated and tuned independently."
+    },
+    {
+      "name": "airgapped-llm-deployment",
+      "category": "sovereign",
+      "path": "skills/sovereign/airgapped-llm-deployment/SKILL.md",
+      "description": "Use when an LLM must run in a fully disconnected, classified, or restricted-network environment (defense, government, critical infrastructure, high-security enterprise) with no outbound internet access. Helps you package models, dependencies, and inference serving so the system works offline and can be patched safely over time."
+    },
+    {
+      "name": "data-residency-compliance",
+      "category": "sovereign",
+      "path": "skills/sovereign/data-residency-compliance/SKILL.md",
+      "description": "Use when a project must keep data within a specific jurisdiction (GDPR, India's DPDP Act, sector rules) or a government/regulated-industry customer asks where data lives and who can access it. Helps you map data flows, pick applicable regimes, and produce an auditable residency posture."
+    },
+    {
+      "name": "open-model-selection",
+      "category": "sovereign",
+      "path": "skills/sovereign/open-model-selection/SKILL.md",
+      "description": "Use when choosing an LLM for a sovereignty-sensitive deployment — government, regulated industry, or any org that cannot depend on a foreign vendor's API — and open-weight self-hosting is on the table. Helps you evaluate license terms, provenance, and the real performance/ops tradeoff against proprietary APIs."
+    },
+    {
+      "name": "sovereign-cloud-architecture",
+      "category": "sovereign",
+      "path": "skills/sovereign/sovereign-cloud-architecture/SKILL.md",
+      "description": "Use when architecting infrastructure for a government, defense, or regulated customer that requires national/organizational control over data, keys, and operations — not just data-in-region but freedom from foreign-jurisdiction compulsion. Helps you design multi-region isolation, local key control, and a credible exit strategy."
+    },
+    {
+      "name": "incident-response",
+      "category": "security",
+      "path": "skills/security/incident-response/SKILL.md",
+      "description": "Use when a security incident is suspected or confirmed — active exploitation, a data leak, a compromised credential, or anomalous access. Helps you classify severity, contain before diagnosing root cause, and run a blameless postmortem afterward."
+    },
+    {
+      "name": "llm-security-review",
+      "category": "security",
+      "path": "skills/security/llm-security-review/SKILL.md",
+      "description": "Use when reviewing or designing an LLM-powered feature — a chatbot, RAG pipeline, or agent with tool access — before it ships or gains new capabilities. Helps you find prompt injection, excessive agency, and unsafe tool/output handling that traditional code review misses."
+    },
+    {
+      "name": "secrets-management",
+      "category": "security",
+      "path": "skills/security/secrets-management/SKILL.md",
+      "description": "Use when adding, storing, rotating, or auditing credentials, API keys, or tokens anywhere in a codebase or infrastructure — before committing config, when provisioning a new service integration, or when a leak is suspected. Helps you keep secrets out of source control and scoped to least privilege."
+    },
+    {
+      "name": "secure-code-review",
+      "category": "security",
+      "path": "skills/security/secure-code-review/SKILL.md",
+      "description": "Use when reviewing a pull request or diff that touches authentication, data input handling, deserialization, or dependencies — before merge, not after. Helps you systematically catch injection, broken authorization, and unsafe dependency changes that functional review tends to miss."
+    },
+    {
+      "name": "threat-modeling",
+      "category": "security",
+      "path": "skills/security/threat-modeling/SKILL.md",
+      "description": "Use when designing a new system, feature, or trust boundary before any code ships — e.g. adding a new API, integrating a third party, or changing auth flow. Helps you systematically enumerate threats, prioritize them by likelihood x impact, and turn them into concrete design changes or tracked risks."
+    },
+    {
+      "name": "tamil-aksharas",
+      "category": "tamil",
+      "path": "skills/tamil/tamil-aksharas/SKILL.md",
+      "description": "Use when you need the complete Tamil letter inventory (aksharas / அட்சரம், natively எழுத்து) — enumerating letters for a keyboard layout, font coverage test, education app, or collation routine, or deciding what counts as \"one letter\" in Tamil. Helps you generate the 247-letter grid from its 31 base glyphs instead of hardcoding it, and avoid shipping an \"alphabet\" that misses Grantha letters, aytham, or numerals."
+    },
+    {
+      "name": "tamil-content-writing",
+      "category": "tamil",
+      "path": "skills/tamil/tamil-content-writing/SKILL.md",
+      "description": "Use when drafting or reviewing original Tamil copy (marketing, product, documentation) rather than mechanically translating it, and the output needs to read as natural, idiomatic Tamil rather than an English sentence wearing Tamil words. Helps you choose the right register, avoid English-calque phrasing, and keep terminology consistent when working with translators."
+    },
+    {
+      "name": "tamil-input-methods",
+      "category": "tamil",
+      "path": "skills/tamil/tamil-input-methods/SKILL.md",
+      "description": "Use when building or configuring a way for users to type Tamil — a keyboard layout, IME, mobile keyboard, or transliteration input field — or debugging why typed keystrokes produce wrong or unrenderable letter sequences. Helps you pick between Tamil99, phonetic, and predictive input models and get the cluster-level editing behaviors (auto-pulli, backspace, reordering) right."
+    },
+    {
+      "name": "tamil-legacy-encodings",
+      "category": "tamil",
+      "path": "skills/tamil/tamil-legacy-encodings/SKILL.md",
+      "description": "Use when ingesting Tamil text from pre-Unicode sources — old news archives, government documents, DTP files, or web pages that render as gibberish Latin characters unless a specific font (Bamini, TSCII, TAB) is installed. Helps you detect which legacy encoding you have, convert it to Unicode without corrupting visual-order vowel signs, and validate the migration."
+    },
+    {
+      "name": "tamil-localization",
+      "category": "tamil",
+      "path": "skills/tamil/tamil-localization/SKILL.md",
+      "description": "Use when adapting a UI, product, or app for Tamil-speaking users — translating interface strings, laying out text, choosing fonts, or formatting dates/numbers. Helps you avoid the layout breakage, font-rendering failures, and grammatically broken output that literal string-substitution localization causes for Tamil."
+    },
+    {
+      "name": "tamil-morphology-nlp",
+      "category": "tamil",
+      "path": "skills/tamil/tamil-morphology-nlp/SKILL.md",
+      "description": "Use when building NLP or search features over Tamil text — tokenization, stemming, keyword search, NER, embeddings, or LLM pipelines — and results are poor because whitespace tokens don't match query terms or token counts explode. Helps you handle Tamil's agglutinative morphology and sandhi stem changes so matching works at the lemma level, not the surface-form level."
+    },
+    {
+      "name": "tamil-numerals-symbols",
+      "category": "tamil",
+      "path": "skills/tamil/tamil-numerals-symbols/SKILL.md",
+      "description": "Use when deciding how to render numbers, dates, or units in Tamil content — or when a design, archive, or classical text calls for the native Tamil numeral glyphs and clerical symbols. Helps you choose between Western and Tamil digits correctly, use the traditional multiplicative numerals without inventing fake positional forms, and verify font coverage for the symbol block."
+    },
+    {
+      "name": "tamil-swaram-notation",
+      "category": "tamil",
+      "path": "skills/tamil/tamil-swaram-notation/SKILL.md",
+      "description": "Use when digitizing, rendering, or generating Carnatic music notation written in Tamil script — swaram lines in a paattu book, a notation editor, or a music-learning app — and you need the seven swara letters, octave dots, and duration marks to survive as searchable text instead of becoming images. Helps you encode ஸ ரி க ம ப த நி notation in Unicode without breaking the letters' own vowel signs."
+    },
+    {
+      "name": "tamil-swaram-vowels",
+      "category": "tamil",
+      "path": "skills/tamil/tamil-swaram-vowels/SKILL.md",
+      "description": "Use when handling Tamil vowels (swaram / உயிரெழுத்து) in code or content — validating input sequences, building keyboards or IMEs, debugging a vowel sign that renders on the \"wrong\" side of its consonant, or deciding whether to emit an independent vowel letter or a dependent sign. Helps you encode vowels in correct logical order and distinguish the two glyph families that write the same twelve sounds."
+    },
+    {
+      "name": "tamil-text-processing",
+      "category": "tamil",
+      "path": "skills/tamil/tamil-text-processing/SKILL.md",
+      "description": "Use when code manipulates Tamil strings — truncating, measuring length, sorting, indexing, or regex-matching text that contains Tamil script — and the output looks subtly wrong (broken glyphs, mis-sorted lists, off-by-one substrings). Helps you handle Tamil text at the grapheme-cluster level instead of the code-unit level so operations don't corrupt combining marks."
+    },
+    {
+      "name": "tamil-transliteration",
+      "category": "tamil",
+      "path": "skills/tamil/tamil-transliteration/SKILL.md",
+      "description": "Use when converting Tamil script to Latin characters (or back) — for search indexing, URL slugs, voice/SMS input normalization, or supporting \"Tanglish\" user input. Helps you pick the right romanization scheme and handle the many-to-one ambiguity that makes reverse transliteration lossy."
+    },
+    {
+      "name": "browser-automation",
+      "category": "computer-use",
+      "path": "skills/computer-use/browser-automation/SKILL.md",
+      "description": "Use when an agent must drive a real or headless browser (Playwright, Puppeteer, Selenium) to fill forms, scrape dynamic content, or verify a web flow end-to-end. Helps you pick robust selectors, wait strategies, and verification steps so the automation survives layout changes and network variance."
+    },
+    {
+      "name": "desktop-workflow-automation",
+      "category": "computer-use",
+      "path": "skills/computer-use/desktop-workflow-automation/SKILL.md",
+      "description": "Use when automating a multi-step task that spans native desktop apps, the filesystem, and the clipboard — e.g. export a report from one app, transform it, and import it into another. Helps you decide scripting vs. agentic control per step and make long-running workflows resumable after crashes or permission prompts."
+    },
+    {
+      "name": "gui-agent-design",
+      "category": "computer-use",
+      "path": "skills/computer-use/gui-agent-design/SKILL.md",
+      "description": "Use when designing the perceive-decide-act loop for an agent that controls arbitrary GUIs via screenshots, coordinates, or an accessibility tree rather than a fixed API. Helps you choose a grounding strategy, define a safe action space, and add guardrails before the agent can click/type/scroll on real screens."
+    },
+    {
+      "name": "api-design",
+      "category": "tools",
+      "path": "skills/tools/api-design/SKILL.md",
+      "description": "Use when designing a new REST or RPC API surface, or reviewing an existing one for consistency — resource naming, versioning, pagination, error shapes, and backward compatibility. Helps you avoid the breaking-change and inconsistency traps that make an API painful for every client that integrates against it."
+    },
+    {
+      "name": "cli-tool-design",
+      "category": "tools",
+      "path": "skills/tools/cli-tool-design/SKILL.md",
+      "description": "Use when designing or reviewing a command-line tool's interface — flags, defaults, output modes, exit codes, and help text — before or while implementing it. Helps you produce a CLI that's predictable for humans and scriptable for automation (including LLM agents shelling out to it)."
+    },
+    {
+      "name": "mcp-server-development",
+      "category": "tools",
+      "path": "skills/tools/mcp-server-development/SKILL.md",
+      "description": "Use when building or reviewing a Model Context Protocol (MCP) server — designing its tools, resources, and prompts so an LLM client can call them reliably. Helps you pick the right primitive, write tool schemas an LLM will use correctly on the first try, and keep tool output small enough to not blow the context window."
+    },
+    {
+      "name": "skill-authoring",
+      "category": "tools",
+      "path": "skills/tools/skill-authoring/SKILL.md",
+      "description": "Use when writing a new SKILL.md file for this repository, or reviewing one submitted in a PR. Helps you meet the frontmatter contract, hit the body quality bar, and place the file correctly so an agent actually finds and trusts it at trigger time."
+    },
+    {
+      "name": "age-appropriate-explaining",
+      "category": "yazh-life",
+      "path": "skills/yazh-life/age-appropriate-explaining/SKILL.md",
+      "description": "Use when explaining any concept to a ~12-year-old — a middle-schooler, a Class 6-8 student, or a kid who asked \"but why?\" — and you need to pitch vocabulary, length, and examples at the right level. Helps you land an explanation that is accurate *and* actually understood, instead of a dumbed-down half-truth or a wall of adult jargon."
+    },
+    {
+      "name": "feelings-and-friendship",
+      "category": "yazh-life",
+      "path": "skills/yazh-life/feelings-and-friendship/SKILL.md",
+      "description": "Use when a ~12-year-old is upset, angry, anxious, left out, fighting with a friend, or being bullied — or when they ask how to apologise, say no, or handle a group that's turned on them. Helps you name the feeling and coach a concrete next move, and recognise when the right answer is a trusted adult or a professional rather than more advice."
+    },
+    {
+      "name": "first-aid-and-emergencies",
+      "category": "yazh-life",
+      "path": "skills/yazh-life/first-aid-and-emergencies/SKILL.md",
+      "description": "Use when a ~12-year-old asks what to do in an emergency — a cut, a burn, a bad fall, someone choking, a fire, feeling unsafe — or when a household is preparing them to be home alone. Helps you give the small set of actions a kid can actually perform under stress, with \"call for help now\" placed correctly, instead of adult first-aid detail they'll never recall."
+    },
+    {
+      "name": "first-coding-steps",
+      "category": "yazh-life",
+      "path": "skills/yazh-life/first-coding-steps/SKILL.md",
+      "description": "Use when a ~12-year-old is learning to program — first Python or Scratch project, a school computing assignment, a game they want to build, or an error message they can't read. Helps you keep them building things they care about and teach them to debug, instead of drowning them in syntax rules or handing over working code they don't understand."
+    },
+    {
+      "name": "healthy-habits",
+      "category": "yazh-life",
+      "path": "skills/yazh-life/healthy-habits/SKILL.md",
+      "description": "Use when a ~12-year-old asks about sleep, food, exercise, screens, hygiene, or their changing body — or when tiredness, mood, or concentration problems trace back to those. Helps you give concrete numbers and one habit to change, instead of general \"eat healthy, sleep well\" advice that changes nothing."
+    },
+    {
+      "name": "homework-coaching",
+      "category": "yazh-life",
+      "path": "skills/yazh-life/homework-coaching/SKILL.md",
+      "description": "Use when a ~12-year-old asks for help with homework, an assignment, or a problem they're stuck on — including when they paste the question and clearly want the finished answer. Helps you coach them to the answer with hints and checks so the learning survives the assignment, instead of handing over work they can't defend or reproduce in a test."
+    },
+    {
+      "name": "kitchen-and-home-basics",
+      "category": "yazh-life",
+      "path": "skills/yazh-life/kitchen-and-home-basics/SKILL.md",
+      "description": "Use when a ~12-year-old wants to cook something, is home alone and hungry, or needs practical household skills — laundry, a stuck zip, a blown fuse, packing a bag, cleaning up a mess. Helps you give safe, sequenced instructions with the hazard called out before the step, instead of a recipe that assumes adult kitchen judgment."
+    },
+    {
+      "name": "money-basics",
+      "category": "yazh-life",
+      "path": "skills/yazh-life/money-basics/SKILL.md",
+      "description": "Use when a ~12-year-old is dealing with money — pocket money, saving for something expensive, an in-game purchase, a first bank account, or \"why can't I just buy it?\". Helps you teach the save/spend/give split, real trade-off arithmetic, and how the free game plans to take their money, instead of vague advice to \"be careful with money\"."
+    },
+    {
+      "name": "online-safety",
+      "category": "yazh-life",
+      "path": "skills/yazh-life/online-safety/SKILL.md",
+      "description": "Use when a ~12-year-old is setting up an account, gaming or chatting online, has been contacted by a stranger, hit a scam or a \"you've won\" message, or is dealing with something upsetting on a screen. Helps you give specific, usable rules — what never to share, how to spot grooming and scams, what to do about cyberbullying — instead of a vague warning to be careful online."
+    },
+    {
+      "name": "science-projects",
+      "category": "yazh-life",
+      "path": "skills/yazh-life/science-projects/SKILL.md",
+      "description": "Use when a ~12-year-old is doing a science fair project, a school experiment, or a \"why does this happen?\" investigation at home. Helps you turn their curiosity into a testable question with a fair test and a real conclusion, and keep the materials safe, instead of producing a decorated poster about a demonstration that tested nothing."
+    },
+    {
+      "name": "speaking-and-presenting",
+      "category": "yazh-life",
+      "path": "skills/yazh-life/speaking-and-presenting/SKILL.md",
+      "description": "Use when a ~12-year-old has to speak in front of people — a class presentation, an assembly, a debate, a viva, a school competition — or is anxious about it. Helps you build a structure they can deliver from memory and rehearse it properly, instead of producing slides they read aloud word for word."
+    },
+    {
+      "name": "spotting-misinformation",
+      "category": "yazh-life",
+      "path": "skills/yazh-life/spotting-misinformation/SKILL.md",
+      "description": "Use when a ~12-year-old asks whether something they saw online is true, forwards a shocking claim or image, is researching for a school project, or asks whether an AI or a video can be trusted. Helps you teach a checkable verification routine and how to judge a source, instead of an unusable rule like \"don't believe everything on the internet\"."
+    },
+    {
+      "name": "study-and-memory",
+      "category": "yazh-life",
+      "path": "skills/yazh-life/study-and-memory/SKILL.md",
+      "description": "Use when a ~12-year-old is preparing for a test, memorising material, or says they \"studied for hours and still forgot everything\". Helps you replace re-reading and highlighting with retrieval practice and spacing, and build a concrete revision schedule they will actually follow."
+    },
+    {
+      "name": "time-and-planning",
+      "category": "yazh-life",
+      "path": "skills/yazh-life/time-and-planning/SKILL.md",
+      "description": "Use when a ~12-year-old is overloaded, missing deadlines, doing everything at the last minute, or staring at a big project with no idea where to start. Helps you build a visible weekly plan and break projects into next-actions, instead of telling them to \"manage their time better\"."
+    }
+  ]
+}

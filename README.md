@@ -3,7 +3,60 @@ Curated list of skills powering Yazhi
 
 Each skill lives at `skills/<category>/<skill-name>/SKILL.md` and follows a common contract: YAML frontmatter with a `name` (matching its directory) and a `description` starting with "Use when...", followed by a procedural, checklist-driven body. See [`skill-authoring`](skills/tools/skill-authoring/SKILL.md) for the contribution guide.
 
-## Catalog (37 skills)
+This is the portable [Agent Skills](https://code.claude.com/docs/en/skills) format, so the same files work in Claude Code, Claude Desktop, and any other tool that reads `SKILL.md`. See [Install](#install) for how to import them.
+
+## Install
+
+### Claude Code (plugin, recommended)
+
+```
+/plugin marketplace add yazhi-lem/yazhi-skills
+/plugin install yazhi-skills@yazhi-skills
+```
+
+All 51 skills load namespaced as `yazhi-skills:<name>` — Claude picks them up automatically when relevant, or you invoke one directly with `/yazhi-skills:tamil-aksharas`. Update later with `/plugin marketplace update yazhi-skills`.
+
+Non-interactively:
+
+```bash
+claude plugin marketplace add yazhi-lem/yazhi-skills
+claude plugin install yazhi-skills@yazhi-skills
+```
+
+### Any tool that reads a skills directory
+
+`install.sh` flattens the category tree into one directory of `<skill-name>/SKILL.md`, which is what Claude Desktop, `~/.claude/skills`, and most third-party agents expect:
+
+```bash
+git clone https://github.com/yazhi-lem/yazhi-skills.git
+cd yazhi-skills
+
+./install.sh                          # all skills -> ~/.claude/skills (symlinks)
+./install.sh -c yazh-life -c tamil    # only those categories
+./install.sh --project --mode copy    # vendor into ./.claude/skills of your project
+./install.sh --dest ~/my-agent/skills --mode copy
+./install.sh --list                   # see what's available
+./install.sh --dry-run                # change nothing, print the plan
+```
+
+Symlinks (the default) mean `git pull` updates every installed skill; `--mode copy` vendors a fixed snapshot.
+
+### Programmatic use
+
+[`skills.json`](skills.json) is a generated index of every skill — name, category, description, and repo-relative path — for tools that want to load or filter them without walking the tree:
+
+```bash
+jq -r '.skills[] | select(.category == "yazh-life") | .path' skills.json
+```
+
+Regenerate it (and the plugin manifest's skill paths) after adding a skill:
+
+```bash
+python3 scripts/build_index.py      # rewrite skills.json + .claude-plugin/plugin.json
+python3 scripts/validate_skills.py  # check every SKILL.md against the repo contract
+```
+
+## Catalog (51 skills)
 
 ### Forward-Deployed Engineering (fde)
 
@@ -76,3 +129,33 @@ Each skill lives at `skills/<category>/<skill-name>/SKILL.md` and follows a comm
 | [`cli-tool-design`](skills/tools/cli-tool-design/SKILL.md) | Flags, defaults, output modes, exit codes, and help text for CLIs |
 | [`api-design`](skills/tools/api-design/SKILL.md) | Resource naming, versioning, pagination, and backward compatibility |
 | [`skill-authoring`](skills/tools/skill-authoring/SKILL.md) | The frontmatter contract and quality bar for SKILL.md files in this repo |
+
+### Yazh Life Skills (yazh-life)
+
+Life skills pitched at a ~12-year-old — how to help one learn, decide, stay safe, and look after themselves. Written as guidance for the assistant doing the helping, not as material to read aloud to a kid.
+
+| Skill | Covers |
+| --- | --- |
+| [`age-appropriate-explaining`](skills/yazh-life/age-appropriate-explaining/SKILL.md) | Pitching vocabulary, length, and analogies at a 12-year-old without dumbing down |
+| [`homework-coaching`](skills/yazh-life/homework-coaching/SKILL.md) | The hint ladder: coaching to the answer instead of handing it over |
+| [`study-and-memory`](skills/yazh-life/study-and-memory/SKILL.md) | Retrieval practice and spacing in place of re-reading and highlighting |
+| [`time-and-planning`](skills/yazh-life/time-and-planning/SKILL.md) | A visible week, next-actions, and buffers before the deadline |
+| [`speaking-and-presenting`](skills/yazh-life/speaking-and-presenting/SKILL.md) | Structure, rehearsal, and nerves for a class presentation |
+| [`first-coding-steps`](skills/yazh-life/first-coding-steps/SKILL.md) | First projects, reading error messages, and debugging as a habit |
+| [`science-projects`](skills/yazh-life/science-projects/SKILL.md) | Turning curiosity into a fair test with controls, repeats, and real safety rules |
+| [`spotting-misinformation`](skills/yazh-life/spotting-misinformation/SKILL.md) | A 30-second source check, lateral reading, and why AI answers aren't sources |
+| [`online-safety`](skills/yazh-life/online-safety/SKILL.md) | What never to share, grooming and scam patterns, cyberbullying, account setup |
+| [`money-basics`](skills/yazh-life/money-basics/SKILL.md) | Save/spend/give split, trade-off arithmetic, and how free games monetise kids |
+| [`feelings-and-friendship`](skills/yazh-life/feelings-and-friendship/SKILL.md) | Naming feelings, repair and apology scripts, and when to escalate to an adult |
+| [`healthy-habits`](skills/yazh-life/healthy-habits/SKILL.md) | Concrete sleep, food, movement, and screen numbers for this age |
+| [`kitchen-and-home-basics`](skills/yazh-life/kitchen-and-home-basics/SKILL.md) | A cooking and chores skill ladder with the hazard stated before the step |
+| [`first-aid-and-emergencies`](skills/yazh-life/first-aid-and-emergencies/SKILL.md) | The short list a kid can execute under stress, and when to call for help |
+
+## Contributing
+
+1. Read [`skill-authoring`](skills/tools/skill-authoring/SKILL.md) — it is the contribution guide.
+2. Add `skills/<category>/<skill-name>/SKILL.md`. The directory name and frontmatter `name` must match.
+3. Add a row to the catalog above.
+4. Run `python3 scripts/build_index.py && python3 scripts/validate_skills.py` and fix anything it reports.
+
+New categories also need a title in `CATEGORY_TITLES` in [`scripts/lib_skills.py`](scripts/lib_skills.py).
