@@ -1,0 +1,35 @@
+name: validate
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  skills:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Generated files are up to date
+        run: python3 scripts/build_index.py --check
+
+      - name: SKILL.md contract
+        run: python3 scripts/validate_skills.py
+
+      - name: Manifests are valid JSON
+        run: |
+          python3 -m json.tool .claude-plugin/plugin.json > /dev/null
+          python3 -m json.tool .claude-plugin/marketplace.json > /dev/null
+          python3 -m json.tool skills.json > /dev/null
+
+      - name: Installer works
+        run: |
+          bash -n install.sh
+          ./install.sh --dest "$RUNNER_TEMP/skills" --mode copy
+          test -f "$RUNNER_TEMP/skills/age-appropriate-explaining/SKILL.md"
+          test "$(find "$RUNNER_TEMP/skills" -name SKILL.md | wc -l)" -eq 51

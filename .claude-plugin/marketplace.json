@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-plugin-marketplace.json",
+  "name": "yazhi-skills",
+  "description": "Curated Agent Skills powering Yazhi — engineering, sovereign AI, security, Tamil language, and life skills for a 12-year-old.",
+  "version": "1.0.0",
+  "owner": {
+    "name": "yazhi-lem",
+    "url": "https://github.com/yazhi-lem"
+  },
+  "plugins": [
+    {
+      "name": "yazhi-skills",
+      "displayName": "Yazhi Skills",
+      "source": "./",
+      "description": "51 curated Agent Skills: forward-deployed engineering, AI/ML, sovereign AI, security, Tamil language and script, computer use, developer tooling, and life skills for a 12-year-old.",
+      "category": "productivity",
+      "tags": [
+        "skills",
+        "tamil",
+        "security",
+        "sovereign-ai",
+        "life-skills",
+        "education"
+      ],
+      "license": "GPL-3.0-or-later",
+      "homepage": "https://github.com/yazhi-lem/yazhi-skills#readme",
+      "repository": "https://github.com/yazhi-lem/yazhi-skills"
+    }
+  ]
+}

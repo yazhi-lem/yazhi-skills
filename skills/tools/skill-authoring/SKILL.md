@@ -29,6 +29,8 @@ Every skill lives at `skills/<category>/<skill-name>/SKILL.md`. The directory na
 
 ## Review checklist for a new skill PR
 
+Run `python3 scripts/build_index.py && python3 scripts/validate_skills.py` first — it mechanises every row below that a script can check, plus the generated `skills.json` and plugin manifest. Review by hand only what it can't judge.
+
 | Check | How to verify |
 |---|---|
 | Frontmatter parses | YAML between `---` markers is valid, exactly two keys: `name`, `description` |
