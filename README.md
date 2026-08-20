@@ -43,14 +43,16 @@ Symlinks (the default) mean `git pull` updates every installed skill; `--mode co
 
 ### Pre-packaged `.skill` bundles
 
-A `.skill` file is a zip archive with a `SKILL.md` at its root — the shape Claude accepts for an uploaded skill. Two are built into [`dist/`](dist) and committed, so they can be downloaded straight from GitHub without cloning:
+A `.skill` file is a zip archive containing **exactly one `SKILL.md`, at its root** — the shape Claude accepts for an uploaded skill. Two are built into [`dist/`](dist) and committed, so they can be downloaded straight from GitHub without cloning:
 
 | File | Contains | Use it for |
 | --- | --- | --- |
-| [`dist/yazhi-skills.skill`](dist/yazhi-skills.skill) | All 51 skills, plus a generated router `SKILL.md` at the root that indexes every skill with its trigger and bundled path | Importing the whole collection as one skill |
-| `dist/skills/<name>.skill` | One skill, its own `SKILL.md` at the archive root | Importing a single skill on its own |
+| [`dist/yazhi-skills.skill`](dist/yazhi-skills.skill) | A generated router `SKILL.md` at the root, plus all 51 skills as reference files under `references/<category>/<name>.md` | Importing the whole collection as one skill |
+| `dist/skills/<name>.skill` | One skill, its own `SKILL.md` at the archive root, and nothing else | Importing a single skill on its own |
 
-The collection bundle's root `SKILL.md` is a router, not a copy: it carries a trigger line and file path per skill, and instructs the reader to open the matching file before acting. That keeps the index small while the full procedural detail stays in the 51 bundled files.
+The collection bundle's root `SKILL.md` is a router, not a copy: it carries a trigger line and bundled path per skill, and instructs the reader to open the matching file before acting. That keeps the index small while the full procedural detail stays in the 51 reference files.
+
+Those 51 files are deliberately renamed away from `SKILL.md` on the way in. Shipping them at their repo paths would put 52 `SKILL.md` files in one archive, which is not a valid skill — the builder asserts the one-`SKILL.md` invariant, and CI re-checks it on every bundle.
 
 Rebuild them after changing any skill:
 
