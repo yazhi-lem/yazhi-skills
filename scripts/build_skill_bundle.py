@@ -10,6 +10,11 @@ Claude accepts for an uploaded skill. Two shapes are produced:
   dist/skills/<name>.skill       one bundle per skill, that skill's SKILL.md at
                                  the archive root. Built with --per-skill.
 
+A bundle must contain exactly one SKILL.md — the one at its root that defines
+the skill. So in the collection bundle the 51 skill bodies ship as reference
+files under references/<category>/<name>.md, not under their repo paths, which
+would put 51 further SKILL.md files in the archive and make it invalid.
+
 Archives are byte-for-byte reproducible (fixed timestamps, sorted entries) so
 `--check` can tell a stale bundle from an unchanged one.
 
@@ -41,6 +46,15 @@ PER_SKILL_DIR = DIST / "skills"
 
 # Fixed epoch for every archive member: zip's own 1980-01-01 floor.
 FIXED_DATE = (1980, 1, 1, 0, 0, 0)
+
+def bundled_path(skill: Skill) -> str:
+    """Where a skill's body lives inside the collection bundle.
+
+    Deliberately not the repo path: the file is renamed away from SKILL.md so
+    the archive holds exactly one, the router at the root.
+    """
+    return f"references/{skill.category}/{skill.name}.md"
+
 
 ROUTER_NAME = "yazhi-skills"
 ROUTER_DESCRIPTION = (
@@ -75,9 +89,10 @@ def render_router(skills: list[Skill]) -> str:
         "---",
         "",
         f"This bundle carries {len(skills)} self-contained skills across "
-        f"{len(cats)} areas. Each one is a procedural checklist with concrete "
-        "defaults and a named set of failure modes — the detail that makes them "
-        "worth following lives in the individual files, not in this index.",
+        f"{len(cats)} areas, one file each under `references/`. Every skill is "
+        "a procedural checklist with concrete defaults and a named set of "
+        "failure modes — the detail that makes them worth following lives in "
+        "those files, not in this index.",
         "",
         "## How to use this bundle",
         "",
@@ -86,8 +101,9 @@ def render_router(skills: list[Skill]) -> str:
         "are only enough to choose, never enough to execute.",
         "3. Follow its workflow section in order, and check the anti-patterns "
         "section before you finish.",
-        "4. Skills cross-reference each other by name in backticks; when one "
-        "points at another, read that file too rather than guessing.",
+        "4. Skills cross-reference each other by name in backticks. When one "
+        "points at another, find that name in the tables below and read its "
+        "file too rather than guessing at what it says.",
         "",
         "If nothing matches, this bundle does not cover the task — say so and "
         "work without it rather than stretching an unrelated skill to fit.",
@@ -102,7 +118,7 @@ def render_router(skills: list[Skill]) -> str:
         lines.append("|---|---|---|")
         for skill in sorted(in_cat, key=lambda s: s.name):
             summary = summaries.get(skill.name, skill.description[:120])
-            lines.append(f"| `{skill.name}` | {summary} | `{skill.rel_path}` |")
+            lines.append(f"| `{skill.name}` | {summary} | `{bundled_path(skill)}` |")
         lines.append("")
 
     lines.append(
@@ -129,9 +145,12 @@ def write_zip(path: Path, members: list[tuple[str, str]]) -> bytes:
 def collection_members(skills: list[Skill]) -> list[tuple[str, str]]:
     members = [("SKILL.md", render_router(skills))]
     for skill in skills:
-        members.append((skill.rel_path, skill.path.read_text(encoding="utf-8")))
-    members.append(("README.md", (REPO_ROOT / "README.md").read_text(encoding="utf-8")))
+        members.append((bundled_path(skill), skill.path.read_text(encoding="utf-8")))
     members.append(("LICENSE", (REPO_ROOT / "LICENSE").read_text(encoding="utf-8")))
+
+    skill_mds = [name for name, _ in members if Path(name).name == "SKILL.md"]
+    if skill_mds != ["SKILL.md"]:
+        raise AssertionError(f"bundle must hold exactly one SKILL.md, got {skill_mds}")
     return members
 
 

@@ -37,15 +37,23 @@ jobs:
           test -f "$RUNNER_TEMP/skills/age-appropriate-explaining/SKILL.md"
           test "$(find "$RUNNER_TEMP/skills" -name SKILL.md | wc -l)" -eq 51
 
-      - name: Bundle has a SKILL.md at its root
+      - name: Every bundle holds exactly one SKILL.md, at its root
         run: |
           python3 - <<'PY'
-          import zipfile
-          names = zipfile.ZipFile("dist/yazhi-skills.skill").namelist()
-          assert "SKILL.md" in names, "collection bundle has no root SKILL.md"
-          assert sum(n.endswith("SKILL.md") for n in names) == 52, names[:5]
-          for n in ("age-appropriate-explaining", "tamil-aksharas"):
-              per = zipfile.ZipFile(f"dist/skills/{n}.skill").namelist()
-              assert per == ["SKILL.md"], (n, per)
-          print("bundle layout ok")
+          import glob, posixpath, zipfile
+
+          def skill_mds(path):
+              names = zipfile.ZipFile(path).namelist()
+              return [n for n in names if posixpath.basename(n) == "SKILL.md"]
+
+          bundles = ["dist/yazhi-skills.skill"] + sorted(glob.glob("dist/skills/*.skill"))
+          assert len(bundles) == 52, f"expected 52 bundles, found {len(bundles)}"
+          for path in bundles:
+              found = skill_mds(path)
+              assert found == ["SKILL.md"], f"{path}: expected one root SKILL.md, got {found}"
+
+          refs = [n for n in zipfile.ZipFile(bundles[0]).namelist()
+                  if n.startswith("references/")]
+          assert len(refs) == 51, f"expected 51 reference files, got {len(refs)}"
+          print(f"bundle layout ok: {len(bundles)} bundles, one SKILL.md each")
           PY
