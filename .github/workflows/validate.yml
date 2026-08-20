@@ -18,6 +18,9 @@ jobs:
       - name: Generated files are up to date
         run: python3 scripts/build_index.py --check
 
+      - name: Committed .skill bundles are up to date
+        run: python3 scripts/build_skill_bundle.py --per-skill --check
+
       - name: SKILL.md contract
         run: python3 scripts/validate_skills.py
 
@@ -33,3 +36,16 @@ jobs:
           ./install.sh --dest "$RUNNER_TEMP/skills" --mode copy
           test -f "$RUNNER_TEMP/skills/age-appropriate-explaining/SKILL.md"
           test "$(find "$RUNNER_TEMP/skills" -name SKILL.md | wc -l)" -eq 51
+
+      - name: Bundle has a SKILL.md at its root
+        run: |
+          python3 - <<'PY'
+          import zipfile
+          names = zipfile.ZipFile("dist/yazhi-skills.skill").namelist()
+          assert "SKILL.md" in names, "collection bundle has no root SKILL.md"
+          assert sum(n.endswith("SKILL.md") for n in names) == 52, names[:5]
+          for n in ("age-appropriate-explaining", "tamil-aksharas"):
+              per = zipfile.ZipFile(f"dist/skills/{n}.skill").namelist()
+              assert per == ["SKILL.md"], (n, per)
+          print("bundle layout ok")
+          PY
