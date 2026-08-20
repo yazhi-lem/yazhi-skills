@@ -41,6 +41,26 @@ cd yazhi-skills
 
 Symlinks (the default) mean `git pull` updates every installed skill; `--mode copy` vendors a fixed snapshot.
 
+### Pre-packaged `.skill` bundles
+
+A `.skill` file is a zip archive with a `SKILL.md` at its root — the shape Claude accepts for an uploaded skill. Two are built into [`dist/`](dist) and committed, so they can be downloaded straight from GitHub without cloning:
+
+| File | Contains | Use it for |
+| --- | --- | --- |
+| [`dist/yazhi-skills.skill`](dist/yazhi-skills.skill) | All 51 skills, plus a generated router `SKILL.md` at the root that indexes every skill with its trigger and bundled path | Importing the whole collection as one skill |
+| `dist/skills/<name>.skill` | One skill, its own `SKILL.md` at the archive root | Importing a single skill on its own |
+
+The collection bundle's root `SKILL.md` is a router, not a copy: it carries a trigger line and file path per skill, and instructs the reader to open the matching file before acting. That keeps the index small while the full procedural detail stays in the 51 bundled files.
+
+Rebuild them after changing any skill:
+
+```bash
+python3 scripts/build_skill_bundle.py --per-skill   # rewrite dist/
+python3 scripts/build_skill_bundle.py --check       # CI: fail if stale
+```
+
+Archives are byte-for-byte reproducible — fixed timestamps and sorted entries — so an unchanged skill produces an unchanged bundle and `--check` only fires on real drift.
+
 ### Programmatic use
 
 [`skills.json`](skills.json) is a generated index of every skill — name, category, description, and repo-relative path — for tools that want to load or filter them without walking the tree:
@@ -156,6 +176,14 @@ Life skills pitched at a ~12-year-old — how to help one learn, decide, stay sa
 1. Read [`skill-authoring`](skills/tools/skill-authoring/SKILL.md) — it is the contribution guide.
 2. Add `skills/<category>/<skill-name>/SKILL.md`. The directory name and frontmatter `name` must match.
 3. Add a row to the catalog above.
-4. Run `python3 scripts/build_index.py && python3 scripts/validate_skills.py` and fix anything it reports.
+4. Run the full build and check:
+
+```bash
+python3 scripts/build_index.py
+python3 scripts/build_skill_bundle.py --per-skill
+python3 scripts/validate_skills.py
+```
+
+Commit the regenerated `skills.json`, `.claude-plugin/plugin.json`, and `dist/` alongside the skill itself — CI fails if any of them is stale.
 
 New categories also need a title in `CATEGORY_TITLES` in [`scripts/lib_skills.py`](scripts/lib_skills.py).
