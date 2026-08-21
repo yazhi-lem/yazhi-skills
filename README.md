@@ -1,6 +1,8 @@
 # yazhi-skills
 Curated list of skills powering Yazhi
 
+See [NEXT_ACTION.md](./NEXT_ACTION.md) for the roadmap, **October 2026 Pilot**, and **December 2026 Launch** deliverables.
+
 Each skill lives at `skills/<category>/<skill-name>/SKILL.md` and follows a common contract: YAML frontmatter with a `name` (matching its directory) and a `description` starting with "Use when...", followed by a procedural, checklist-driven body. See [`skill-authoring`](skills/tools/skill-authoring/SKILL.md) for the contribution guide.
 
 This is the portable [Agent Skills](https://code.claude.com/docs/en/skills) format, so the same files work in Claude Code, Claude Desktop, and any other tool that reads `SKILL.md`. See [Install](#install) for how to import them.
