@@ -5,8 +5,14 @@
   "license": "GPL-3.0-or-later",
   "skillFormat": "SKILL.md with YAML frontmatter (name, description)",
   "generatedBy": "scripts/build_index.py — do not edit by hand",
-  "count": 51,
+  "count": 52,
   "categories": [
+    {
+      "id": "org",
+      "title": "Organization",
+      "path": "skills/org",
+      "count": 1
+    },
     {
       "id": "fde",
       "title": "Forward-Deployed Engineering",
@@ -57,6 +63,12 @@
     }
   ],
   "skills": [
+    {
+      "name": "yazhi-org-status",
+      "category": "org",
+      "path": "skills/org/yazhi-org-status/SKILL.md",
+      "description": "Use when starting work in any yazhi-lem repository, planning cross-repo work, or briefing someone (human or agent) on where the Yazhi ecosystem stands. Helps you orient quickly to the current status, vision, and near-term priorities of each project instead of re-deriving them from scratch by reading nine repos."
+    },
     {
       "name": "customer-discovery",
       "category": "fde",

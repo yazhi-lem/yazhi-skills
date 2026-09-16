@@ -16,6 +16,7 @@ SKILLS_ROOT = REPO_ROOT / "skills"
 
 # Category id -> human-readable title used in README headings and skills.json.
 CATEGORY_TITLES: Dict[str, str] = {
+    "org": "Organization",
     "fde": "Forward-Deployed Engineering",
     "ai-ml": "AI/ML",
     "sovereign": "Sovereign",
