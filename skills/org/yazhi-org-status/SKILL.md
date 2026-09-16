@@ -7,17 +7,19 @@ Yazhi is a sovereign, zero-cloud Tamil-first AI ecosystem spanning nine reposito
 
 ## The nine repos
 
-| Repo | Purpose | Stack | Status |
-|---|---|---|---|
-| `yazhi-api` | Central gRPC orchestrator: agents, IAM/Circle, RAG, memory, skills | Python 3.11, gRPC, SQLite | v1.13.0 — gRPC transport, IAM/Circle, two ingestion pipelines live; Pilot Oct 2026, Launch Dec 2026 |
-| `adhan` | From-scratch Tamil SLM: swaram-token tokenizer, JAX/Flax training | Python, JAX/Flax, MLflow | Phase 0 + A done; Phase 3 (pretrain `adhan-nano`) in progress |
-| `open-sangam` | Sangam-era Tamil literature reader + AI agent assembly (சங்க அவை) | React/Vite, Firebase, Gemini via OpenRouter | Phase 1 (scrape/normalize) done — 18 poems, 2,552 verses; Phase 2 (English translation) drafting nightly; Phase 3 (reader) in progress |
-| `yazh-unity` | AR/XR Tamil pet app, on-device ONNX inference | Unity 6, C#, Barracuda | Production-ready code; blocked on Play Store / App Store signing credentials (founder gate) |
-| `illakiya` | Native Tamil (PM0100/Tholkaappiyam) Android keyboard | Rust core + Kotlin/Compose via UniFFI | Working 836-word dictionary + sandhi engine; pre-1.0 |
-| `capitol` | Internal AI/ML ops + people console: annotation, agents, models | Next.js 16, React 19, TypeScript | Early scaffold — console/annotation/audit/people pages stubbed, no backend wired |
-| `yazh-kutty` | 30K-vocabulary Tamil model for kids | — | Named, empty repo — not started |
-| `yazhi-dev` | yazhi.dev community site + `/chat` demo | Next.js, Framer Motion | Chat UI streams through `yazhi-api`; immersive-site redesign at design-doc stage |
-| `styleguide` | Fork of Google's style guides | — | Reference only — `yazhi-api`'s Python style is enforced against this |
+Each row links to a dedicated skill with that repo's full layer map, workflow, and anti-patterns — read this table for orientation, the linked skill before touching that repo's code.
+
+| Repo | Purpose | Stack | Status | Detail |
+|---|---|---|---|---|
+| `yazhi-api` | Central gRPC orchestrator: agents, IAM/Circle, RAG, memory, skills | Python 3.11, gRPC, SQLite | v1.13.0 — gRPC transport, IAM/Circle, two ingestion pipelines live; Pilot Oct 2026, Launch Dec 2026 | `yazhi-api-status` |
+| `adhan` | From-scratch Tamil SLM: swaram-token tokenizer, JAX/Flax training | Python, JAX/Flax, MLflow | Phase 0 + A done; Phase 3 (pretrain `adhan-nano`) in progress | `adhan-status` |
+| `open-sangam` | Sangam-era Tamil literature reader + AI agent assembly (சங்க அவை) | React/Vite, Firebase, Gemini via OpenRouter | Phase 1 (scrape/normalize) done — 18 poems, 2,552 verses; Phase 2 (English translation) drafting nightly; Phase 3 (reader) in progress | `open-sangam-status` |
+| `yazh-unity` | AR/XR Tamil pet app, on-device ONNX inference | Unity 6, C#, Barracuda | Production-ready code; blocked on Play Store / App Store signing credentials (founder gate) | `yazh-unity-status` |
+| `illakiya` | Native Tamil (PM0100/Tholkaappiyam) Android keyboard | Rust core + Kotlin/Compose via UniFFI | Working 836-word dictionary + sandhi engine; pre-1.0 | `illakiya-status` |
+| `capitol` | Internal AI/ML ops + people console: annotation, agents, models | Next.js 16, React 19, TypeScript | Early scaffold — console/annotation/audit/people pages stubbed, no backend wired | `capitol-status` |
+| `yazh-kutty` | 30K-vocabulary Tamil model for kids | — | Named, empty repo — not started | `yazh-kutty-status` |
+| `yazhi-dev` | yazhi.dev community site + `/chat` demo | Next.js, Framer Motion | Chat UI streams through `yazhi-api`; immersive-site redesign at design-doc stage | `yazhi-dev-status` |
+| `styleguide` | Fork of Google's style guides | — | Reference only — `yazhi-api`'s Python style is enforced against this | `styleguide-status` |
 
 ## Vision
 
@@ -50,4 +52,4 @@ Sovereign, air-gap-capable Tamil AI: a child, or anyone, should be able to talk,
 - **Overriding the ruff baseline wholesale.** `yazhi-api` carries roughly 1,350 pre-existing lint findings on purpose (`.ruff-baseline.json`); run `scripts/ruff_baseline.py`, not a blanket `ruff check --fix`.
 - **Re-deriving corpus stats by hand.** `open-sangam`'s README numbers are a snapshot from 2026-08-04; use `python -m ai.translate_with_gemini --status` for the current figures instead.
 
-Cross-reference `sovereign-cloud-architecture` and `airgapped-llm-deployment` for the infrastructure posture behind "zero-cloud by default," `fine-tuning-workflow` for `adhan`'s pretraining loop, and `tamil-text-processing` / `tamil-aksharas` for the swaram/akshara-level handling shared by `adhan` and `illakiya`.
+Cross-reference the per-repo skills above for anything below the ecosystem level: `yazhi-api-status`, `adhan-status`, `open-sangam-status`, `yazh-unity-status`, `illakiya-status`, `capitol-status`, `yazh-kutty-status`, `yazhi-dev-status`, `styleguide-status`. For general technique guidance, see `sovereign-cloud-architecture` and `airgapped-llm-deployment` for the infrastructure posture behind "zero-cloud by default," `fine-tuning-workflow` for pretraining, and `tamil-text-processing` / `tamil-aksharas` for swaram/akshara-level handling.

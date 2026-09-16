@@ -14,7 +14,7 @@ This is the portable [Agent Skills](https://code.claude.com/docs/en/skills) form
 /plugin install yazhi-skills@yazhi-skills
 ```
 
-All 52 skills load namespaced as `yazhi-skills:<name>` — Claude picks them up automatically when relevant, or you invoke one directly with `/yazhi-skills:tamil-aksharas`. Update later with `/plugin marketplace update yazhi-skills`.
+All 61 skills load namespaced as `yazhi-skills:<name>` — Claude picks them up automatically when relevant, or you invoke one directly with `/yazhi-skills:tamil-aksharas`. Update later with `/plugin marketplace update yazhi-skills`.
 
 Non-interactively:
 
@@ -47,12 +47,12 @@ A `.skill` file is a zip archive containing **exactly one `SKILL.md`, at its roo
 
 | File | Contains | Use it for |
 | --- | --- | --- |
-| [`dist/yazhi-skills.skill`](dist/yazhi-skills.skill) | A generated router `SKILL.md` at the root, plus all 52 skills as reference files under `references/<category>/<name>.md` | Importing the whole collection as one skill |
+| [`dist/yazhi-skills.skill`](dist/yazhi-skills.skill) | A generated router `SKILL.md` at the root, plus all 61 skills as reference files under `references/<category>/<name>.md` | Importing the whole collection as one skill |
 | `dist/skills/<name>.skill` | One skill, its own `SKILL.md` at the archive root, and nothing else | Importing a single skill on its own |
 
-The collection bundle's root `SKILL.md` is a router, not a copy: it carries a trigger line and bundled path per skill, and instructs the reader to open the matching file before acting. That keeps the index small while the full procedural detail stays in the 52 reference files.
+The collection bundle's root `SKILL.md` is a router, not a copy: it carries a trigger line and bundled path per skill, and instructs the reader to open the matching file before acting. That keeps the index small while the full procedural detail stays in the 61 reference files.
 
-Those 52 files are deliberately renamed away from `SKILL.md` on the way in. Shipping them at their repo paths would put 53 `SKILL.md` files in one archive, which is not a valid skill — the builder asserts the one-`SKILL.md` invariant, and CI re-checks it on every bundle.
+Those 61 files are deliberately renamed away from `SKILL.md` on the way in. Shipping them at their repo paths would put 62 `SKILL.md` files in one archive, which is not a valid skill — the builder asserts the one-`SKILL.md` invariant, and CI re-checks it on every bundle.
 
 Rebuild them after changing any skill:
 
@@ -78,13 +78,29 @@ python3 scripts/build_index.py      # rewrite skills.json + .claude-plugin/plugi
 python3 scripts/validate_skills.py  # check every SKILL.md against the repo contract
 ```
 
-## Catalog (52 skills)
+## Catalog (61 skills)
 
 ### Organization (org)
 
 | Skill | Covers |
 | --- | --- |
 | [`yazhi-org-status`](skills/org/yazhi-org-status/SKILL.md) | Current status, vision, and next actions across all nine yazhi-lem repos |
+
+### Repositories (repos)
+
+One skill per yazhi-lem repository — its own layer map, workflow, next actions, and anti-patterns.
+
+| Skill | Covers |
+| --- | --- |
+| [`yazhi-api-status`](skills/repos/yazhi-api-status/SKILL.md) | The central gRPC orchestrator: layer map, Pilot/Launch roadmap, known constraints |
+| [`adhan-status`](skills/repos/adhan-status/SKILL.md) | The from-scratch Tamil SLM: JAX/Flax training phases, swaram tokenizer |
+| [`open-sangam-status`](skills/repos/open-sangam-status/SKILL.md) | Sangam-era literature reader + agent assembly: corpus phases, translation pipeline |
+| [`yazh-unity-status`](skills/repos/yazh-unity-status/SKILL.md) | The AR/XR Tamil pet app: endless-runner pivot, on-device inference, store blockers |
+| [`illakiya-status`](skills/repos/illakiya-status/SKILL.md) | The Rust + Kotlin Tamil Android keyboard: layout, dictionary, sandhi engine |
+| [`capitol-status`](skills/repos/capitol-status/SKILL.md) | The internal AI/ML ops console: recognizing UI scaffold vs. real backend |
+| [`yazh-kutty-status`](skills/repos/yazh-kutty-status/SKILL.md) | The 30K-vocabulary kids' Tamil model: scoping an empty repository |
+| [`yazhi-dev-status`](skills/repos/yazhi-dev-status/SKILL.md) | The yazhi.dev site and `/chat` demo: backend contract, design history |
+| [`styleguide-status`](skills/repos/styleguide-status/SKILL.md) | The google/styleguide fork: when (not) to edit it |
 
 ### Forward-Deployed Engineering (fde)
 

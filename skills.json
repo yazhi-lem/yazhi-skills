@@ -5,13 +5,19 @@
   "license": "GPL-3.0-or-later",
   "skillFormat": "SKILL.md with YAML frontmatter (name, description)",
   "generatedBy": "scripts/build_index.py — do not edit by hand",
-  "count": 52,
+  "count": 61,
   "categories": [
     {
       "id": "org",
       "title": "Organization",
       "path": "skills/org",
       "count": 1
+    },
+    {
+      "id": "repos",
+      "title": "Repositories",
+      "path": "skills/repos",
+      "count": 9
     },
     {
       "id": "fde",
@@ -68,6 +74,60 @@
       "category": "org",
       "path": "skills/org/yazhi-org-status/SKILL.md",
       "description": "Use when starting work in any yazhi-lem repository, planning cross-repo work, or briefing someone (human or agent) on where the Yazhi ecosystem stands. Helps you orient quickly to the current status, vision, and near-term priorities of each project instead of re-deriving them from scratch by reading nine repos."
+    },
+    {
+      "name": "adhan-status",
+      "category": "repos",
+      "path": "skills/repos/adhan-status/SKILL.md",
+      "description": "Use when working in the adhan repository — the from-scratch Tamil small language model — whether on the tokenizer, the JAX training loop, corpus scraping, or evaluation. Helps you place work in the current phase instead of resuming a pipeline the project already retired."
+    },
+    {
+      "name": "capitol-status",
+      "category": "repos",
+      "path": "skills/repos/capitol-status/SKILL.md",
+      "description": "Use when working in the capitol repository — the internal AI/ML ops and people-management console. Helps you recognize this is a UI mockup over hardcoded data, not a working backend, before building on top of state that doesn't actually exist yet."
+    },
+    {
+      "name": "illakiya-status",
+      "category": "repos",
+      "path": "skills/repos/illakiya-status/SKILL.md",
+      "description": "Use when working in the illakiya repository — the Rust + Kotlin native Tamil Android keyboard — on the layout engine, dictionary, sandhi rules, or the IME UI. Helps you extend the existing engine instead of duplicating logic that already exists across the Rust/Kotlin boundary."
+    },
+    {
+      "name": "open-sangam-status",
+      "category": "repos",
+      "path": "skills/repos/open-sangam-status/SKILL.md",
+      "description": "Use when working in the open-sangam repository — the Sangam-era Tamil literature reader, its corpus pipeline, or the சங்க அவை (Sangam Avai) agent assembly. Helps you find the current phase and horizon before proposing scope, and avoid re-scraping or re-translating work already tracked."
+    },
+    {
+      "name": "styleguide-status",
+      "category": "repos",
+      "path": "skills/repos/styleguide-status/SKILL.md",
+      "description": "Use when asked to change, sync, or reference the styleguide repository — a fork of google/styleguide. Helps you recognize it as an upstream reference rather than a place to author new conventions, and route Yazhi-specific style decisions elsewhere."
+    },
+    {
+      "name": "yazh-kutty-status",
+      "category": "repos",
+      "path": "skills/repos/yazh-kutty-status/SKILL.md",
+      "description": "Use when asked to start, scope, or resume work in the yazh-kutty repository — a 30K-vocabulary Tamil model for kids. Helps you confirm scope and avoid duplicating adhan's own nano-tier model before writing a first line of code into an empty repository."
+    },
+    {
+      "name": "yazh-unity-status",
+      "category": "repos",
+      "path": "skills/repos/yazh-unity-status/SKILL.md",
+      "description": "Use when working in the yazh-unity repository — the Tamil AR/XR pet app — on gameplay, the on-device Tamil inference engine, or release packaging. Helps you recognize that the code is production-ready and the actual blocker is credentials, not engineering."
+    },
+    {
+      "name": "yazhi-api-status",
+      "category": "repos",
+      "path": "skills/repos/yazhi-api-status/SKILL.md",
+      "description": "Use when working in the yazhi-api repository — adding an endpoint, a domain, an agent, or reviewing a PR against it. Helps you place new code in the right layer, respect the model-agnostic boundary, and avoid rebuilding work already scheduled in the Pilot/Launch roadmap."
+    },
+    {
+      "name": "yazhi-dev-status",
+      "category": "repos",
+      "path": "skills/repos/yazhi-dev-status/SKILL.md",
+      "description": "Use when working in the yazhi-dev repository — the yazhi.dev marketing/community site and its /chat demo. Helps you keep the chat UI's backend contract intact and avoid re-designing a site that already went through one full visual pivot."
     },
     {
       "name": "customer-discovery",
