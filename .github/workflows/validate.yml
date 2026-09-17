@@ -35,7 +35,8 @@ jobs:
           bash -n install.sh
           ./install.sh --dest "$RUNNER_TEMP/skills" --mode copy
           test -f "$RUNNER_TEMP/skills/age-appropriate-explaining/SKILL.md"
-          test "$(find "$RUNNER_TEMP/skills" -name SKILL.md | wc -l)" -eq 51
+          expected="$(python3 -c 'import json; print(len(json.load(open("skills.json", encoding="utf-8"))["skills"]))')"
+          test "$(find "$RUNNER_TEMP/skills" -name SKILL.md | wc -l)" -eq "$expected"
 
       - name: Every bundle holds exactly one SKILL.md, at its root
         run: |
