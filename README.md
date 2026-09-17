@@ -78,7 +78,7 @@ python3 scripts/build_index.py      # rewrite skills.json + .claude-plugin/plugi
 python3 scripts/validate_skills.py  # check every SKILL.md against the repo contract
 ```
 
-## Catalog (51 skills)
+## Catalog (59 skills)
 
 ### Forward-Deployed Engineering (fde)
 
@@ -172,6 +172,19 @@ Life skills pitched at a ~12-year-old — how to help one learn, decide, stay sa
 | [`healthy-habits`](skills/yazh-life/healthy-habits/SKILL.md) | Concrete sleep, food, movement, and screen numbers for this age |
 | [`kitchen-and-home-basics`](skills/yazh-life/kitchen-and-home-basics/SKILL.md) | A cooking and chores skill ladder with the hazard stated before the step |
 | [`first-aid-and-emergencies`](skills/yazh-life/first-aid-and-emergencies/SKILL.md) | The short list a kid can execute under stress, and when to call for help |
+
+### Social Media (social-media)
+
+| Skill | Covers |
+| --- | --- |
+| [`social-content-master`](skills/social-media/social-content-master/SKILL.md) | Generating ready-to-publish posts, captions, and reel/short-form video scripts |
+| [`tone-of-voice-application`](skills/social-media/tone-of-voice-application/SKILL.md) | Applying a brand's tone rules consistently and gracefully falling back to defaults |
+| [`social-caption-writing`](skills/social-media/social-caption-writing/SKILL.md) | Drafting publish-ready social captions with platform-specific constraints |
+| [`reel-script-generation`](skills/social-media/reel-script-generation/SKILL.md) | Scripting timestamped short-form videos with visual cues and on-screen text |
+| [`content-repurposing`](skills/social-media/content-repurposing/SKILL.md) | Repurposing long-form assets into multiple platform-native social posts |
+| [`hashtag-and-platform-strategy`](skills/social-media/hashtag-and-platform-strategy/SKILL.md) | Finalizing hashtags and posting notes for social media copy |
+| [`content-quality-review`](skills/social-media/content-quality-review/SKILL.md) | Catching repetition, generic phrasing, and weak hooks before final output |
+| [`tamil-social-content`](skills/social-media/tamil-social-content/SKILL.md) | Adapting social media content into idiomatic Tamil, avoiding literal translations |
 
 ## Contributing
 
