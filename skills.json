@@ -5,7 +5,7 @@
   "license": "GPL-3.0-or-later",
   "skillFormat": "SKILL.md with YAML frontmatter (name, description)",
   "generatedBy": "scripts/build_index.py — do not edit by hand",
-  "count": 61,
+  "count": 66,
   "categories": [
     {
       "id": "org",
@@ -18,6 +18,12 @@
       "title": "Repositories",
       "path": "skills/repos",
       "count": 9
+    },
+    {
+      "id": "gtm",
+      "title": "Go-To-Market",
+      "path": "skills/gtm",
+      "count": 5
     },
     {
       "id": "fde",
@@ -128,6 +134,36 @@
       "category": "repos",
       "path": "skills/repos/yazhi-dev-status/SKILL.md",
       "description": "Use when working in the yazhi-dev repository — the yazhi.dev marketing/community site and its /chat demo. Helps you keep the chat UI's backend contract intact and avoid re-designing a site that already went through one full visual pivot."
+    },
+    {
+      "name": "channel-and-partnerships",
+      "category": "gtm",
+      "path": "skills/gtm/channel-and-partnerships/SKILL.md",
+      "description": "Use when deciding how a product should reach customers beyond direct sales — evaluating resellers, technology integrations, marketplace listings, or co-marketing deals. Helps you avoid signing a partnership that costs more in integration and management overhead than it returns in pipeline."
+    },
+    {
+      "name": "launch-planning",
+      "category": "gtm",
+      "path": "skills/gtm/launch-planning/SKILL.md",
+      "description": "Use when planning the rollout of a new product, major feature, or rebrand — deciding launch tier, sequencing announcements, and coordinating teams around a ship date. Helps you avoid the common failure of treating \"launch\" as a single press-release day instead of a staged sequence with its own success criteria."
+    },
+    {
+      "name": "positioning-and-messaging",
+      "category": "gtm",
+      "path": "skills/gtm/positioning-and-messaging/SKILL.md",
+      "description": "Use when a product, feature, or company needs a positioning statement or messaging hierarchy before any launch asset gets written — a new product, a pivot, a new market segment, or a rebrand. Helps you avoid the common failure of writing taglines before deciding who the product is for and what it displaces."
+    },
+    {
+      "name": "pricing-strategy",
+      "category": "gtm",
+      "path": "skills/gtm/pricing-strategy/SKILL.md",
+      "description": "Use when setting initial pricing for a new product, restructuring tiers, or deciding whether to change a pricing model (seat-based, usage-based, flat, freemium). Helps you anchor price to value delivered and buyer willingness-to-pay instead of defaulting to cost-plus or copying a competitor's sheet."
+    },
+    {
+      "name": "sales-enablement",
+      "category": "gtm",
+      "path": "skills/gtm/sales-enablement/SKILL.md",
+      "description": "Use when preparing a sales or customer-facing team to sell a new product, feature, or pricing change — building a pitch deck, battlecard, objection-handling guide, or onboarding a new rep. Helps you avoid shipping enablement material that reps skim once and never use because it doesn't match how a real sales conversation actually goes."
     },
     {
       "name": "customer-discovery",

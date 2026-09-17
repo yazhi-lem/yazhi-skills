@@ -18,6 +18,7 @@ SKILLS_ROOT = REPO_ROOT / "skills"
 CATEGORY_TITLES: Dict[str, str] = {
     "org": "Organization",
     "repos": "Repositories",
+    "gtm": "Go-To-Market",
     "fde": "Forward-Deployed Engineering",
     "ai-ml": "AI/ML",
     "sovereign": "Sovereign",

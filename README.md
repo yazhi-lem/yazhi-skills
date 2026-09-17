@@ -14,7 +14,7 @@ This is the portable [Agent Skills](https://code.claude.com/docs/en/skills) form
 /plugin install yazhi-skills@yazhi-skills
 ```
 
-All 61 skills load namespaced as `yazhi-skills:<name>` — Claude picks them up automatically when relevant, or you invoke one directly with `/yazhi-skills:tamil-aksharas`. Update later with `/plugin marketplace update yazhi-skills`.
+All 66 skills load namespaced as `yazhi-skills:<name>` — Claude picks them up automatically when relevant, or you invoke one directly with `/yazhi-skills:tamil-aksharas`. Update later with `/plugin marketplace update yazhi-skills`.
 
 Non-interactively:
 
@@ -47,12 +47,12 @@ A `.skill` file is a zip archive containing **exactly one `SKILL.md`, at its roo
 
 | File | Contains | Use it for |
 | --- | --- | --- |
-| [`dist/yazhi-skills.skill`](dist/yazhi-skills.skill) | A generated router `SKILL.md` at the root, plus all 61 skills as reference files under `references/<category>/<name>.md` | Importing the whole collection as one skill |
+| [`dist/yazhi-skills.skill`](dist/yazhi-skills.skill) | A generated router `SKILL.md` at the root, plus all 66 skills as reference files under `references/<category>/<name>.md` | Importing the whole collection as one skill |
 | `dist/skills/<name>.skill` | One skill, its own `SKILL.md` at the archive root, and nothing else | Importing a single skill on its own |
 
-The collection bundle's root `SKILL.md` is a router, not a copy: it carries a trigger line and bundled path per skill, and instructs the reader to open the matching file before acting. That keeps the index small while the full procedural detail stays in the 61 reference files.
+The collection bundle's root `SKILL.md` is a router, not a copy: it carries a trigger line and bundled path per skill, and instructs the reader to open the matching file before acting. That keeps the index small while the full procedural detail stays in the 66 reference files.
 
-Those 61 files are deliberately renamed away from `SKILL.md` on the way in. Shipping them at their repo paths would put 62 `SKILL.md` files in one archive, which is not a valid skill — the builder asserts the one-`SKILL.md` invariant, and CI re-checks it on every bundle.
+Those 66 files are deliberately renamed away from `SKILL.md` on the way in. Shipping them at their repo paths would put 67 `SKILL.md` files in one archive, which is not a valid skill — the builder asserts the one-`SKILL.md` invariant, and CI re-checks it on every bundle.
 
 Rebuild them after changing any skill:
 
@@ -78,7 +78,17 @@ python3 scripts/build_index.py      # rewrite skills.json + .claude-plugin/plugi
 python3 scripts/validate_skills.py  # check every SKILL.md against the repo contract
 ```
 
-## Catalog (61 skills)
+## Catalog (66 skills)
+
+### Go-To-Market (gtm)
+
+| Skill | Covers |
+| --- | --- |
+| [`positioning-and-messaging`](skills/gtm/positioning-and-messaging/SKILL.md) | Writing a positioning statement and messaging hierarchy before launch copy |
+| [`pricing-strategy`](skills/gtm/pricing-strategy/SKILL.md) | Choosing a pricing model and metric, and setting/changing tiers |
+| [`launch-planning`](skills/gtm/launch-planning/SKILL.md) | Tiering a launch and sequencing announcements across channels |
+| [`sales-enablement`](skills/gtm/sales-enablement/SKILL.md) | Battlecards, objection handling, and certifying reps on a new pitch |
+| [`channel-and-partnerships`](skills/gtm/channel-and-partnerships/SKILL.md) | Evaluating resellers, integrations, marketplaces, and co-marketing deals |
 
 ### Organization (org)
 
