@@ -5,7 +5,7 @@
   "license": "GPL-3.0-or-later",
   "skillFormat": "SKILL.md with YAML frontmatter (name, description)",
   "generatedBy": "scripts/build_index.py — do not edit by hand",
-  "count": 51,
+  "count": 59,
   "categories": [
     {
       "id": "fde",
@@ -54,6 +54,12 @@
       "title": "Yazh Life Skills",
       "path": "skills/yazh-life",
       "count": 14
+    },
+    {
+      "id": "social-media",
+      "title": "Social Media",
+      "path": "skills/social-media",
+      "count": 8
     }
   ],
   "skills": [
@@ -362,6 +368,54 @@
       "category": "yazh-life",
       "path": "skills/yazh-life/time-and-planning/SKILL.md",
       "description": "Use when a ~12-year-old is overloaded, missing deadlines, doing everything at the last minute, or staring at a big project with no idea where to start. Helps you build a visible weekly plan and break projects into next-actions, instead of telling them to \"manage their time better\"."
+    },
+    {
+      "name": "content-quality-review",
+      "category": "social-media",
+      "path": "skills/social-media/content-quality-review/SKILL.md",
+      "description": "Use when doing a final check on drafted social media copy or scripts — after tone-of-voice-application and before hashtag-and-platform-strategy — to catch repetition across platforms, generic phrasing, weak hooks, and vague claims before content is finalized."
+    },
+    {
+      "name": "content-repurposing",
+      "category": "social-media",
+      "path": "skills/social-media/content-repurposing/SKILL.md",
+      "description": "Use when a long-form asset — a blog post, video transcript, or document — needs to be turned into multiple platform-native social posts (LinkedIn, X, Instagram, or a reel script) instead of being copied or lightly edited."
+    },
+    {
+      "name": "hashtag-and-platform-strategy",
+      "category": "social-media",
+      "path": "skills/social-media/hashtag-and-platform-strategy/SKILL.md",
+      "description": "Use when finalizing hashtags, posting-time notes, or platform formatting guidance for a social media post, caption, or reel script that has already been drafted."
+    },
+    {
+      "name": "reel-script-generation",
+      "category": "social-media",
+      "path": "skills/social-media/reel-script-generation/SKILL.md",
+      "description": "Use when scripting a short-form video for Instagram Reels, YouTube Shorts, or TikTok from a topic or brief. Produces a timestamped script with visual cues, on-screen text, and a hook designed to work with sound off."
+    },
+    {
+      "name": "social-caption-writing",
+      "category": "social-media",
+      "path": "skills/social-media/social-caption-writing/SKILL.md",
+      "description": "Use when drafting a social media post or caption for Instagram, LinkedIn, X/Twitter, or Facebook from a topic, brief, or idea. Applies platform-specific length limits and a Hook-Value-CTA structure to produce publish-ready copy."
+    },
+    {
+      "name": "social-content-master",
+      "category": "social-media",
+      "path": "skills/social-media/social-content-master/SKILL.md",
+      "description": "Use when a request asks to create, draft, rewrite, or repurpose content for social media — posts, captions, reel/short-form video scripts, or turning one long-form asset into multiple platform posts. Orchestrates the social-media skill set (tone, captions, reel scripts, repurposing, hashtags) into one end-to-end content generation workflow."
+    },
+    {
+      "name": "tamil-social-content",
+      "category": "social-media",
+      "path": "skills/social-media/tamil-social-content/SKILL.md",
+      "description": "Use when social media content needs to be produced or adapted in Tamil — either the request explicitly asks for Tamil copy, or asks for a Tamil version alongside an English one. Bridges the social-media pipeline to the repo's existing `tamil-content-writing` skill so Tamil output is natural and idiomatic, not a mechanical translation."
+    },
+    {
+      "name": "tone-of-voice-application",
+      "category": "social-media",
+      "path": "skills/social-media/tone-of-voice-application/SKILL.md",
+      "description": "Use when writing or reviewing any social media copy that must match a specific brand voice — captions, posts, reel scripts, or repurposed content. Applies a brand's tone rules consistently and flags when no brand voice reference is available."
     }
   ]
 }
