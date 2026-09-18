@@ -5,7 +5,7 @@
   "license": "GPL-3.0-or-later",
   "skillFormat": "SKILL.md with YAML frontmatter (name, description)",
   "generatedBy": "scripts/build_index.py — do not edit by hand",
-  "count": 66,
+  "count": 71,
   "categories": [
     {
       "id": "org",
@@ -47,7 +47,7 @@
       "id": "security",
       "title": "Security",
       "path": "skills/security",
-      "count": 5
+      "count": 10
     },
     {
       "id": "tamil",
@@ -250,6 +250,18 @@
       "description": "Use when architecting infrastructure for a government, defense, or regulated customer that requires national/organizational control over data, keys, and operations — not just data-in-region but freedom from foreign-jurisdiction compulsion. Helps you design multi-region isolation, local key control, and a credible exit strategy."
     },
     {
+      "name": "codebase-vulnerability-audit",
+      "category": "security",
+      "path": "skills/security/codebase-vulnerability-audit/SKILL.md",
+      "description": "Use when auditing an entire existing codebase for latent vulnerabilities and forgotten loopholes — inheriting ownership of legacy code, before a security certification, or after a near-miss makes you distrust code nobody has looked at in years. Helps you find dead auth checks, hardcoded bypasses, and debug backdoors that a per-PR diff review would never surface because they predate every current PR."
+    },
+    {
+      "name": "environment-security-hardening",
+      "category": "security",
+      "path": "skills/security/environment-security-hardening/SKILL.md",
+      "description": "Use when provisioning or auditing an environment — a container image, a cloud account, CI/CD runners, or a dev/staging/prod config — for vulnerabilities that live outside the application code itself. Helps you catch exposed services, stale dependencies, over-broad IAM, and leaked environment variables that a code-only review never looks at."
+    },
+    {
       "name": "incident-response",
       "category": "security",
       "path": "skills/security/incident-response/SKILL.md",
@@ -262,6 +274,12 @@
       "description": "Use when reviewing or designing an LLM-powered feature — a chatbot, RAG pipeline, or agent with tool access — before it ships or gains new capabilities. Helps you find prompt injection, excessive agency, and unsafe tool/output handling that traditional code review misses."
     },
     {
+      "name": "pr-loophole-review",
+      "category": "security",
+      "path": "skills/security/pr-loophole-review/SKILL.md",
+      "description": "Use when reviewing a specific pull request for a deliberately or carelessly introduced security bypass — an unfamiliar contributor's PR, a \"quick fix\" that touches auth or validation, or any diff where something about the change feels like it's working around a control rather than through it. Helps you spot a loophole hidden in a plausible-looking diff instead of trusting that a passing test suite means the change is safe."
+    },
+    {
       "name": "secrets-management",
       "category": "security",
       "path": "skills/security/secrets-management/SKILL.md",
@@ -272,6 +290,18 @@
       "category": "security",
       "path": "skills/security/secure-code-review/SKILL.md",
       "description": "Use when reviewing a pull request or diff that touches authentication, data input handling, deserialization, or dependencies — before merge, not after. Helps you systematically catch injection, broken authorization, and unsafe dependency changes that functional review tends to miss."
+    },
+    {
+      "name": "secure-design-patterns",
+      "category": "security",
+      "path": "skills/security/secure-design-patterns/SKILL.md",
+      "description": "Use when designing a module, service, or API's internal structure — choosing how auth checks, input validation, and privilege boundaries are arranged in code — after threat modeling has named the risks but before implementation starts. Helps you pick concrete, proven design patterns instead of ad hoc placement of security checks that later drift out of sync with the code they're meant to protect."
+    },
+    {
+      "name": "security-posture-health-check",
+      "category": "security",
+      "path": "skills/security/security-posture-health-check/SKILL.md",
+      "description": "Use when running a periodic security review of an already-shipped system — a quarterly audit, a pre-funding/compliance due-diligence pass, or picking up ownership of a codebase someone else built. Helps you assess overall security health with a repeatable scorecard instead of an unstructured \"looks fine to me\" pass that misses slow-accumulating debt."
     },
     {
       "name": "threat-modeling",
