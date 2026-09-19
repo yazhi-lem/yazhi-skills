@@ -5,8 +5,26 @@
   "license": "GPL-3.0-or-later",
   "skillFormat": "SKILL.md with YAML frontmatter (name, description)",
   "generatedBy": "scripts/build_index.py — do not edit by hand",
-  "count": 59,
+  "count": 79,
   "categories": [
+    {
+      "id": "org",
+      "title": "Organization",
+      "path": "skills/org",
+      "count": 1
+    },
+    {
+      "id": "repos",
+      "title": "Repositories",
+      "path": "skills/repos",
+      "count": 9
+    },
+    {
+      "id": "gtm",
+      "title": "Go-To-Market",
+      "path": "skills/gtm",
+      "count": 5
+    },
     {
       "id": "fde",
       "title": "Forward-Deployed Engineering",
@@ -29,7 +47,7 @@
       "id": "security",
       "title": "Security",
       "path": "skills/security",
-      "count": 5
+      "count": 10
     },
     {
       "id": "tamil",
@@ -63,6 +81,96 @@
     }
   ],
   "skills": [
+    {
+      "name": "yazhi-org-status",
+      "category": "org",
+      "path": "skills/org/yazhi-org-status/SKILL.md",
+      "description": "Use when starting work in any yazhi-lem repository, planning cross-repo work, or briefing someone (human or agent) on where the Yazhi ecosystem stands. Helps you orient quickly to the current status, vision, and near-term priorities of each project instead of re-deriving them from scratch by reading nine repos."
+    },
+    {
+      "name": "adhan-status",
+      "category": "repos",
+      "path": "skills/repos/adhan-status/SKILL.md",
+      "description": "Use when working in the adhan repository — the from-scratch Tamil small language model — whether on the tokenizer, the JAX training loop, corpus scraping, or evaluation. Helps you place work in the current phase instead of resuming a pipeline the project already retired."
+    },
+    {
+      "name": "capitol-status",
+      "category": "repos",
+      "path": "skills/repos/capitol-status/SKILL.md",
+      "description": "Use when working in the capitol repository — the internal AI/ML ops and people-management console. Helps you recognize this is a UI mockup over hardcoded data, not a working backend, before building on top of state that doesn't actually exist yet."
+    },
+    {
+      "name": "illakiya-status",
+      "category": "repos",
+      "path": "skills/repos/illakiya-status/SKILL.md",
+      "description": "Use when working in the illakiya repository — the Rust + Kotlin native Tamil Android keyboard — on the layout engine, dictionary, sandhi rules, or the IME UI. Helps you extend the existing engine instead of duplicating logic that already exists across the Rust/Kotlin boundary."
+    },
+    {
+      "name": "open-sangam-status",
+      "category": "repos",
+      "path": "skills/repos/open-sangam-status/SKILL.md",
+      "description": "Use when working in the open-sangam repository — the Sangam-era Tamil literature reader, its corpus pipeline, or the சங்க அவை (Sangam Avai) agent assembly. Helps you find the current phase and horizon before proposing scope, and avoid re-scraping or re-translating work already tracked."
+    },
+    {
+      "name": "styleguide-status",
+      "category": "repos",
+      "path": "skills/repos/styleguide-status/SKILL.md",
+      "description": "Use when asked to change, sync, or reference the styleguide repository — a fork of google/styleguide. Helps you recognize it as an upstream reference rather than a place to author new conventions, and route Yazhi-specific style decisions elsewhere."
+    },
+    {
+      "name": "yazh-kutty-status",
+      "category": "repos",
+      "path": "skills/repos/yazh-kutty-status/SKILL.md",
+      "description": "Use when asked to start, scope, or resume work in the yazh-kutty repository — a 30K-vocabulary Tamil model for kids. Helps you confirm scope and avoid duplicating adhan's own nano-tier model before writing a first line of code into an empty repository."
+    },
+    {
+      "name": "yazh-unity-status",
+      "category": "repos",
+      "path": "skills/repos/yazh-unity-status/SKILL.md",
+      "description": "Use when working in the yazh-unity repository — the Tamil AR/XR pet app — on gameplay, the on-device Tamil inference engine, or release packaging. Helps you recognize that the code is production-ready and the actual blocker is credentials, not engineering."
+    },
+    {
+      "name": "yazhi-api-status",
+      "category": "repos",
+      "path": "skills/repos/yazhi-api-status/SKILL.md",
+      "description": "Use when working in the yazhi-api repository — adding an endpoint, a domain, an agent, or reviewing a PR against it. Helps you place new code in the right layer, respect the model-agnostic boundary, and avoid rebuilding work already scheduled in the Pilot/Launch roadmap."
+    },
+    {
+      "name": "yazhi-dev-status",
+      "category": "repos",
+      "path": "skills/repos/yazhi-dev-status/SKILL.md",
+      "description": "Use when working in the yazhi-dev repository — the yazhi.dev marketing/community site and its /chat demo. Helps you keep the chat UI's backend contract intact and avoid re-designing a site that already went through one full visual pivot."
+    },
+    {
+      "name": "channel-and-partnerships",
+      "category": "gtm",
+      "path": "skills/gtm/channel-and-partnerships/SKILL.md",
+      "description": "Use when deciding how a product should reach customers beyond direct sales — evaluating resellers, technology integrations, marketplace listings, or co-marketing deals. Helps you avoid signing a partnership that costs more in integration and management overhead than it returns in pipeline."
+    },
+    {
+      "name": "launch-planning",
+      "category": "gtm",
+      "path": "skills/gtm/launch-planning/SKILL.md",
+      "description": "Use when planning the rollout of a new product, major feature, or rebrand — deciding launch tier, sequencing announcements, and coordinating teams around a ship date. Helps you avoid the common failure of treating \"launch\" as a single press-release day instead of a staged sequence with its own success criteria."
+    },
+    {
+      "name": "positioning-and-messaging",
+      "category": "gtm",
+      "path": "skills/gtm/positioning-and-messaging/SKILL.md",
+      "description": "Use when a product, feature, or company needs a positioning statement or messaging hierarchy before any launch asset gets written — a new product, a pivot, a new market segment, or a rebrand. Helps you avoid the common failure of writing taglines before deciding who the product is for and what it displaces."
+    },
+    {
+      "name": "pricing-strategy",
+      "category": "gtm",
+      "path": "skills/gtm/pricing-strategy/SKILL.md",
+      "description": "Use when setting initial pricing for a new product, restructuring tiers, or deciding whether to change a pricing model (seat-based, usage-based, flat, freemium). Helps you anchor price to value delivered and buyer willingness-to-pay instead of defaulting to cost-plus or copying a competitor's sheet."
+    },
+    {
+      "name": "sales-enablement",
+      "category": "gtm",
+      "path": "skills/gtm/sales-enablement/SKILL.md",
+      "description": "Use when preparing a sales or customer-facing team to sell a new product, feature, or pricing change — building a pitch deck, battlecard, objection-handling guide, or onboarding a new rep. Helps you avoid shipping enablement material that reps skim once and never use because it doesn't match how a real sales conversation actually goes."
+    },
     {
       "name": "customer-discovery",
       "category": "fde",
@@ -148,6 +256,18 @@
       "description": "Use when architecting infrastructure for a government, defense, or regulated customer that requires national/organizational control over data, keys, and operations — not just data-in-region but freedom from foreign-jurisdiction compulsion. Helps you design multi-region isolation, local key control, and a credible exit strategy."
     },
     {
+      "name": "codebase-vulnerability-audit",
+      "category": "security",
+      "path": "skills/security/codebase-vulnerability-audit/SKILL.md",
+      "description": "Use when auditing an entire existing codebase for latent vulnerabilities and forgotten loopholes — inheriting ownership of legacy code, before a security certification, or after a near-miss makes you distrust code nobody has looked at in years. Helps you find dead auth checks, hardcoded bypasses, and debug backdoors that a per-PR diff review would never surface because they predate every current PR."
+    },
+    {
+      "name": "environment-security-hardening",
+      "category": "security",
+      "path": "skills/security/environment-security-hardening/SKILL.md",
+      "description": "Use when provisioning or auditing an environment — a container image, a cloud account, CI/CD runners, or a dev/staging/prod config — for vulnerabilities that live outside the application code itself. Helps you catch exposed services, stale dependencies, over-broad IAM, and leaked environment variables that a code-only review never looks at."
+    },
+    {
       "name": "incident-response",
       "category": "security",
       "path": "skills/security/incident-response/SKILL.md",
@@ -160,6 +280,12 @@
       "description": "Use when reviewing or designing an LLM-powered feature — a chatbot, RAG pipeline, or agent with tool access — before it ships or gains new capabilities. Helps you find prompt injection, excessive agency, and unsafe tool/output handling that traditional code review misses."
     },
     {
+      "name": "pr-loophole-review",
+      "category": "security",
+      "path": "skills/security/pr-loophole-review/SKILL.md",
+      "description": "Use when reviewing a specific pull request for a deliberately or carelessly introduced security bypass — an unfamiliar contributor's PR, a \"quick fix\" that touches auth or validation, or any diff where something about the change feels like it's working around a control rather than through it. Helps you spot a loophole hidden in a plausible-looking diff instead of trusting that a passing test suite means the change is safe."
+    },
+    {
       "name": "secrets-management",
       "category": "security",
       "path": "skills/security/secrets-management/SKILL.md",
@@ -170,6 +296,18 @@
       "category": "security",
       "path": "skills/security/secure-code-review/SKILL.md",
       "description": "Use when reviewing a pull request or diff that touches authentication, data input handling, deserialization, or dependencies — before merge, not after. Helps you systematically catch injection, broken authorization, and unsafe dependency changes that functional review tends to miss."
+    },
+    {
+      "name": "secure-design-patterns",
+      "category": "security",
+      "path": "skills/security/secure-design-patterns/SKILL.md",
+      "description": "Use when designing a module, service, or API's internal structure — choosing how auth checks, input validation, and privilege boundaries are arranged in code — after threat modeling has named the risks but before implementation starts. Helps you pick concrete, proven design patterns instead of ad hoc placement of security checks that later drift out of sync with the code they're meant to protect."
+    },
+    {
+      "name": "security-posture-health-check",
+      "category": "security",
+      "path": "skills/security/security-posture-health-check/SKILL.md",
+      "description": "Use when running a periodic security review of an already-shipped system — a quarterly audit, a pre-funding/compliance due-diligence pass, or picking up ownership of a codebase someone else built. Helps you assess overall security health with a repeatable scorecard instead of an unstructured \"looks fine to me\" pass that misses slow-accumulating debt."
     },
     {
       "name": "threat-modeling",

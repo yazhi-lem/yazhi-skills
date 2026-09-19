@@ -16,7 +16,7 @@ This is the portable [Agent Skills](https://code.claude.com/docs/en/skills) form
 /plugin install yazhi-skills@yazhi-skills
 ```
 
-All 51 skills load namespaced as `yazhi-skills:<name>` — Claude picks them up automatically when relevant, or you invoke one directly with `/yazhi-skills:tamil-aksharas`. Update later with `/plugin marketplace update yazhi-skills`.
+All 79 skills load namespaced as `yazhi-skills:<name>` — Claude picks them up automatically when relevant, or you invoke one directly with `/yazhi-skills:tamil-aksharas`. Update later with `/plugin marketplace update yazhi-skills`.
 
 Non-interactively:
 
@@ -49,12 +49,12 @@ A `.skill` file is a zip archive containing **exactly one `SKILL.md`, at its roo
 
 | File | Contains | Use it for |
 | --- | --- | --- |
-| [`dist/yazhi-skills.skill`](dist/yazhi-skills.skill) | A generated router `SKILL.md` at the root, plus all 51 skills as reference files under `references/<category>/<name>.md` | Importing the whole collection as one skill |
+| [`dist/yazhi-skills.skill`](dist/yazhi-skills.skill) | A generated router `SKILL.md` at the root, plus all 79 skills as reference files under `references/<category>/<name>.md` | Importing the whole collection as one skill |
 | `dist/skills/<name>.skill` | One skill, its own `SKILL.md` at the archive root, and nothing else | Importing a single skill on its own |
 
-The collection bundle's root `SKILL.md` is a router, not a copy: it carries a trigger line and bundled path per skill, and instructs the reader to open the matching file before acting. That keeps the index small while the full procedural detail stays in the 51 reference files.
+The collection bundle's root `SKILL.md` is a router, not a copy: it carries a trigger line and bundled path per skill, and instructs the reader to open the matching file before acting. That keeps the index small while the full procedural detail stays in the 79 reference files.
 
-Those 51 files are deliberately renamed away from `SKILL.md` on the way in. Shipping them at their repo paths would put 52 `SKILL.md` files in one archive, which is not a valid skill — the builder asserts the one-`SKILL.md` invariant, and CI re-checks it on every bundle.
+Those 79 files are deliberately renamed away from `SKILL.md` on the way in. Shipping them at their repo paths would put 80 `SKILL.md` files in one archive, which is not a valid skill — the builder asserts the one-`SKILL.md` invariant, and CI re-checks it on every bundle.
 
 Rebuild them after changing any skill:
 
@@ -80,7 +80,39 @@ python3 scripts/build_index.py      # rewrite skills.json + .claude-plugin/plugi
 python3 scripts/validate_skills.py  # check every SKILL.md against the repo contract
 ```
 
-## Catalog (59 skills)
+## Catalog (79 skills)
+
+### Go-To-Market (gtm)
+
+| Skill | Covers |
+| --- | --- |
+| [`positioning-and-messaging`](skills/gtm/positioning-and-messaging/SKILL.md) | Writing a positioning statement and messaging hierarchy before launch copy |
+| [`pricing-strategy`](skills/gtm/pricing-strategy/SKILL.md) | Choosing a pricing model and metric, and setting/changing tiers |
+| [`launch-planning`](skills/gtm/launch-planning/SKILL.md) | Tiering a launch and sequencing announcements across channels |
+| [`sales-enablement`](skills/gtm/sales-enablement/SKILL.md) | Battlecards, objection handling, and certifying reps on a new pitch |
+| [`channel-and-partnerships`](skills/gtm/channel-and-partnerships/SKILL.md) | Evaluating resellers, integrations, marketplaces, and co-marketing deals |
+
+### Organization (org)
+
+| Skill | Covers |
+| --- | --- |
+| [`yazhi-org-status`](skills/org/yazhi-org-status/SKILL.md) | Current status, vision, and next actions across all nine yazhi-lem repos |
+
+### Repositories (repos)
+
+One skill per yazhi-lem repository — its own layer map, workflow, next actions, and anti-patterns.
+
+| Skill | Covers |
+| --- | --- |
+| [`yazhi-api-status`](skills/repos/yazhi-api-status/SKILL.md) | The central gRPC orchestrator: layer map, Pilot/Launch roadmap, known constraints |
+| [`adhan-status`](skills/repos/adhan-status/SKILL.md) | The from-scratch Tamil SLM: JAX/Flax training phases, swaram tokenizer |
+| [`open-sangam-status`](skills/repos/open-sangam-status/SKILL.md) | Sangam-era literature reader + agent assembly: corpus phases, translation pipeline |
+| [`yazh-unity-status`](skills/repos/yazh-unity-status/SKILL.md) | The AR/XR Tamil pet app: endless-runner pivot, on-device inference, store blockers |
+| [`illakiya-status`](skills/repos/illakiya-status/SKILL.md) | The Rust + Kotlin Tamil Android keyboard: layout, dictionary, sandhi engine |
+| [`capitol-status`](skills/repos/capitol-status/SKILL.md) | The internal AI/ML ops console: recognizing UI scaffold vs. real backend |
+| [`yazh-kutty-status`](skills/repos/yazh-kutty-status/SKILL.md) | The 30K-vocabulary kids' Tamil model: scoping an empty repository |
+| [`yazhi-dev-status`](skills/repos/yazhi-dev-status/SKILL.md) | The yazhi.dev site and `/chat` demo: backend contract, design history |
+| [`styleguide-status`](skills/repos/styleguide-status/SKILL.md) | The google/styleguide fork: when (not) to edit it |
 
 ### Forward-Deployed Engineering (fde)
 
@@ -116,8 +148,13 @@ python3 scripts/validate_skills.py  # check every SKILL.md against the repo cont
 | Skill | Covers |
 | --- | --- |
 | [`threat-modeling`](skills/security/threat-modeling/SKILL.md) | Enumerating and prioritizing threats before a system ships |
+| [`secure-design-patterns`](skills/security/secure-design-patterns/SKILL.md) | Chokepoint auth, fail-safe defaults, and least privilege in code structure |
 | [`llm-security-review`](skills/security/llm-security-review/SKILL.md) | Finding prompt injection, excessive agency, and unsafe tool/output handling |
 | [`secure-code-review`](skills/security/secure-code-review/SKILL.md) | Catching injection, broken authz, and unsafe dependency changes pre-merge |
+| [`pr-loophole-review`](skills/security/pr-loophole-review/SKILL.md) | Spotting a deliberately or carelessly introduced bypass hidden in one PR |
+| [`codebase-vulnerability-audit`](skills/security/codebase-vulnerability-audit/SKILL.md) | Sweeping an entire existing codebase for dead auth checks and forgotten backdoors |
+| [`environment-security-hardening`](skills/security/environment-security-hardening/SKILL.md) | Container, cloud/IaC, CI/CD, and network vulnerabilities outside the app code |
+| [`security-posture-health-check`](skills/security/security-posture-health-check/SKILL.md) | A recurring scorecard for patching, access review, and logging coverage |
 | [`secrets-management`](skills/security/secrets-management/SKILL.md) | Keeping credentials out of source control and scoped to least privilege |
 | [`incident-response`](skills/security/incident-response/SKILL.md) | Classifying severity, containment, and blameless postmortems |
 
