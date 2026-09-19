@@ -35,7 +35,8 @@ jobs:
           bash -n install.sh
           ./install.sh --dest "$RUNNER_TEMP/skills" --mode copy
           test -f "$RUNNER_TEMP/skills/age-appropriate-explaining/SKILL.md"
-          test "$(find "$RUNNER_TEMP/skills" -name SKILL.md | wc -l)" -eq 51
+          expected="$(python3 -c 'import json; print(len(json.load(open("skills.json", encoding="utf-8"))["skills"]))')"
+          test "$(find "$RUNNER_TEMP/skills" -name SKILL.md | wc -l)" -eq "$expected"
 
       - name: Every bundle holds exactly one SKILL.md, at its root
         run: |
@@ -46,14 +47,19 @@ jobs:
               names = zipfile.ZipFile(path).namelist()
               return [n for n in names if posixpath.basename(n) == "SKILL.md"]
 
-          bundles = ["dist/yazhi-skills.skill"] + sorted(glob.glob("dist/skills/*.skill"))
-          assert len(bundles) == 52, f"expected 52 bundles, found {len(bundles)}"
+          skill_bundles = sorted(glob.glob("dist/skills/*.skill"))
+          bundles = ["dist/yazhi-skills.skill"] + skill_bundles
+          assert len(bundles) == len(skill_bundles) + 1, (
+              f"expected {len(skill_bundles) + 1} bundles, found {len(bundles)}"
+          )
           for path in bundles:
               found = skill_mds(path)
               assert found == ["SKILL.md"], f"{path}: expected one root SKILL.md, got {found}"
 
           refs = [n for n in zipfile.ZipFile(bundles[0]).namelist()
                   if n.startswith("references/")]
-          assert len(refs) == 51, f"expected 51 reference files, got {len(refs)}"
+          assert len(refs) == len(skill_bundles), (
+              f"expected {len(skill_bundles)} reference files, got {len(refs)}"
+          )
           print(f"bundle layout ok: {len(bundles)} bundles, one SKILL.md each")
           PY

@@ -25,6 +25,7 @@ Usage:
 from __future__ import annotations
 
 import argparse
+import io
 import re
 import sys
 import zipfile
@@ -130,8 +131,6 @@ def render_router(skills: list[Skill]) -> str:
 
 def write_zip(path: Path, members: list[tuple[str, str]]) -> bytes:
     """Write a deterministic zip and return its bytes."""
-    import io
-
     buffer = io.BytesIO()
     with zipfile.ZipFile(buffer, "w", zipfile.ZIP_DEFLATED) as zf:
         for name, content in sorted(members):
@@ -140,6 +139,19 @@ def write_zip(path: Path, members: list[tuple[str, str]]) -> bytes:
             info.external_attr = 0o644 << 16
             zf.writestr(info, content)
     return buffer.getvalue()
+
+
+def zip_payload(path: Path) -> dict[str, bytes] | None:
+    try:
+        with zipfile.ZipFile(path) as zf:
+            return {name: zf.read(name) for name in sorted(zf.namelist())}
+    except zipfile.BadZipFile:
+        return None
+
+
+def zip_payload_bytes(data: bytes) -> dict[str, bytes]:
+    with zipfile.ZipFile(io.BytesIO(data)) as zf:
+        return {name: zf.read(name) for name in sorted(zf.namelist())}
 
 
 def collection_members(skills: list[Skill]) -> list[tuple[str, str]]:
@@ -189,7 +201,7 @@ def main() -> int:
         stale = [
             p.relative_to(REPO_ROOT).as_posix()
             for p, data in targets
-            if not p.exists() or p.read_bytes() != data
+            if not p.exists() or zip_payload(p) != zip_payload_bytes(data)
         ]
         if stale:
             print(
