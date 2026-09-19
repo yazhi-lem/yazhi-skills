@@ -1,6 +1,6 @@
 ---
 name: poc-to-production
-description: Use when a customer POC has proven the concept works and stakeholders are asking "when can this go live?" Helps you decide what must change before a demo-quality prototype can carry real production traffic and real business risk.
+description: Use when a customer POC has proven the concept works and stakeholders ask to go live. Helps you decide what must change before a demo-quality prototype can carry real production traffic and real business risk.
 ---
 
 A POC is optimized to prove a concept fast under a compressed timeline, usually with hardcoded credentials, no retries, and a happy-path-only demo script. Forward-deployed engineers are the ones who get asked to make that same code carry real customer traffic in weeks, and the gap between "it worked in the demo" and "it survives production" is where most FDE engagements go over budget or over deadline. Treat this as a distinct phase with its own gate, not a continuation of POC momentum.

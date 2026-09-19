@@ -1,6 +1,6 @@
 ---
 name: content-quality-review
-description: Use when doing a final check on drafted social media copy or scripts — after tone-of-voice-application and before hashtag-and-platform-strategy — to catch repetition across platforms, generic phrasing, weak hooks, and vague claims before content is finalized.
+description: Use when doing a final check on drafted social media copy or scripts — after tone-of-voice-application and before hashtag-and-platform-strategy. Helps you catch repetition across platforms, generic phrasing, weak hooks, and vague claims before content is finalized.
 ---
 
 This skill acts as a final quality check for your social media content pipeline. It runs a pass across ALL pieces generated in a single batch to catch cross-platform repetition and generic phrasing before output is finalized.

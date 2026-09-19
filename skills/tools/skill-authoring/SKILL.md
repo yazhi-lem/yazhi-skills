@@ -26,6 +26,7 @@ Every skill lives at `skills/<category>/<skill-name>/SKILL.md`. The directory na
 5. **Include an "Anti-patterns" or "Common failure modes" section** with 3-5 specific, named failures and *why* each one bites — not generic "avoid bad code" filler.
 6. **Cross-reference sibling skills by name in backticks** instead of duplicating their content. If two skills would otherwise repeat the same guidance, one should own it and the other should link to it.
 7. **Target 400-700 words** for the body. Long enough to be procedural, short enough that an agent reads the whole thing at trigger time instead of skimming.
+8. **Require evidence for verdicts.** If the skill produces a pass/fail, compliant/non-compliant, or "no issues" verdict, it must require an evidence worksheet first. See `skill-verification-testing` for the required pattern.
 
 ## Review checklist for a new skill PR
 

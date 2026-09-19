@@ -5,7 +5,7 @@
   "license": "GPL-3.0-or-later",
   "skillFormat": "SKILL.md with YAML frontmatter (name, description)",
   "generatedBy": "scripts/build_index.py — do not edit by hand",
-  "count": 79,
+  "count": 80,
   "categories": [
     {
       "id": "org",
@@ -65,7 +65,7 @@
       "id": "tools",
       "title": "Tools",
       "path": "skills/tools",
-      "count": 4
+      "count": 5
     },
     {
       "id": "yazh-life",
@@ -193,7 +193,7 @@
       "name": "poc-to-production",
       "category": "fde",
       "path": "skills/fde/poc-to-production/SKILL.md",
-      "description": "Use when a customer POC has proven the concept works and stakeholders are asking \"when can this go live?\" Helps you decide what must change before a demo-quality prototype can carry real production traffic and real business risk."
+      "description": "Use when a customer POC has proven the concept works and stakeholders ask to go live. Helps you decide what must change before a demo-quality prototype can carry real production traffic and real business risk."
     },
     {
       "name": "stakeholder-reporting",
@@ -424,6 +424,12 @@
       "description": "Use when writing a new SKILL.md file for this repository, or reviewing one submitted in a PR. Helps you meet the frontmatter contract, hit the body quality bar, and place the file correctly so an agent actually finds and trusts it at trigger time."
     },
     {
+      "name": "skill-verification-testing",
+      "category": "tools",
+      "path": "skills/tools/skill-verification-testing/SKILL.md",
+      "description": "Use when a skill in this repo produces a self-reported verdict — \"passed\", \"compliant\", \"no issues found\", \"on-brand\", \"no vulnerabilities\" — and that verdict needs to be trusted before acting on it. Also use when authoring a new skill that will produce any pass/fail judgment, to build in verification from the start rather than adding it after a false verdict is discovered in production use."
+    },
+    {
       "name": "age-appropriate-explaining",
       "category": "yazh-life",
       "path": "skills/yazh-life/age-appropriate-explaining/SKILL.md",
@@ -511,19 +517,19 @@
       "name": "content-quality-review",
       "category": "social-media",
       "path": "skills/social-media/content-quality-review/SKILL.md",
-      "description": "Use when doing a final check on drafted social media copy or scripts — after tone-of-voice-application and before hashtag-and-platform-strategy — to catch repetition across platforms, generic phrasing, weak hooks, and vague claims before content is finalized."
+      "description": "Use when doing a final check on drafted social media copy or scripts — after tone-of-voice-application and before hashtag-and-platform-strategy. Helps you catch repetition across platforms, generic phrasing, weak hooks, and vague claims before content is finalized."
     },
     {
       "name": "content-repurposing",
       "category": "social-media",
       "path": "skills/social-media/content-repurposing/SKILL.md",
-      "description": "Use when a long-form asset — a blog post, video transcript, or document — needs to be turned into multiple platform-native social posts (LinkedIn, X, Instagram, or a reel script) instead of being copied or lightly edited."
+      "description": "Use when a long-form asset — a blog post, video transcript, or document — needs to be turned into multiple platform-native social posts. Helps you extract the strongest moments and adapt them instead of lightly editing."
     },
     {
       "name": "hashtag-and-platform-strategy",
       "category": "social-media",
       "path": "skills/social-media/hashtag-and-platform-strategy/SKILL.md",
-      "description": "Use when finalizing hashtags, posting-time notes, or platform formatting guidance for a social media post, caption, or reel script that has already been drafted."
+      "description": "Use when finalizing hashtags, posting-time notes, or platform formatting guidance for drafted social media copy. Helps you apply the right metadata and limits before publishing."
     },
     {
       "name": "reel-script-generation",
