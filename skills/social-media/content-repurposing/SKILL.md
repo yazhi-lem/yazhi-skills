@@ -1,6 +1,6 @@
 ---
 name: content-repurposing
-description: Use when a long-form asset — a blog post, video transcript, or document — needs to be turned into multiple platform-native social posts (LinkedIn, X, Instagram, or a reel script) instead of being copied or lightly edited.
+description: Use when a long-form asset — a blog post, video transcript, or document — needs to be turned into multiple platform-native social posts. Helps you extract the strongest moments and adapt them instead of lightly editing.
 ---
 
 This skill extracts the strongest, most standalone moments from long-form content and rewrites each one as a native post for a different platform. It ensures the content is adapted for its specific destination rather than summarizing or copying the source directly.

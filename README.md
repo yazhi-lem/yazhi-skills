@@ -80,23 +80,23 @@ python3 scripts/build_index.py      # rewrite skills.json + .claude-plugin/plugi
 python3 scripts/validate_skills.py  # check every SKILL.md against the repo contract
 ```
 
-## Catalog (79 skills)
+## Catalog (80 skills)
 
 ### Go-To-Market (gtm)
 
 | Skill | Covers |
 | --- | --- |
-| [`positioning-and-messaging`](skills/gtm/positioning-and-messaging/SKILL.md) | Writing a positioning statement and messaging hierarchy before launch copy |
-| [`pricing-strategy`](skills/gtm/pricing-strategy/SKILL.md) | Choosing a pricing model and metric, and setting/changing tiers |
-| [`launch-planning`](skills/gtm/launch-planning/SKILL.md) | Tiering a launch and sequencing announcements across channels |
-| [`sales-enablement`](skills/gtm/sales-enablement/SKILL.md) | Battlecards, objection handling, and certifying reps on a new pitch |
-| [`channel-and-partnerships`](skills/gtm/channel-and-partnerships/SKILL.md) | Evaluating resellers, integrations, marketplaces, and co-marketing deals |
+| [positioning-and-messaging](skills/gtm/positioning-and-messaging/SKILL.md) | Writing a positioning statement and messaging hierarchy before launch copy |
+| [pricing-strategy](skills/gtm/pricing-strategy/SKILL.md) | Choosing a pricing model and metric, and setting/changing tiers |
+| [launch-planning](skills/gtm/launch-planning/SKILL.md) | Tiering a launch and sequencing announcements across channels |
+| [sales-enablement](skills/gtm/sales-enablement/SKILL.md) | Battlecards, objection handling, and certifying reps on a new pitch |
+| [channel-and-partnerships](skills/gtm/channel-and-partnerships/SKILL.md) | Evaluating resellers, integrations, marketplaces, and co-marketing deals |
 
 ### Organization (org)
 
 | Skill | Covers |
 | --- | --- |
-| [`yazhi-org-status`](skills/org/yazhi-org-status/SKILL.md) | Current status, vision, and next actions across all nine yazhi-lem repos |
+| [yazhi-org-status](skills/org/yazhi-org-status/SKILL.md) | Current status, vision, and next actions across all nine yazhi-lem repos |
 
 ### Repositories (repos)
 
@@ -104,15 +104,15 @@ One skill per yazhi-lem repository — its own layer map, workflow, next actions
 
 | Skill | Covers |
 | --- | --- |
-| [`yazhi-api-status`](skills/repos/yazhi-api-status/SKILL.md) | The central gRPC orchestrator: layer map, Pilot/Launch roadmap, known constraints |
-| [`adhan-status`](skills/repos/adhan-status/SKILL.md) | The from-scratch Tamil SLM: JAX/Flax training phases, swaram tokenizer |
-| [`open-sangam-status`](skills/repos/open-sangam-status/SKILL.md) | Sangam-era literature reader + agent assembly: corpus phases, translation pipeline |
-| [`yazh-unity-status`](skills/repos/yazh-unity-status/SKILL.md) | The AR/XR Tamil pet app: endless-runner pivot, on-device inference, store blockers |
-| [`illakiya-status`](skills/repos/illakiya-status/SKILL.md) | The Rust + Kotlin Tamil Android keyboard: layout, dictionary, sandhi engine |
-| [`capitol-status`](skills/repos/capitol-status/SKILL.md) | The internal AI/ML ops console: recognizing UI scaffold vs. real backend |
-| [`yazh-kutty-status`](skills/repos/yazh-kutty-status/SKILL.md) | The 30K-vocabulary kids' Tamil model: scoping an empty repository |
-| [`yazhi-dev-status`](skills/repos/yazhi-dev-status/SKILL.md) | The yazhi.dev site and `/chat` demo: backend contract, design history |
-| [`styleguide-status`](skills/repos/styleguide-status/SKILL.md) | The google/styleguide fork: when (not) to edit it |
+| [yazhi-api-status](skills/repos/yazhi-api-status/SKILL.md) | The central gRPC orchestrator: layer map, Pilot/Launch roadmap, known constraints |
+| [dhan-status](skills/repos/adhan-status/SKILL.md) | The from-scratch Tamil SLM: JAX/Flax training phases, swaram tokenizer |
+| [open-sangam-status](skills/repos/open-sangam-status/SKILL.md) | Sangam-era literature reader + agent assembly: corpus phases, translation pipeline |
+| [yazh-unity-status](skills/repos/yazh-unity-status/SKILL.md) | The AR/XR Tamil pet app: endless-runner pivot, on-device inference, store blockers |
+| [illakiya-status](skills/repos/illakiya-status/SKILL.md) | The Rust + Kotlin Tamil Android keyboard: layout, dictionary, sandhi engine |
+| [capitol-status](skills/repos/capitol-status/SKILL.md) | The internal AI/ML ops console: recognizing UI scaffold vs. real backend |
+| [yazh-kutty-status](skills/repos/yazh-kutty-status/SKILL.md) | The 30K-vocabulary kids' Tamil model: scoping an empty repository |
+| [yazhi-dev-status](skills/repos/yazhi-dev-status/SKILL.md) | The yazhi.dev site and /chat demo: backend contract, design history |
+| [styleguide-status](skills/repos/styleguide-status/SKILL.md) | The google/styleguide fork: when (not) to edit it |
 
 ### Forward-Deployed Engineering (fde)
 
@@ -190,6 +190,7 @@ One skill per yazhi-lem repository — its own layer map, workflow, next actions
 | [`cli-tool-design`](skills/tools/cli-tool-design/SKILL.md) | Flags, defaults, output modes, exit codes, and help text for CLIs |
 | [`api-design`](skills/tools/api-design/SKILL.md) | Resource naming, versioning, pagination, and backward compatibility |
 | [`skill-authoring`](skills/tools/skill-authoring/SKILL.md) | The frontmatter contract and quality bar for SKILL.md files in this repo |
+| [`skill-verification-testing`](skills/tools/skill-verification-testing/SKILL.md) | Auditing and designing verdict-producing skills using an evidence worksheet |
 
 ### Yazh Life Skills (yazh-life)
 

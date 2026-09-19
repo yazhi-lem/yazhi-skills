@@ -1,6 +1,6 @@
 ---
 name: hashtag-and-platform-strategy
-description: Use when finalizing hashtags, posting-time notes, or platform formatting guidance for a social media post, caption, or reel script that has already been drafted.
+description: Use when finalizing hashtags, posting-time notes, or platform formatting guidance for drafted social media copy. Helps you apply the right metadata and limits before publishing.
 ---
 
 This skill adds the final layer of platform-specific metadata — hashtags and posting notes — to already-drafted copy. It keeps this metadata separate from the caption itself so the social team can adjust it independently before publishing.

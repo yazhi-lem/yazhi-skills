@@ -14,7 +14,12 @@ Security-focused code review is a distinct pass from functional/style review —
 5. **Review dependency changes.** Any new or bumped dependency: check for known CVEs, maintenance status, and whether the added transitive tree is proportionate to the feature. A one-line utility shouldn't pull in a network-capable package.
 6. **Check error handling and logging.** Do error paths leak stack traces, internal paths, or secrets to the client or logs? Are secrets ever interpolated into log lines?
 7. **Confirm output encoding matches the sink.** HTML-escape for HTML context, parameterize for SQL, shell-escape (or better, avoid shell entirely) for commands.
-8. **Score findings and gate merge** using the table below.
+8. **Show evidence before verdict.** Before any "no issues found" or "passed" verdict is written (or before gating a merge on a finding), produce a visible worksheet that:
+   - Quotes the specific code snippet (input boundary, sink, or auth check) being reviewed.
+   - States the exact criterion being applied to it from the injection checklist.
+   - Reaches a verdict for that one item before moving to the next.
+   A final verdict without this preceding worksheet is invalid.
+9. **Score findings and gate merge** using the table below based on the worksheet results.
 
 ## Injection class checklist
 
