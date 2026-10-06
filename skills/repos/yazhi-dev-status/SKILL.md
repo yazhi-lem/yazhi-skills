@@ -3,7 +3,7 @@ name: yazhi-dev-status
 description: Use when working in the yazhi-dev repository — the yazhi.dev marketing/community site and its /chat demo. Helps you keep the chat UI's backend contract intact and avoid re-designing a site that already went through one full visual pivot.
 ---
 
-This is Yazhi's public-facing community site (yazhi.dev), a Next.js app whose job is to explain the ecosystem — Adhan, Open Sangam, Yazh — to visitors, plus a working `/chat` demo that proxies real conversations through `yazhi-api` (see `yazhi-api-status` for that service). The site already went through one complete visual pivot: v1 was a cyberpunk/neon theme (archived at `previous-designs/v1-cyberpunk/`), replaced in July 2026 with an immersive, scroll-driven Sangam-era 3D open-world experience (`src/three/`: `ThinaiWorld`, `Terrain`, `SangamObjects`, `CameraRig`, one procedural heightfield zone for each tinai). `INDEX.md` is a still-current design brief for a further "high-contrast dark mode" iteration — read it as intent, not as what's already built.
+This is Yazhi's public-facing community site (yazhi.dev), a Next.js app whose job is to explain the ecosystem — Adhan, Open Sangam, Yazh — to visitors, plus a working `/chat` demo that proxies real conversations through `yazhi-api`. The site already went through one complete visual pivot: v1 was a cyberpunk/neon theme (archived at `previous-designs/v1-cyberpunk/`), replaced in July 2026 with an immersive, scroll-driven Sangam-era 3D open-world experience (`src/three/`: `ThinaiWorld`, `Terrain`, `SangamObjects`, `CameraRig`, one procedural heightfield zone for each tinai). `INDEX.md` is a still-current design brief for a further "high-contrast dark mode" iteration — read it as intent, not as what's already built.
 
 ## Status at a glance
 
@@ -39,4 +39,4 @@ This is Yazhi's public-facing community site (yazhi.dev), a Next.js app whose jo
 - **Assuming standard Next.js API/conventions from training data** without checking `node_modules/next/dist/docs/` first — `AGENTS.md` exists specifically because this version has breaking changes from what most training data reflects.
 - **Adding server-side chat persistence silently** without updating the privacy/data-handling story — today's `localStorage`-only design is a stated choice, not an oversight.
 
-Cross-reference `yazhi-org-status` for the ecosystem-wide picture and `yazhi-api-status` for the backend contract `/chat` depends on.
+Cross-reference `yazhi-org-status` for the ecosystem-wide picture, including the `yazhi-api` backend that `/chat` depends on.
