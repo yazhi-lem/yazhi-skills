@@ -26,7 +26,7 @@ description: Use when asked to change, sync, or reference the styleguide reposit
 ## Next actions
 
 1. Confirm whether the fork needs a fresh sync from `google/styleguide` — check the last-synced date (2025-11-13) against upstream's current state before the next time `yazhi-api`'s Python style is questioned in review.
-2. If Yazhi accumulates enough repo-specific conventions layered on top of the Google guide (as `yazhi-api` already has, per `yazhi-api-status`, with its test-naming and `.ruff-baseline.json` policy), consider a dedicated Yazhi engineering-standards doc instead of scattered `CONTEXT.md` files.
+2. If Yazhi accumulates enough repo-specific conventions layered on top of the Google guide (as `yazhi-api` already has), consider a dedicated Yazhi engineering-standards doc instead of scattered `CONTEXT.md` files.
 
 ## Anti-patterns
 
@@ -35,4 +35,4 @@ description: Use when asked to change, sync, or reference the styleguide reposit
 - **Cherry-picking partial upstream updates** instead of a full sync — leaves the fork in an inconsistent state that's harder to reason about than either "fully synced" or "not yet synced."
 - **Treating this repo as the place to resolve a Yazhi-specific style question** (test naming, `.ruff-baseline.json` policy, directory layout) — those belong in the consuming repo's own contributor docs, as `yazhi-api` already does correctly.
 
-Cross-reference `yazhi-org-status` for the ecosystem-wide picture and `yazhi-api-status` for the one concrete place this fork is currently cited from.
+Cross-reference `yazhi-org-status` for the ecosystem-wide picture, including the one concrete place this fork is currently cited from.

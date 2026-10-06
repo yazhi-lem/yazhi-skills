@@ -26,7 +26,7 @@ Adhan is Yazhi's Tamil-first language model, built from scratch rather than fine
 3. **Prefer the CPU training path unless you have CUDA 12 on Linux.** `pip install -e ".[dev,jax,tamil-nlp]"` gets a working CPU stack on macOS/Windows/CI; only add `jax-gpu` when you actually have the hardware.
 4. **Sanity-gate any training change with `--overfit-batch` before a real run** — one batch, loss must collapse — per `docs/CPU_TRAINING.md`. Skipping this wastes a full training budget on a wiring bug.
 5. **Use `scripts/prepare_slm_corpus.py` to freeze the tokenizer and pack shards** before training; don't hand-roll corpus prep — vocab size (12,000 default) and sequence length (1,024 default) are baked into the frozen tokenizer.
-6. **Keep tests at `<module>_tests.py`, one file per module under test** — this is a repo-specific convention, distinct from the singular `<module>_test.py` form `yazhi-api-status` documents for that repo.
+6. **Keep tests at `<module>_tests.py`, one file per module under test** — this is a repo-specific convention, distinct from the singular `<module>_test.py` form used in the yazhi-api repo.
 7. **Run `python scripts/run_scraper.py --strategy modern --max-records 80000`** for corpus builds; check `src/data_scraper/merge_corpora.py` before writing a new merge step — one already exists.
 
 ## Next actions
