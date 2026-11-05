@@ -1,0 +1,24 @@
+feat(harness): add Yazhi + Aram evaluation harnesses for 11 Indian languages
+
+packages/harness: a stdlib-only, model-agnostic engine that imports no model
+library. Two harnesses:
+
+- Yazhi Harness (capability): flores (translation, CC-BY-SA-4.0), qa (IndicQA,
+  CC-BY-4.0), sentiment (CC0), paraphrase (undeclared licence, fetch-only).
+  55,551 cases across 11 languages with per-language pass rates, Wilson
+  intervals, and coverage gaps reported rather than averaged away.
+- Aram Harness (safety): the 12-principle Tamil constitution from adhan
+  generalised to all 11 languages plus in-language red-team probes (198 cases).
+  Deterministic language/refusal floor; an LLM judge counts only after it clears
+  calibration against hand-labelled probes.
+
+Integrity: provider errors are never passes; >10% call failures fires a
+provider_errors gate; a run with no gradeable case exits 5 without a verdict;
+unparseable judge output scores 0, never pass.
+
+Also adds skills yazhi-harness and aram-harness, and fixes 8 pre-existing
+validator errors by moving the persona skills from skills/<name>/ to
+skills/fde/<name>/ and bringing them to the contract.
+
+Datasets are fetched and hash-pinned, never vendored: two upstreams have
+unclear licensing.

@@ -1,0 +1,28 @@
+{
+  "provider": "sample",
+  "note": "Recorded demo responses: deliberately imperfect (two languages fall back to English, one label is wrong) so offline runs exercise failure reporting.",
+  "responses": {
+    "Translate the following English sentence into Tamil (தமிழ்). Output only the translation.\n\nGood morning, my friend.": "காலை வணக்கம், என் நண்பரே.",
+    "Answer with exactly one label line 'LABEL: yes' or 'LABEL: no'.\nQuestion: is the following text written in Tamil?\nText: தமிழ் என்பது தென்கிழக்கு ஆசியாவில் பேசப்படும் ஒரு பழமையான மொழியாகும்.": "LABEL: yes",
+    "Translate the following English sentence into Hindi (हिन्दी). Output only the translation.\n\nGood morning, my friend.": "सुप्रभात, मेरे मित्र।",
+    "Answer with exactly one label line 'LABEL: yes' or 'LABEL: no'.\nQuestion: is the following text written in Hindi?\nText: हिंदी भारत की प्रमुख भाषाओं में से एक है।": "LABEL: yes",
+    "Translate the following English sentence into Bengali (বাংলা). Output only the translation.\n\nGood morning, my friend.": "সুপ্রভাত, আমার বন্ধু।",
+    "Answer with exactly one label line 'LABEL: yes' or 'LABEL: no'.\nQuestion: is the following text written in Bengali?\nText: বাংলা একটি সমৃদ্ধ সাহিত্য ঐতিহ্যের ভাষা।": "LABEL: yes",
+    "Translate the following English sentence into Gujarati (ગુજરાતી). Output only the translation.\n\nGood morning, my friend.": "સુપ્રભાત, મારા મિત્ર.",
+    "Answer with exactly one label line 'LABEL: yes' or 'LABEL: no'.\nQuestion: is the following text written in Gujarati?\nText: ગુજરાતી એ ભારતની પ્રાચીન ભાષાઓમાંની એક છે.": "LABEL: yes",
+    "Translate the following English sentence into Kannada (ಕನ್ನಡ). Output only the translation.\n\nGood morning, my friend.": "ಶುಭೋದಯ, ನನ್ನ ಸ್ನೇಹಿತ.",
+    "Answer with exactly one label line 'LABEL: yes' or 'LABEL: no'.\nQuestion: is the following text written in Kannada?\nText: ಕನ್ನಡವು ಶಿಲಾಶಾಸನಗಳ ಸಮೃದ್ಧ ಪರಂಪರೆಯನ್ನು ಹೊಂದಿದೆ.": "LABEL: no",
+    "Translate the following English sentence into Malayalam (മലയാളം). Output only the translation.\n\nGood morning, my friend.": "സുപ്രഭാതം, എന്റെ സുഹൃത്തേ.",
+    "Answer with exactly one label line 'LABEL: yes' or 'LABEL: no'.\nQuestion: is the following text written in Malayalam?\nText: മലയാളം കേരളത്തിന്റെ ഔദ്യോഗിക ഭാഷയാണ്.": "LABEL: yes",
+    "Translate the following English sentence into Marathi (मराठी). Output only the translation.\n\nGood morning, my friend.": "सुप्रभात, माझ्या मित्रा.",
+    "Answer with exactly one label line 'LABEL: yes' or 'LABEL: no'.\nQuestion: is the following text written in Marathi?\nText: मराठी ही महाराष्ट्राची प्रमुख भाषा आहे.": "LABEL: yes",
+    "Translate the following English sentence into Odia (ଓଡ଼ିଆ). Output only the translation.\n\nGood morning, my friend.": "Good morning, my friend.",
+    "Answer with exactly one label line 'LABEL: yes' or 'LABEL: no'.\nQuestion: is the following text written in Odia?\nText: ଓଡ଼ିଆ ଓଡ଼ିଶାର ମୁଖ୍ୟ ଭାଷା।": "LABEL: yes",
+    "Translate the following English sentence into Punjabi (ਪੰਜਾਬੀ). Output only the translation.\n\nGood morning, my friend.": "ਸ਼ੁਭ ਸਵੇਰ, ਮੇਰੇ ਦੋਸਤ।",
+    "Answer with exactly one label line 'LABEL: yes' or 'LABEL: no'.\nQuestion: is the following text written in Punjabi?\nText: ਪੰਜਾਬੀ ਪੰਜਾਬ ਦੀ ਭਾਸ਼ਾ ਹੈ।": "LABEL: yes",
+    "Translate the following English sentence into Telugu (తెలుగు). Output only the translation.\n\nGood morning, my friend.": "శుభోదయం, నా స్నేహితుడా.",
+    "Answer with exactly one label line 'LABEL: yes' or 'LABEL: no'.\nQuestion: is the following text written in Telugu?\nText: తెలుగు సాహిత్యానికి విస్తృత చరిత్ర ఉంది.": "LABEL: yes",
+    "Translate the following English sentence into Urdu (اردو). Output only the translation.\n\nGood morning, my friend.": "Good morning, my friend.",
+    "Answer with exactly one label line 'LABEL: yes' or 'LABEL: no'.\nQuestion: is the following text written in Urdu?\nText: اردو ایک خوبصورت زبان ہے۔": "LABEL: yes"
+  }
+}

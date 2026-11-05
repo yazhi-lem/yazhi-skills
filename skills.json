@@ -5,7 +5,7 @@
   "license": "GPL-3.0-or-later",
   "skillFormat": "SKILL.md with YAML frontmatter (name, description)",
   "generatedBy": "scripts/build_index.py — do not edit by hand",
-  "count": 76,
+  "count": 86,
   "categories": [
     {
       "id": "org",
@@ -29,13 +29,13 @@
       "id": "fde",
       "title": "Forward-Deployed Engineering",
       "path": "skills/fde",
-      "count": 5
+      "count": 13
     },
     {
       "id": "ai-ml",
       "title": "AI/ML",
       "path": "skills/ai-ml",
-      "count": 5
+      "count": 7
     },
     {
       "id": "sovereign",
@@ -154,6 +154,18 @@
       "description": "Use when preparing a sales or customer-facing team to sell a new product, feature, or pricing change — building a pitch deck, battlecard, objection-handling guide, or onboarding a new rep. Helps you avoid shipping enablement material that reps skim once and never use because it doesn't match how a real sales conversation actually goes."
     },
     {
+      "name": "anbu-ops",
+      "category": "fde",
+      "path": "skills/fde/anbu-ops/SKILL.md",
+      "description": "Use when running a consultation across FDE personas, onboarding a new node or agent into the monorepo, or reconciling task state that has drifted between journals and trackers. Helps you keep one authoritative record of decisions and a clean onboarding checklist instead of knowledge scattered across chat logs and half-updated task files."
+    },
+    {
+      "name": "arivu-data",
+      "category": "fde",
+      "path": "skills/fde/arivu-data/SKILL.md",
+      "description": "Use when building or repairing a Tamil corpus pipeline — scraping Project Madurai and similar classical archives, cleaning OCR and encoding artefacts, or quantising a trained checkpoint to GGUF for an offline edge model. Helps you ship a reproducible dataset with provenance instead of a folder of half-cleaned text nobody can re-derive."
+    },
+    {
       "name": "customer-discovery",
       "category": "fde",
       "path": "skills/fde/customer-discovery/SKILL.md",
@@ -172,6 +184,24 @@
       "description": "Use when your system needs to connect to a customer's existing SSO/SAML provider, data pipeline, legacy API, or message queue, and you have to negotiate access through their IT/security process rather than just configuring it yourself. Helps you plan integration patterns and access requests so enterprise IT constraints don't become last-week surprises."
     },
     {
+      "name": "kanaku-biz",
+      "category": "fde",
+      "path": "skills/fde/kanaku-biz/SKILL.md",
+      "description": "Use when pricing a self-hosted or offline Yazhi product, designing a P2P barter or mutual-aid transaction format, or sanity-checking unit economics under a hard resource cap. Helps you keep an ownership-respecting pricing model (one-time purchase, no SaaS lock-in) and barter payloads small enough to actually travel over BLE mesh."
+    },
+    {
+      "name": "karuppu-sec",
+      "category": "fde",
+      "path": "skills/fde/karuppu-sec/SKILL.md",
+      "description": "Use when hardening a Yazhi edge node before it leaves the lab — locking down a WireGuard mesh, writing firewall rules that survive a reboot, or scanning a repo for secrets before it is published. Helps you close the perimeter on air-gapped and peer-to-peer deployments without locking yourself out."
+    },
+    {
+      "name": "oviya-design",
+      "category": "fde",
+      "path": "skills/fde/oviya-design/SKILL.md",
+      "description": "Use when defining or auditing the visual identity of a Yazhi app — building the Sangam Earth dark palette, exporting shared CSS custom properties, or pruning ad-hoc styles that drifted from the theme. Helps you keep one token source across web and mobile while staying readable on low-power, small screens."
+    },
+    {
       "name": "poc-to-production",
       "category": "fde",
       "path": "skills/fde/poc-to-production/SKILL.md",
@@ -182,6 +212,30 @@
       "category": "fde",
       "path": "skills/fde/stakeholder-reporting/SKILL.md",
       "description": "Use when you need to keep both technical and non-technical customer stakeholders informed of progress, risk, and blockers throughout an engagement without either burying them in detail or blindsiding them with a late surprise. Helps you set a reporting cadence and format that builds trust and surfaces risk early without triggering unnecessary alarm."
+    },
+    {
+      "name": "thozhan-dev",
+      "category": "fde",
+      "path": "skills/fde/thozhan-dev/SKILL.md",
+      "description": "Use when shipping an offline-first Yazhi interface — a Flutter APK for a low-spec Android device, a Rust/Dioxus desktop or web widget, or a local predictive Tamil keyboard that must run with no network. Helps you keep storage local, the first frame fast, and keystrokes off any remote server."
+    },
+    {
+      "name": "uyir-sre",
+      "category": "fde",
+      "path": "skills/fde/uyir-sre/SKILL.md",
+      "description": "Use when a Yazhi edge node's background services have died, are looping, or are quietly filling the disk — the Capitol backend, frontend or auth daemon misbehaving on a box you cannot easily reach. Helps you deploy, watchdog and recover systemd-managed daemons on hardware-constrained nodes without turning an outage into a disk-full incident."
+    },
+    {
+      "name": "vajra-assistant",
+      "category": "fde",
+      "path": "skills/fde/vajra-assistant/SKILL.md",
+      "description": "Use when acting as a startup co-founder in a working session — brainstorming a product direction, running a learning or ideation session, or turning a decision into a linked Obsidian note and a JSON configuration. Helps you end every session with durable, discoverable artifacts instead of a chat transcript nobody rereads."
+    },
+    {
+      "name": "aram-harness",
+      "category": "ai-ml",
+      "path": "skills/ai-ml/aram-harness/SKILL.md",
+      "description": "Use when gating an Indian-language model on safety, cultural respect and in-language behaviour before shipping — a release candidate, an on-device assistant, or a child-facing app. Runs the Araṃ Harness: 12 constitutional principles over 11 Indian languages, testing whether the model refuses harm in the caller's own language, cites classical texts honestly, stays neutral on caste/religion/politics, and keeps Tamil users out of English."
     },
     {
       "name": "fine-tuning-workflow",
@@ -212,6 +266,12 @@
       "category": "ai-ml",
       "path": "skills/ai-ml/rag-pipeline-design/SKILL.md",
       "description": "Use when building or debugging a retrieval-augmented generation system and answers are missing context, hallucinating, or retrieval feels like guesswork. Helps you design chunking, embedding, retrieval, and reranking stages that can be evaluated and tuned independently."
+    },
+    {
+      "name": "yazhi-harness",
+      "category": "ai-ml",
+      "path": "skills/ai-ml/yazhi-harness/SKILL.md",
+      "description": "Use when you need to measure an Indian-language model's actual capability across Tamil, Hindi, Bengali, Gujarati, Kannada, Malayalam, Marathi, Odia, Punjabi, Telugu and Urdu — before a release, after a fine-tune, or when someone claims a model \"works well in Tamil\" without numbers. Runs the model-agnostic Yazhi Harness (translation, reading comprehension, sentiment, paraphrase) and produces a report with per-language pass rates, confidence intervals and honest coverage gaps."
     },
     {
       "name": "airgapped-llm-deployment",

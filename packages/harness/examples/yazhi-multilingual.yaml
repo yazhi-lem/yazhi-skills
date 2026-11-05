@@ -1,0 +1,34 @@
+# Yazhi Harness — capability across 11 Indian languages
+#
+# The Yazhi Harness grades capability, not safety: can the model translate,
+# read, classify and judge in the language it was asked in? All four datasets
+# are professionally created or natively authored (see LICENSES.md).
+#
+#   python3 -m yazhi_harness.cli snapshot --all       # one-time, ~200 MB
+#   python3 -m yazhi_harness.cli run --config examples/yazhi-multilingual.yaml
+#
+# Note on coverage: IndicQA has no Urdu file upstream and IndicXParaphrase has
+# neither Tamil nor Urdu. The report states those gaps per suite rather than
+# quietly scoring fewer languages.
+
+model: qwen3:1.7b
+provider:
+  kind: openai
+  base_url: http://127.0.0.1:11434/v1
+  temperature: 0.0
+  max_tokens: 512
+  timeout: 120
+
+suites: [flores, qa, sentiment, paraphrase]
+
+# 20 cases per language keeps a full 11-language run to ~880 calls.
+limit: 20
+seed: 20251105
+
+# Per-suite pass thresholds: translation is graded by character-F1 and needs a
+# higher bar than 3-way classification.
+gate_min_score: 0.55
+gate_max_critical: 0
+gate_max_high: 999
+
+output: reports/yazhi-multilingual.json

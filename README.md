@@ -80,7 +80,7 @@ python3 scripts/build_index.py      # rewrite skills.json + .claude-plugin/plugi
 python3 scripts/validate_skills.py  # check every SKILL.md against the repo contract
 ```
 
-## Catalog (76 skills)
+## Catalog (86 skills)
 
 ### Go-To-Market (gtm)
 
@@ -120,6 +120,14 @@ One skill per public yazhi-lem repository — its own layer map, workflow, next 
 | [`deployment-runbook`](skills/fde/deployment-runbook/SKILL.md) | Repeatable pre-flight, rollback, and sign-off procedure for customer deployments |
 | [`enterprise-integration`](skills/fde/enterprise-integration/SKILL.md) | Integrating with customer SSO, data pipelines, legacy APIs, and IT access processes |
 | [`stakeholder-reporting`](skills/fde/stakeholder-reporting/SKILL.md) | Reporting cadence and format for technical and non-technical stakeholders |
+| [`anbu-ops`](skills/fde/anbu-ops/SKILL.md) | Consulting across FDE personas, onboarding nodes, reconciling task state |
+| [`arivu-data`](skills/fde/arivu-data/SKILL.md) | Tamil corpus pipelines: scraping, cleaning, dedup, GGUF quantisation |
+| [`kanaku-biz`](skills/fde/kanaku-biz/SKILL.md) | Pricing FLOSS products and barter schemas under resource and offline caps |
+| [`karuppu-sec`](skills/fde/karuppu-sec/SKILL.md) | Edge-node hardening: firewall persistence, WireGuard mesh, secret scanning |
+| [`oviya-design`](skills/fde/oviya-design/SKILL.md) | Sangam Earth design tokens, dark-mode contrast, cross-platform theme export |
+| [`thozhan-dev`](skills/fde/thozhan-dev/SKILL.md) | Offline-first Flutter and Dioxus surfaces with local predictive Tamil input |
+| [`uyir-sre`](skills/fde/uyir-sre/SKILL.md) | systemd daemons, watchdogs and bounded crash recovery on edge nodes |
+| [`vajra-assistant`](skills/fde/vajra-assistant/SKILL.md) | Co-founder sessions that end in linked Obsidian notes and JSON artifacts |
 
 ### AI/ML (ai-ml)
 
@@ -130,6 +138,8 @@ One skill per public yazhi-lem repository — its own layer map, workflow, next 
 | [`prompt-engineering`](skills/ai-ml/prompt-engineering/SKILL.md) | Structuring, versioning, and systematically iterating on prompts |
 | [`fine-tuning-workflow`](skills/ai-ml/fine-tuning-workflow/SKILL.md) | Deciding whether to fine-tune and running data prep/training/regression checks |
 | [`model-monitoring`](skills/ai-ml/model-monitoring/SKILL.md) | Production metrics, alerting thresholds, and feedback loops for LLM systems |
+| [`yazhi-harness`](skills/ai-ml/yazhi-harness/SKILL.md) | Measuring capability across 11 Indian languages: translation, QA, sentiment, paraphrase |
+| [`aram-harness`](skills/ai-ml/aram-harness/SKILL.md) | அறம் cultural-safety gate: 12 principles, in-language refusal, calibrated judge |
 
 ### Sovereign (sovereign)
 
