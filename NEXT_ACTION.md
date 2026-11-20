@@ -1,39 +1,34 @@
-# Founder Refresher & Next Actions — yazhi-skills
+# Next Actions: yazhi-skills (Q4 2026)
 
-> **Milestone Expectations:**
-> - 🎯 **October 2026:** Pilot Release — Complete Core Agent Skills Catalog for Sangam Literature, Data Scraping & API Automation
-> - 🚀 **December 2026:** Public Launch — Open Skill Marketplace & Distributed Execution Engine for Community-contributed Tamil AI Skills
+> This file mirrors the Yazhi Q4 2026 launch plan as of **8 Oct 2026**.
 
----
+## Where this repo sits in the Q4 plan
 
-## 1. Executive Summary & Philosophy
+- **No Q4 2026 milestone or dated item** targets yazhi-skills. The repo is mapped to **Yazhi Academy** and **Yazhi Media**
+  (Federal **Circle**) as "skills and learning content (@yazhi.skills)".
+- The closest link is the **FDE Foundry** (Yazhi Academy's Forward Deployed Engineering apprenticeship). The `skills/fde/` set
+  (customer-discovery, poc-to-production, deployment-runbook, enterprise-integration, stakeholder-reporting) matches that
+  curriculum's subject, but whether these skills are part of the cohort-2 curriculum is **unclear**.
+- The previous version of this file set an **October "pilot"** (core skill validation, CI bundling, plugin packaging) and a
+  **December "public launch"** (community skill marketplace; Nyayam / Kanaku / Sevai domain skills). Neither date is part of
+  the Q4 plan, so they are listed below as undated backlog.
 
-`yazhi-skills` maintains the standardized catalog of procedural skills powering autonomous agents across Yazhi. Built upon the portable Agent Skills format, skills define actionable, verified checklists for LLM tool use.
+## Academy dates this repo could support
 
----
+| Date | Academy milestone |
+|---|---|
+| 20 Nov 2026 | Cohort-2 selection rubric and intake size |
+| 25 Nov 2026 | Programme page (structure only) and cohort-1 capstone showcase |
+| **1 Dec 2026** | Cohort-2 applications open |
 
-## 2. October 2026 Pilot Scope
+## Undated backlog
 
-- [ ] **Core Skillset Validation:**
-  - Standardize and test core skills: `skill-authoring`, `sangam-transcription`, `adhan-corpus-curation`, `yazhi-api-client`.
-- [ ] **Build & Bundle Automation:**
-  - Automated validation (`scripts/validate_skills.py`), bundle generation, and index synchronization in CI.
-- [ ] **Plugin Packaging:**
-  - Seamless Claude Code / Hermes / OpenCode plugin distribution setup.
+- Validate core skills and keep the index and bundles rebuilt in CI (`scripts/build_index.py`, `scripts/validate_skills.py`).
+- Plugin packaging (Claude Code / Hermes / OpenCode).
+- Community skill registry and domain skills (Nyayam, Kanaku, Sevai). These need a planned, dated item before they are scheduled.
+- Review open PR [#9](https://github.com/yazhi-lem/yazhi-skills/pull/9) (skill-verification-testing, from 19 Sep).
 
----
+## Possible next step
 
-## 3. December 2026 Launch Scope
-
-- [ ] **Community Skill Registry:**
-  - Public skill marketplace with automated quality scoring and sandboxed test execution.
-- [ ] **Multilingual & Domain Skills:**
-  - Specialized skills for Tamil governance (Nyayam), educational math (Kanaku), and administrative services (Sevai).
-
----
-
-## 4. Immediate Next Actions
-
-1. Run skill build scripts (`python3 scripts/build_index.py && python3 scripts/validate_skills.py`).
-2. Verify YAML frontmatter syntax and trigger descriptions across all category skill files.
-3. Clean up deprecated or prototype skill definitions.
+If the FDE skills become part of the cohort-2 curriculum, map `skills/fde/` to the FDE Foundry curriculum weeks so this repo
+has a dated reason to change.
