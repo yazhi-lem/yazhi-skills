@@ -5,13 +5,13 @@
   "license": "GPL-3.0-or-later",
   "skillFormat": "SKILL.md with YAML frontmatter (name, description)",
   "generatedBy": "scripts/build_index.py — do not edit by hand",
-  "count": 76,
+  "count": 90,
   "categories": [
     {
       "id": "org",
-      "title": "Organization",
+      "title": "Yazhi Organization",
       "path": "skills/org",
-      "count": 1
+      "count": 11
     },
     {
       "id": "repos",
@@ -53,7 +53,7 @@
       "id": "tamil",
       "title": "Tamil",
       "path": "skills/tamil",
-      "count": 11
+      "count": 14
     },
     {
       "id": "computer-use",
@@ -65,7 +65,7 @@
       "id": "tools",
       "title": "Tools",
       "path": "skills/tools",
-      "count": 4
+      "count": 5
     },
     {
       "id": "yazh-life",
@@ -82,10 +82,70 @@
   ],
   "skills": [
     {
+      "name": "org-cross-repo-change",
+      "category": "org",
+      "path": "skills/org/org-cross-repo-change/SKILL.md",
+      "description": "Use when one change must land in two or more Yazhi repositories — a proto/API contract, shared Tamil logic, a data schema, or a doc contract — and merge order matters. Helps you sequence producers before consumers and keep every repo buildable after each merge."
+    },
+    {
+      "name": "org-doc-authoring",
+      "category": "org",
+      "path": "skills/org/org-doc-authoring/SKILL.md",
+      "description": "Use when writing a new Yazhi doc and you need to pick its color — green for living state, blue for a frozen contract, orange for provisional work — and set its header, expiry, and promotion path. Helps you stop the three-way drift where status, specs, and drafts all look equally authoritative."
+    },
+    {
+      "name": "org-ethos",
+      "category": "org",
+      "path": "skills/org/org-ethos/SKILL.md",
+      "description": "Use when a Yazhi decision, doc, PR, or release needs a values check — child safety, data residency, Tamil cultural accuracy, or whether work belongs in the private அகம் chamber or the public புறம் one. Helps you apply the five அறம் rules and the அன்பு standard of care instead of rediscovering them per project."
+    },
+    {
+      "name": "org-healthy-code",
+      "category": "org",
+      "path": "skills/org/org-healthy-code/SKILL.md",
+      "description": "Use when writing or reviewing code in a Yazhi repo and the change risks becoming unreviewable — a 2,000-line diff, a silent fallback, a test that asserts nothing, or a shortcut that sends data to a foreign API. Helps you keep diffs small, local-first, and honest so the 48-hour review gate actually works."
+    },
+    {
+      "name": "org-impactful-pr",
+      "category": "org",
+      "path": "skills/org/org-impactful-pr/SKILL.md",
+      "description": "Use when opening or reviewing a pull request in a Yazhi repo and you want it to land within the 48-hour gate without rework — especially when the PR touches Tamil strings, child-facing code, or another repo's contract. Helps you write the scope, evidence, and honest status that a reviewer can verify instead of trust."
+    },
+    {
+      "name": "org-issue-triage",
+      "category": "org",
+      "path": "skills/org/org-issue-triage/SKILL.md",
+      "description": "Use when validating open issues and PRs across yazhi-lem repos after a strategy reset — aged planning imports, duplicate titles, hard dates, or PRs claiming to close issues. Helps you decide close, keep, or rewrite with evidence without silently discarding contributor work."
+    },
+    {
+      "name": "org-plan-reset-recovery",
+      "category": "org",
+      "path": "skills/org/org-plan-reset-recovery/SKILL.md",
+      "description": "Use when an old roadmap, dated issue, or archived plan resurfaces after a Yazhi strategy reset and someone is about to act on it. Helps you verify what is current, cite the retirement source, and avoid resurrecting plans the founders deliberately cleared."
+    },
+    {
+      "name": "org-release",
+      "category": "org",
+      "path": "skills/org/org-release/SKILL.md",
+      "description": "Use when shipping a Yazhi release — a store build, a service deploy, a model checkpoint, or a public doc set — and the எண்ணித் துணிக rule requires a plan, an approved runbook, and a human confirm before anything changes. Helps you gate the release on child safety, DPDP, and rollback instead of discovering a blocker at submission."
+    },
+    {
+      "name": "org-repo-audit",
+      "category": "org",
+      "path": "skills/org/org-repo-audit/SKILL.md",
+      "description": "Use when auditing docs, task files, or configuration across multiple yazhi-lem repositories for stale, duplicate, or unhealthy content and the team wants a reduction plan before any edits. Helps you produce a dated, evidence-backed inventory and proposal instead of deleting a live source of truth."
+    },
+    {
+      "name": "org-service-boundaries",
+      "category": "org",
+      "path": "skills/org/org-service-boundaries/SKILL.md",
+      "description": "Use when deciding where a new capability belongs in the Yazhi stack — yazhi-api, Adhan, Illakiya, open-sangam, or a client — and a sovereign or local-first constraint is at stake. Helps you keep model weights, external APIs, and Tamil NLP logic in their owning repos."
+    },
+    {
       "name": "yazhi-org-status",
       "category": "org",
       "path": "skills/org/yazhi-org-status/SKILL.md",
-      "description": "Use when starting work in any yazhi-lem repository, planning cross-repo work, or briefing someone (human or agent) on where the Yazhi ecosystem stands. Helps you orient quickly to the current status, vision, and near-term priorities of each project instead of re-deriving them from scratch by reading nine repos."
+      "description": "Use when starting work in any yazhi-lem repository, planning cross-repo work, or briefing someone (human or agent) on where the Yazhi ecosystem stands. Helps you orient quickly to the current status, vision, and near-term priorities of each project without re-deriving them from eleven repos."
     },
     {
       "name": "adhan-status",
@@ -115,7 +175,7 @@
       "name": "yazh-unity-status",
       "category": "repos",
       "path": "skills/repos/yazh-unity-status/SKILL.md",
-      "description": "Use when working in the yazh-unity repository — the Tamil AR/XR pet app — on gameplay, the on-device Tamil inference engine, or release packaging. Helps you recognize that the code is production-ready and the actual blocker is credentials, not engineering."
+      "description": "Use when working in the yazh-unity repository — the Tamil AR/XR pet app — on gameplay, the on-device Tamil inference engine, or release packaging. Helps you distinguish the runner pivot, placeholder model files, and founder-gated store credentials from real engineering work."
     },
     {
       "name": "yazhi-dev-status",
@@ -175,7 +235,7 @@
       "name": "poc-to-production",
       "category": "fde",
       "path": "skills/fde/poc-to-production/SKILL.md",
-      "description": "Use when a customer POC has proven the concept works and stakeholders are asking \"when can this go live?\" Helps you decide what must change before a demo-quality prototype can carry real production traffic and real business risk."
+      "description": "Use when a customer POC has proven the concept works and stakeholders are asking \"when can this go live?\" Helps you decide what must change before a demo-quality prototype can carry real production traffic and real business risk. Names the gates that turn a successful demo into a supportable service."
     },
     {
       "name": "stakeholder-reporting",
@@ -340,6 +400,12 @@
       "description": "Use when deciding how to render numbers, dates, or units in Tamil content — or when a design, archive, or classical text calls for the native Tamil numeral glyphs and clerical symbols. Helps you choose between Western and Tamil digits correctly, use the traditional multiplicative numerals without inventing fake positional forms, and verify font coverage for the symbol block."
     },
     {
+      "name": "tamil-purity-scoring",
+      "category": "tamil",
+      "path": "skills/tamil/tamil-purity-scoring/SKILL.md",
+      "description": "Use when measuring how pure a Tamil text or corpus is — scoring model output, filtering a pretraining corpus, or verifying a \"pure Tamil\" claim in a report. Helps you use the real purity formula and token classifier, and avoid the two known gaps that make both overstate purity."
+    },
+    {
       "name": "tamil-swaram-notation",
       "category": "tamil",
       "path": "skills/tamil/tamil-swaram-notation/SKILL.md",
@@ -350,6 +416,18 @@
       "category": "tamil",
       "path": "skills/tamil/tamil-swaram-vowels/SKILL.md",
       "description": "Use when handling Tamil vowels (swaram / உயிரெழுத்து) in code or content — validating input sequences, building keyboards or IMEs, debugging a vowel sign that renders on the \"wrong\" side of its consonant, or deciding whether to emit an independent vowel letter or a dependent sign. Helps you encode vowels in correct logical order and distinguish the two glyph families that write the same twelve sounds."
+    },
+    {
+      "name": "tamil-tani-tamil",
+      "category": "tamil",
+      "path": "skills/tamil/tamil-tani-tamil/SKILL.md",
+      "description": "Use when writing or reviewing Tamil copy that should read as தனித்தமிழ் (pure Tamil) — product UI, model responses, marketing, or documentation — and the text currently leans on Sanskrit loanwords, Grantha letters, or English code-mixing. Helps you decide per term whether to use a native coinage, a loanword, or the English word, and keep that choice consistent."
+    },
+    {
+      "name": "tamil-technical-terms",
+      "category": "tamil",
+      "path": "skills/tamil/tamil-technical-terms/SKILL.md",
+      "description": "Use when rendering a technical concept in Tamil — UI strings, docs, model prompts, or a glossary — and you must decide between a native Tamil coinage, a transliterated loanword, or the English term in Latin script. Helps you reuse established Yazhi terms and coin new ones without inventing words nobody reads."
     },
     {
       "name": "tamil-text-processing",
@@ -404,6 +482,12 @@
       "category": "tools",
       "path": "skills/tools/skill-authoring/SKILL.md",
       "description": "Use when writing a new SKILL.md file for this repository, or reviewing one submitted in a PR. Helps you meet the frontmatter contract, hit the body quality bar, and place the file correctly so an agent actually finds and trusts it at trigger time."
+    },
+    {
+      "name": "technical-documentation",
+      "category": "tools",
+      "path": "skills/tools/technical-documentation/SKILL.md",
+      "description": "Use when writing, rewriting, reviewing, or retiring a Markdown doc in any yazhi-lem repository. Enforces one doc structure, status labels, naming, link checks, and archive rules so docs stay navigable instead of multiplying as stale snapshots."
     },
     {
       "name": "age-appropriate-explaining",
@@ -493,25 +577,25 @@
       "name": "content-quality-review",
       "category": "social-media",
       "path": "skills/social-media/content-quality-review/SKILL.md",
-      "description": "Use when doing a final check on drafted social media copy or scripts — after tone-of-voice-application and before hashtag-and-platform-strategy — to catch repetition across platforms, generic phrasing, weak hooks, and vague claims before content is finalized."
+      "description": "Use when doing a final check on drafted social media copy or scripts — after tone-of-voice-application and before hashtag-and-platform-strategy — to catch repetition across platforms, generic phrasing, weak hooks, and vague claims before content is finalized. Helps you return one batch-level verdict with explicit pass/fail reasons instead of scattered per-post notes."
     },
     {
       "name": "content-repurposing",
       "category": "social-media",
       "path": "skills/social-media/content-repurposing/SKILL.md",
-      "description": "Use when a long-form asset — a blog post, video transcript, or document — needs to be turned into multiple platform-native social posts (LinkedIn, X, Instagram, or a reel script) instead of being copied or lightly edited."
+      "description": "Use when a long-form asset — a blog post, video transcript, or document — needs to be turned into multiple platform-native social posts (LinkedIn, X, Instagram, or a reel script) instead of being copied or lightly edited. Helps you pick standalone insights per platform without inventing facts the source never claimed."
     },
     {
       "name": "hashtag-and-platform-strategy",
       "category": "social-media",
       "path": "skills/social-media/hashtag-and-platform-strategy/SKILL.md",
-      "description": "Use when finalizing hashtags, posting-time notes, or platform formatting guidance for a social media post, caption, or reel script that has already been drafted."
+      "description": "Use when finalizing hashtags, posting-time notes, or platform formatting guidance for a social media post, caption, or reel script that has already been drafted. Helps you attach platform-specific metadata without padding tags, claiming live trends you never checked, or overriding the finished copy."
     },
     {
       "name": "reel-script-generation",
       "category": "social-media",
       "path": "skills/social-media/reel-script-generation/SKILL.md",
-      "description": "Use when scripting a short-form video for Instagram Reels, YouTube Shorts, or TikTok from a topic or brief. Produces a timestamped script with visual cues, on-screen text, and a hook designed to work with sound off."
+      "description": "Use when scripting a short-form video for Instagram Reels, YouTube Shorts, or TikTok from a topic or brief. Produces a timestamped script with visual cues, on-screen text, and a hook designed to work with sound off. Helps you keep beats short and the call to action at the end."
     },
     {
       "name": "social-caption-writing",
