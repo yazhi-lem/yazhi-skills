@@ -3,14 +3,14 @@ name: tamil-transliteration
 description: Use when converting Tamil script to Latin characters (or back) — for search indexing, URL slugs, voice/SMS input normalization, or supporting "Tanglish" user input. Helps you pick the right romanization scheme and handle the many-to-one ambiguity that makes reverse transliteration lossy.
 ---
 
-Transliteration between Tamil (U+0B80–U+0BFF) and Latin script is not one operation but several, each with different goals: a formal, reversible academic scheme (ISO 15919), a phonetic approximation for search/pronunciation, and the informal "Tanglish" spelling real users type in chat and SMS. These schemes disagree with each other, and going Latin-to-Tamil is inherently ambiguous because Tamil's ~18 consonants and limited vowel-length distinctions collapse many possible Latin spellings onto the same intended word — you cannot build a lossless reverse mapping without added context or a dictionary/language model.
+Transliteration between Tamil (U+0B80–U+0BFF) and Latin is several operations with different goals: a reversible academic scheme (ISO 15919), a phonetic approximation for search, and informal "Tanglish". They disagree, and Latin-to-Tamil is inherently ambiguous — Tamil's consonant and vowel distinctions collapse many Latin spellings onto one word. Lossless reverse mapping needs added context or a dictionary/language model.
 
 ## Workflow
 
 1. **Decide direction and reversibility requirement first.** Tamil→Latin for display/search is easy and mostly deterministic. Latin→Tamil (e.g., converting "Tanglish" user input to native script) is ambiguous and needs a ranked-candidate approach, not a single deterministic function.
 2. **Pick a scheme matched to the use case**, not the most "correct" one — see table. Mixing schemes within one product (e.g., ISO 15919 in URLs but ad-hoc phonetics in search) causes inconsistent lookups.
 3. **For Tamil→Latin (forward), map at the cluster level**, not the code point level — a consonant+vowel-sign cluster like மி must map to one syllable unit (`mi`), not to `m` followed by a separate vowel-sign transliteration that could misorder.
-4. **For Latin→Tamil (reverse/"Tanglish" input), generate candidate sets, not a single answer.** "eppadi" could be spelled எப்படி; "zh" digraphs (used for ழ) versus plain "l" (often substituted for ள or ழ by casual typists) create systematic ambiguity — maintain a substitution-rule table and rank candidates by frequency/dictionary match rather than picking one deterministically.
+4. **For Latin→Tamil ("Tanglish" input), generate candidate sets, not one answer.** "eppadi" could be எப்படி; "zh" for ழ versus "l" for ள/ழ creates systematic ambiguity — keep a substitution table and rank candidates by frequency/dictionary match.
 5. **Normalize before comparing/searching.** Strip vowel-length distinctions, fold `zh`/`z`/`l` variants, and fold aspirated/unaspirated consonant spellings (`th`/`t`, `dh`/`d`) into a canonical search key so "தமிழ்" typed as "tamil," "thamil," or "thamizh" all resolve to the same record.
 6. **Handle mixed-script and numerals explicitly.** Tamil has its own numeral forms (Tamil digits, U+0BE6–U+0BEF) that are rarely used in modern digital text — most Tamil content uses Western Arabic numerals inline (e.g., "10 நிமிடம்"). Don't assume a string is pure-script; detect and preserve embedded Latin words/brand names/numbers rather than attempting to transliterate them.
 7. **Validate round-trips on a test set of real ambiguous words** before shipping any reverse-transliteration feature — check that common Tanglish spellings for high-frequency words resolve correctly.
@@ -39,7 +39,7 @@ Note the three "l"-like and two "n"-like distinctions the simplified/Tanglish sc
 
 ## Ambiguity example
 
-The Latin string "kali" could map to கலி, காலி ("empty," long a), or களி (retroflex ள, different word/meaning) — a plain consonant-by-consonant reverse map cannot disambiguate; distinguishing dental ல, retroflex ள, and alveolar ழ all commonly collapse to "l" or "zh" in casual typing. Treat reverse transliteration as a ranking/search problem, not a function.
+"kali" could map to கலி, காலி (long a), or களி (retroflex ள) — a character-by-character reverse map cannot disambiguate. Treat reverse transliteration as a ranking/search problem, not a function.
 
 ## Anti-patterns / common failure modes
 

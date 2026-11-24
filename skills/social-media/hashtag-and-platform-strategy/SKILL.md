@@ -1,11 +1,18 @@
 ---
 name: hashtag-and-platform-strategy
-description: Use when finalizing hashtags, posting-time notes, or platform formatting guidance for a social media post, caption, or reel script that has already been drafted.
+description: Use when finalizing hashtags, posting-time notes, or platform formatting guidance for a social media post, caption, or reel script that has already been drafted. Helps you attach platform-specific metadata without padding tags, claiming live trends you never checked, or overriding the finished copy.
 ---
 
-This skill adds the final layer of platform-specific metadata — hashtags and posting notes — to already-drafted copy. It keeps this metadata separate from the caption itself so the social team can adjust it independently before publishing.
+This skill adds the final layer of platform-specific metadata — hashtags and posting notes — to already-drafted copy. It keeps this metadata separate from the caption itself so the social team can adjust it independently before publishing. Run it last, after `content-quality-review` has passed the batch and the copy will no longer change.
 
-## Step 1 — Apply hashtag counts and mix by platform
+## Workflow
+
+1. **Confirm the copy is final.** If a draft is still being edited, stop and return it to `social-content-master` — hashtags chosen for one draft often no longer match a rewritten hook.
+2. **Pick hashtag count and mix per platform** from the table below. These are starting ranges, not quotas: fewer relevant tags beat padded ones.
+3. **Check every tag against the actual content.** A tag earns its place only if the post says something about that topic. If fewer relevant tags exist than the target count, ship fewer and note why.
+4. **Flag the trend caveat explicitly.** Suggestions here are pattern-based on the topic, not pulled from live trend data. State that in the output so the team can verify against current trends before publishing.
+5. **Add posting notes only when they change a decision** — format constraints, a genuinely platform-specific quirk, or a timing starting point. Do not restate the caption or pad the notes section.
+6. **Emit the fixed output shape** and keep hashtags/notes separate from the copy, so a publisher can edit either field without touching the other.
 
 | Platform | Count | Mix |
 |---|---|---|
@@ -15,19 +22,15 @@ This skill adds the final layer of platform-specific metadata — hashtags and p
 | TikTok / Shorts | 3–5 | 1 trending + rest niche |
 | Facebook | 0–2 | Optional, low impact on this platform |
 
-## Step 2 — Only suggest hashtags actually relevant to the content
+## Posting notes: what qualifies
 
-1. Do not pad counts with generic or unrelated tags just to hit the range. If fewer relevant tags exist than the target count, use fewer and note it.
-2. Note: hashtag suggestions here are pattern-based on the content topic, not pulled from live trending data — flag this in output so the team can verify against current trends before publishing.
+- **Format reminders** — e.g. "square or 4:5 crop for Instagram feed", when the asset is not already sized correctly.
+- **Timing windows** — framed as a starting hypothesis from general audience patterns, never as a measured fact about this account. The account's own analytics are the only authoritative source.
+- **Platform quirks** — e.g. X's weak response to hashtag-heavy posts, or a link preview that needs checking, when they apply to this specific post.
 
-## Step 3 — Add posting notes
+If none of these change the publishing decision, write `NOTES: none` rather than inventing a remark.
 
-Include brief, practical notes only when relevant:
-- Format reminders (e.g. "square or 4:5 crop for Instagram feed")
-- General best-practice posting windows, framed as a starting point, not a guarantee
-- Any platform-specific formatting quirks relevant to this post type
-
-## Step 4 — Output format
+## Output format
 
 ```text
 HASHTAGS: #tag1 #tag2 #tag3
@@ -40,3 +43,6 @@ NOTES: <format, timing, or platform-quirk notes>
 - **Treating hashtag suggestions as verified trends**: presenting pattern-based guesses as if they were confirmed trending tags, when no live data source was checked.
 - **One hashtag set for all platforms**: reusing the same tags on X and Instagram, ignoring that X performs worse with multiple hashtags while Instagram rewards a broader mix.
 - **Posting-time overconfidence**: stating a specific "best time to post" as fact rather than a general starting point, when actual best time depends on the specific audience's activity data.
+- **Rewriting copy to fit tags**: changing a final, quality-approved hook so a hashtag fits — the metadata exists to serve the copy, not the other way round.
+
+For the workflow that leads here see `social-content-master`; for the quality gate immediately before this step see `content-quality-review`; for Tamil hashtags and script-specific formatting see `tamil-social-content`.

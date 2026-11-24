@@ -103,10 +103,26 @@ def main() -> int:
         body = skill.body
         if not re.search(r"^\|.*\|.*$", body, re.M):
             error(rel, "body has no Markdown table")
-        if not re.search(r"^\s*1\.\s+\S", body, re.M):
-            error(rel, "body has no numbered workflow/checklist")
-        if not re.search(r"^#+ .*(Anti-pattern|failure mode)", body, re.M | re.I):
-            error(rel, "body has no 'Anti-patterns' / 'failure modes' section")
+        steps = re.findall(r"^\s*\d+\.\s+\S", body, re.M)
+        if len(steps) < 3:
+            error(rel, f"body has {len(steps)} numbered steps (min 3 for a workflow)")
+
+        # Anchor the heading on one line: with DOTALL on the capture group, a
+        # broad `.*` can otherwise swallow later bullets that mention the
+        # words "anti-pattern" or "failure mode" inside the body.
+        anti = re.search(
+            r"^#+[^\n]*(?:Anti-pattern|failure mode)[^\n]*\n"
+            r"(.*?)(?=^#+[^\n]*\n|\Z)",
+            body,
+            re.M | re.I | re.S,
+        )
+        anti_items = len(re.findall(r"^-\s+\S", anti.group(1), re.M)) if anti else 0
+        if anti_items < 3:
+            error(
+                rel,
+                f"'Anti-patterns' / 'failure modes' section has {anti_items} "
+                "entries (min 3 named failures)",
+            )
         if not re.search(r"\d", body):
             warn(rel, "body contains no numbers; prefer concrete defaults")
 

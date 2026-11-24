@@ -3,7 +3,7 @@ name: pr-loophole-review
 description: Use when reviewing a specific pull request for a deliberately or carelessly introduced security bypass — an unfamiliar contributor's PR, a "quick fix" that touches auth or validation, or any diff where something about the change feels like it's working around a control rather than through it. Helps you spot a loophole hidden in a plausible-looking diff instead of trusting that a passing test suite means the change is safe.
 ---
 
-`secure-code-review` checks a diff against known vulnerability classes (injection, broken authz, unsafe deserialization). This skill is narrower and adversarial: it assumes the diff might contain a change that *looks* like a reasonable fix but actually weakens or bypasses an existing control, whether by mistake or on purpose — a real, recurring category in both open-source supply-chain incidents and internal "fast-tracked" fixes under deadline pressure.
+`secure-code-review` checks a diff against known vulnerability classes (injection, broken authz, unsafe deserialization). This skill is narrower and adversarial: it assumes a change may *look* like a reasonable fix while weakening an existing control — a recurring category in supply-chain incidents and deadline-driven fixes.
 
 ## Loophole shapes to check for
 
