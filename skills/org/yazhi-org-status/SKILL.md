@@ -19,7 +19,7 @@ Each public repo has a dedicated status skill with a fuller layer map and workfl
 | yazhi-dev | Public community site + `/chat` demo | 3D site shipped; chat streams through yazhi-api. See [docs/README.md](https://github.com/yazhi-lem/yazhi-dev/blob/main/docs/README.md) | `yazhi-dev-status` |
 | `capitol` | Local Linear/GitHub/Slack operator console | Live tooling with a 2026-10-03 data snapshot; see `capitol/README.md` | private |
 | `styleguide` | Fork of Google style guides | Upstream reference, last synced 2025-11-13 — not Yazhi policy | `styleguide-status` |
-| `yazhi-skills` | Shared skill catalog | 98 skills, including `technical-documentation` and the `org/` ways-of-working skills | — |
+| `yazhi-skills` | Shared skill catalog | 99 skills, including `technical-documentation` and the `org/` ways-of-working skills | — |
 | `books`, `yazh-kutty` | Placeholder repos | No commits or code yet; founder-gated scope | — |
 
 ## Workflow

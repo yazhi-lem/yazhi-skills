@@ -5,13 +5,13 @@
   "license": "GPL-3.0-or-later",
   "skillFormat": "SKILL.md with YAML frontmatter (name, description)",
   "generatedBy": "scripts/build_index.py — do not edit by hand",
-  "count": 98,
+  "count": 99,
   "categories": [
     {
       "id": "org",
       "title": "Yazhi Organization",
       "path": "skills/org",
-      "count": 12
+      "count": 13
     },
     {
       "id": "agentic",
@@ -148,10 +148,16 @@
       "description": "Use when deciding where a new capability belongs in the Yazhi stack — yazhi-api, Adhan, Illakiya, open-sangam, or a client — and a sovereign or local-first constraint is at stake. Helps you keep model weights, external APIs, and Tamil NLP logic in their owning repos."
     },
     {
+      "name": "yazhi-daily-rhythm",
+      "category": "org",
+      "path": "skills/org/yazhi-daily-rhythm/SKILL.md",
+      "description": "Use when starting a Yazhi engineering day or when a day has gone sideways and you need to recover the rhythm. Gives the hour-by-hour block plan — digest, deep work, review window, close — and the checks at each block boundary."
+    },
+    {
       "name": "yazhi-ops",
       "category": "org",
       "path": "skills/org/yazhi-ops/SKILL.md",
-      "description": "Use when deciding what to do next in a Yazhi working week, running a daily or weekly review, or diagnosing why work is stalling. Helps you follow the operating rhythm — daily digest, 48-hour PR rule, weekly OKR check, monthly freeze — instead of re-deriving priorities from scratch."
+      "description": "Use when setting or running Yazhi's operating cadence — the daily digest, weekly review, monthly gate, and quarterly reset — or when work is slipping and you need to know which ritual was skipped. Helps you run the rhythm as a system instead of improvising each week."
     },
     {
       "name": "yazhi-org-status",

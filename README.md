@@ -5,7 +5,7 @@ Current status and the docs map live in [`docs/README.md`](./docs/README.md); cr
 
 Each skill lives at `skills/<category>/<skill-name>/SKILL.md` and follows a common contract: YAML frontmatter with a `name` (matching its directory) and a `description` starting with "Use when...", followed by a procedural, checklist-driven body. See [`skill-authoring`](skills/tools/skill-authoring/SKILL.md) for the contribution guide and [`technical-documentation`](skills/tools/technical-documentation/SKILL.md) for the docs contract used across yazhi-lem repos. Repo-local skills are indexed in [`skills/README.md`](skills/README.md).
 
-This is the portable [Agent Skills](https://code.claude.com/docs/en/skills) format, so the same files work in Claude Code, Claude Desktop, and any other tool that reads `SKILL.md`. See [Install](#install) for how to import them.
+This is the portable [Agent Skills](https://code.claude.com/docs/en/skills) format, so the same files work in Claude Code, Claude Desktop, Pi, and any other tool that reads `SKILL.md`. See [Install](#install) for how to import them; Pi users can jump to [`docs/pi.md`](docs/pi.md).
 
 ## Install
 
@@ -16,7 +16,7 @@ This is the portable [Agent Skills](https://code.claude.com/docs/en/skills) form
 /plugin install yazhi-skills@yazhi-skills
 ```
 
-All 98 skills load namespaced as `yazhi-skills:<name>` — Claude picks them up automatically when relevant, or you invoke one directly with `/yazhi-skills:tamil-aksharas`. Update later with `/plugin marketplace update yazhi-skills`.
+All 99 skills load namespaced as `yazhi-skills:<name>` — Claude picks them up automatically when relevant, or you invoke one directly with `/yazhi-skills:tamil-aksharas`. Update later with `/plugin marketplace update yazhi-skills`.
 
 Non-interactively:
 
@@ -25,9 +25,27 @@ claude plugin marketplace add yazhi-lem/yazhi-skills
 claude plugin install yazhi-skills@yazhi-skills
 ```
 
+### Pi
+
+Pi reads the same `SKILL.md` tree. Install with the preset, or point Pi at the checkout:
+
+```bash
+./install.sh --pi            # all skills -> ~/.pi/agent/skills
+./install.sh --pi-project    # all skills -> ./.pi/skills
+./install.sh --pi -c org     # just the org/ category
+```
+
+Or add the checkout to `~/.pi/agent/settings.json` (or `.pi/settings.json`):
+
+```json
+{ "skills": ["~/Yazhi/repos/yazhi-lem/yazhi-skills/skills"] }
+```
+
+Pi advertises each skill's name and description at startup and loads the body only when the task matches; force one with `/skill:yazhi-daily-rhythm`. Restart `pi` or run `/reload` after installing. Full details in [`docs/pi.md`](docs/pi.md).
+
 ### Any tool that reads a skills directory
 
-`install.sh` flattens the category tree into one directory of `<skill-name>/SKILL.md`, which is what Claude Desktop, `~/.claude/skills`, and most third-party agents expect:
+`install.sh` flattens the category tree into one directory of `<skill-name>/SKILL.md`, which is what Claude Desktop, `~/.claude/skills`, `~/.pi/agent/skills`, and most third-party agents expect:
 
 ```bash
 git clone https://github.com/yazhi-lem/yazhi-skills.git
@@ -49,12 +67,12 @@ A `.skill` file is a zip archive containing **exactly one `SKILL.md`, at its roo
 
 | File | Contains | Use it for |
 | --- | --- | --- |
-| [`dist/yazhi-skills.skill`](dist/yazhi-skills.skill) | A generated router `SKILL.md` at the root, plus all 98 skills as reference files under `references/<category>/<name>.md` | Importing the whole collection as one skill |
+| [`dist/yazhi-skills.skill`](dist/yazhi-skills.skill) | A generated router `SKILL.md` at the root, plus all 99 skills as reference files under `references/<category>/<name>.md` | Importing the whole collection as one skill |
 | `dist/skills/<name>.skill` | One skill, its own `SKILL.md` at the archive root, and nothing else | Importing a single skill on its own |
 
-The collection bundle's root `SKILL.md` is a router, not a copy: it carries a trigger line and bundled path per skill, and instructs the reader to open the matching file before acting. That keeps the index small while the full procedural detail stays in the 98 reference files.
+The collection bundle's root `SKILL.md` is a router, not a copy: it carries a trigger line and bundled path per skill, and instructs the reader to open the matching file before acting. That keeps the index small while the full procedural detail stays in the 99 reference files.
 
-Those 98 files are deliberately renamed away from `SKILL.md` on the way in. Shipping them at their repo paths would put 98 `SKILL.md` files in one archive, which is not a valid skill — the builder asserts the one-`SKILL.md` invariant, and CI re-checks it on every bundle.
+Those 99 files are deliberately renamed away from `SKILL.md` on the way in. Shipping them at their repo paths would put 99 `SKILL.md` files in one archive, which is not a valid skill — the builder asserts the one-`SKILL.md` invariant, and CI re-checks it on every bundle.
 
 Rebuild them after changing any skill:
 
@@ -80,7 +98,7 @@ python3 scripts/build_index.py      # rewrite skills.json + .claude-plugin/plugi
 python3 scripts/validate_skills.py  # check every SKILL.md against the repo contract
 ```
 
-## Catalog (98 skills)
+## Catalog (99 skills)
 
 ### Agentic (agentic)
 
@@ -115,7 +133,8 @@ How to work inside Yazhi: ethos (அறம் / அன்பு / அகம்),
 | [`org-healthy-code`](skills/org/org-healthy-code/SKILL.md) | Writing code that stays reviewable: small diffs, local-first, honest tests |
 | [`org-impactful-pr`](skills/org/org-impactful-pr/SKILL.md) | PRs that land in 48h: scope, evidence, Tamil-string review, honest status |
 | [`org-release`](skills/org/org-release/SKILL.md) | Releasing under எண்ணித் துணிக: runbook, rollback, child-safety and DPDP gates |
-| [`yazhi-ops`](skills/org/yazhi-ops/SKILL.md) | The operating rhythm: daily digest, 48-hour PR rule, weekly OKR delta, monthly freeze |
+| [`yazhi-ops`](skills/org/yazhi-ops/SKILL.md) | The four operating loops — daily, weekly, monthly, quarterly — plus the escalation ladder |
+| [`yazhi-daily-rhythm`](skills/org/yazhi-daily-rhythm/SKILL.md) | The engineer's day: digest, deep work, review window, close, and the recovery path |
 | [`org-repo-audit`](skills/org/org-repo-audit/SKILL.md) | Report-only audits of stale, duplicate, or unhealthy docs and task artifacts across repos |
 | [`org-issue-triage`](skills/org/org-issue-triage/SKILL.md) | Validating open issues and PRs after a strategy reset without discarding contributor work |
 | [`org-cross-repo-change`](skills/org/org-cross-repo-change/SKILL.md) | Sequencing a proto, data, or doc contract change across producer and consumer repos |
