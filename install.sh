@@ -1,11 +1,15 @@
 #!/usr/bin/env bash
 # Install yazhi-skills into any tool that reads a flat directory of
-# <skill-name>/SKILL.md — Claude Code, Claude Desktop, or your own agent.
+# <skill-name>/SKILL.md — Claude Code, Claude Desktop, Pi, or your own agent.
 #
 # Claude Code users can instead install this repo as a plugin:
 #   /plugin marketplace add yazhi-lem/yazhi-skills
 #   /plugin install yazhi-skills@yazhi-skills
-# See README.md. This script exists for everything that isn't a plugin host.
+#
+# Pi users: ./install.sh --pi installs into ~/.pi/agent/skills, which Pi
+# discovers at startup. Invoke a skill explicitly with /skill:<name>.
+# See README.md and docs/pi.md. This script exists for everything that isn't
+# a plugin host.
 
 set -euo pipefail
 
@@ -25,9 +29,12 @@ Usage: ./install.sh [options]
 Options:
   -d, --dest DIR       Install into DIR (default: ~/.claude/skills)
   -p, --project        Shorthand for --dest ./.claude/skills
+      --pi             Install into ~/.pi/agent/skills (Pi user skills)
+      --pi-project     Install into ./.pi/skills (Pi project skills)
+      --agents         Install into ~/.agents/skills (Agent Skills spec)
   -c, --category NAME  Install only this category (repeatable).
-                       One of: ai-ml computer-use fde security sovereign
-                               tamil tools yazh-life
+                       One of: agentic ai-ml computer-use fde gtm org repos
+                               security social-media sovereign tamil tools yazh-life
   -m, --mode MODE      symlink (default) or copy
   -f, --force          Overwrite existing entries with the same name
   -n, --dry-run        Print what would happen, change nothing
@@ -36,6 +43,8 @@ Options:
 
 Examples:
   ./install.sh                              # all skills, symlinked into ~/.claude/skills
+  ./install.sh --pi                         # all skills, into ~/.pi/agent/skills
+  ./install.sh --pi-project                 # into this repo's .pi/skills
   ./install.sh -c yazh-life -c tamil        # just those two categories
   ./install.sh --project --mode copy        # vendor into this repo's .claude/skills
   ./install.sh --dest ~/my-agent/skills -m copy
@@ -46,6 +55,9 @@ while [ $# -gt 0 ]; do
   case "$1" in
     -d|--dest)     DEST="$2"; shift 2 ;;
     -p|--project)  DEST="$PWD/.claude/skills"; shift ;;
+    --pi)          DEST="${HOME}/.pi/agent/skills"; shift ;;
+    --pi-project)  DEST="$PWD/.pi/skills"; shift ;;
+    --agents)      DEST="${HOME}/.agents/skills"; shift ;;
     -c|--category) CATEGORIES+=("$2"); shift 2 ;;
     -m|--mode)     MODE="$2"; shift 2 ;;
     -f|--force)    FORCE=1; shift ;;
@@ -113,5 +125,9 @@ if [ "$DRY_RUN" -eq 1 ]; then
   echo "dry run: $installed skill(s) would be installed into $DEST"
 else
   echo "installed $installed skill(s) into $DEST ($MODE), skipped $skipped"
-  echo "restart your agent, or run /reload-plugins in Claude Code, to pick them up."
+  case "$DEST" in
+    */.pi/*|*/.pi) echo "Pi: restart pi or run /reload to pick them up; invoke with /skill:<name>." ;;
+    */.claude/*)   echo "Claude Code: restart or run /reload-plugins to pick them up." ;;
+    *)             echo "restart your agent to pick them up." ;;
+  esac
 fi

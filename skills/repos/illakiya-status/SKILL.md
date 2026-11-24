@@ -20,9 +20,9 @@ Illakiya (இலக்கியம், "literature") is a native Tamil keyboard 
 
 ## Workflow
 
-1. **Read `docs/tasks.md` (dev log with Next Actions) and `docs/PLAN.md` (phase completion) before starting** — both are actively maintained and more current than the README's feature list.
+1. **Read [`docs/README.md`](https://github.com/yazhi-lem/illakiya/blob/main/docs/README.md) and the repo README before starting.** The old `docs/tasks.md` and `docs/PLAN.md` were retired on 2026-11-21; do not treat them as live trackers.
 2. **Put new Tamil-classification logic in `core-rust/`, never duplicate it in Kotlin.** The whole point of the UniFFI split is one classifier; a parallel Kotlin implementation of Vallinam/Mellinam rules would drift from the Rust source of truth.
-3. **Run `cargo test` in `core-rust/` before touching the Android layer** — it's the first item in the repo's own Next Actions list and validates the engine independent of the Android build.
+3. **Run `cargo test` in `core-rust/` before touching the Android layer** — it validates the engine independent of the Android build and is the repo's documented first gate.
 4. **Grow the dictionary via the existing sources table in the README**, not a new ad hoc word list — Swadesh+Common, Sangam Corpus, Modern Tamil, Verbs, Grammar, Tanglish, Tech, Literary, Body & Nature, and Corpus Frequent are the tracked categories; add words under the right one.
 5. **Keep all data embedded via `include_str!`** — the "zero filesystem" design goal means no runtime file reads for dictionary or layout data; don't introduce a loose asset file as a shortcut.
 6. **Build and test with `./scripts/build-apk.sh`**, requiring Android SDK + NDK + Rust — don't hand-assemble the cross-compilation steps; the script already handles the 4-ABI build.

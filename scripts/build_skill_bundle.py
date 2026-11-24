@@ -4,16 +4,16 @@
 A `.skill` file is a zip archive with a `SKILL.md` at its root — the format
 Claude accepts for an uploaded skill. Two shapes are produced:
 
-  dist/yazhi-skills.skill        one bundle, all 51 skills. Its root SKILL.md is
-                                 a generated router: it lists every skill with
-                                 its trigger and the bundled path to read.
+  dist/yazhi-skills.skill        one bundle containing every skill. Its root
+                                 SKILL.md is a generated router: it lists each
+                                 skill with its trigger and bundled path.
   dist/skills/<name>.skill       one bundle per skill, that skill's SKILL.md at
                                  the archive root. Built with --per-skill.
 
 A bundle must contain exactly one SKILL.md — the one at its root that defines
 the skill. So in the collection bundle the 51 skill bodies ship as reference
 files under references/<category>/<name>.md, not under their repo paths, which
-would put 51 further SKILL.md files in the archive and make it invalid.
+would put one further SKILL.md file per skill in the archive and make it invalid.
 
 Archives are byte-for-byte reproducible (fixed timestamps, sorted entries) so
 `--check` can tell a stale bundle from an unchanged one.
@@ -61,8 +61,9 @@ ROUTER_NAME = "yazhi-skills"
 ROUTER_DESCRIPTION = (
     "Use when a task touches any area this collection covers — forward-deployed "
     "engineering, AI/ML systems, sovereign or air-gapped AI, security review, "
-    "Tamil language and script, computer-use agents, developer tooling, or "
-    "helping a ~12-year-old learn, decide, and stay safe. Points you at the one "
+    "Tamil language and script, computer-use agents, developer tooling, "
+    "cross-repo Yazhi ecosystem work, or helping a ~12-year-old learn, decide, "
+    "and stay safe. Points you at the one "
     "detailed skill file for the task so you follow its checklist instead of "
     "improvising."
 )

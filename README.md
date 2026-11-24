@@ -1,11 +1,11 @@
 # yazhi-skills
 Curated list of skills powering Yazhi
 
-See [NEXT_ACTION.md](./NEXT_ACTION.md) for the roadmap, **October 2026 Pilot**, and **December 2026 Launch** deliverables.
+Current status and the docs map live in [`docs/README.md`](./docs/README.md); cross-repo orientation is in [`yazhi-org-status`](skills/org/yazhi-org-status/SKILL.md).
 
-Each skill lives at `skills/<category>/<skill-name>/SKILL.md` and follows a common contract: YAML frontmatter with a `name` (matching its directory) and a `description` starting with "Use when...", followed by a procedural, checklist-driven body. See [`skill-authoring`](skills/tools/skill-authoring/SKILL.md) for the contribution guide.
+Each skill lives at `skills/<category>/<skill-name>/SKILL.md` and follows a common contract: YAML frontmatter with a `name` (matching its directory) and a `description` starting with "Use when...", followed by a procedural, checklist-driven body. See [`skill-authoring`](skills/tools/skill-authoring/SKILL.md) for the contribution guide and [`technical-documentation`](skills/tools/technical-documentation/SKILL.md) for the docs contract used across yazhi-lem repos. Repo-local skills are indexed in [`skills/README.md`](skills/README.md).
 
-This is the portable [Agent Skills](https://code.claude.com/docs/en/skills) format, so the same files work in Claude Code, Claude Desktop, and any other tool that reads `SKILL.md`. See [Install](#install) for how to import them.
+This is the portable [Agent Skills](https://code.claude.com/docs/en/skills) format, so the same files work in Claude Code, Claude Desktop, Pi, and any other tool that reads `SKILL.md`. See [Install](#install) for how to import them; Pi users can jump to [`docs/pi.md`](docs/pi.md).
 
 ## Install
 
@@ -16,7 +16,7 @@ This is the portable [Agent Skills](https://code.claude.com/docs/en/skills) form
 /plugin install yazhi-skills@yazhi-skills
 ```
 
-All 76 skills load namespaced as `yazhi-skills:<name>` — Claude picks them up automatically when relevant, or you invoke one directly with `/yazhi-skills:tamil-aksharas`. Update later with `/plugin marketplace update yazhi-skills`.
+All 99 skills load namespaced as `yazhi-skills:<name>` — Claude picks them up automatically when relevant, or you invoke one directly with `/yazhi-skills:tamil-aksharas`. Update later with `/plugin marketplace update yazhi-skills`.
 
 Non-interactively:
 
@@ -25,9 +25,27 @@ claude plugin marketplace add yazhi-lem/yazhi-skills
 claude plugin install yazhi-skills@yazhi-skills
 ```
 
+### Pi
+
+Pi reads the same `SKILL.md` tree. Install with the preset, or point Pi at the checkout:
+
+```bash
+./install.sh --pi            # all skills -> ~/.pi/agent/skills
+./install.sh --pi-project    # all skills -> ./.pi/skills
+./install.sh --pi -c org     # just the org/ category
+```
+
+Or add the checkout to `~/.pi/agent/settings.json` (or `.pi/settings.json`):
+
+```json
+{ "skills": ["~/Yazhi/repos/yazhi-lem/yazhi-skills/skills"] }
+```
+
+Pi advertises each skill's name and description at startup and loads the body only when the task matches; force one with `/skill:yazhi-daily-rhythm`. Restart `pi` or run `/reload` after installing. Full details in [`docs/pi.md`](docs/pi.md).
+
 ### Any tool that reads a skills directory
 
-`install.sh` flattens the category tree into one directory of `<skill-name>/SKILL.md`, which is what Claude Desktop, `~/.claude/skills`, and most third-party agents expect:
+`install.sh` flattens the category tree into one directory of `<skill-name>/SKILL.md`, which is what Claude Desktop, `~/.claude/skills`, `~/.pi/agent/skills`, and most third-party agents expect:
 
 ```bash
 git clone https://github.com/yazhi-lem/yazhi-skills.git
@@ -49,12 +67,12 @@ A `.skill` file is a zip archive containing **exactly one `SKILL.md`, at its roo
 
 | File | Contains | Use it for |
 | --- | --- | --- |
-| [`dist/yazhi-skills.skill`](dist/yazhi-skills.skill) | A generated router `SKILL.md` at the root, plus all 76 skills as reference files under `references/<category>/<name>.md` | Importing the whole collection as one skill |
+| [`dist/yazhi-skills.skill`](dist/yazhi-skills.skill) | A generated router `SKILL.md` at the root, plus all 99 skills as reference files under `references/<category>/<name>.md` | Importing the whole collection as one skill |
 | `dist/skills/<name>.skill` | One skill, its own `SKILL.md` at the archive root, and nothing else | Importing a single skill on its own |
 
-The collection bundle's root `SKILL.md` is a router, not a copy: it carries a trigger line and bundled path per skill, and instructs the reader to open the matching file before acting. That keeps the index small while the full procedural detail stays in the 76 reference files.
+The collection bundle's root `SKILL.md` is a router, not a copy: it carries a trigger line and bundled path per skill, and instructs the reader to open the matching file before acting. That keeps the index small while the full procedural detail stays in the 99 reference files.
 
-Those 76 files are deliberately renamed away from `SKILL.md` on the way in. Shipping them at their repo paths would put 77 `SKILL.md` files in one archive, which is not a valid skill — the builder asserts the one-`SKILL.md` invariant, and CI re-checks it on every bundle.
+Those 99 files are deliberately renamed away from `SKILL.md` on the way in. Shipping them at their repo paths would put 99 `SKILL.md` files in one archive, which is not a valid skill — the builder asserts the one-`SKILL.md` invariant, and CI re-checks it on every bundle.
 
 Rebuild them after changing any skill:
 
@@ -80,7 +98,16 @@ python3 scripts/build_index.py      # rewrite skills.json + .claude-plugin/plugi
 python3 scripts/validate_skills.py  # check every SKILL.md against the repo contract
 ```
 
-## Catalog (76 skills)
+## Catalog (99 skills)
+
+### Agentic (agentic)
+
+Designing agents that run without a human watching: bounded loops, idempotent side effects, and a trust boundary that survives prompt injection.
+
+| Skill | Covers |
+| --- | --- |
+| [`agentic-reliability`](skills/agentic/agentic-reliability/SKILL.md) | Idempotency, bounded loops, checkpoints, and measurable success conditions |
+| [`agentic-security`](skills/agentic/agentic-security/SKILL.md) | Prompt injection, least privilege, and human confirm for irreversible actions |
 
 ### Go-To-Market (gtm)
 
@@ -91,12 +118,28 @@ python3 scripts/validate_skills.py  # check every SKILL.md against the repo cont
 | [`launch-planning`](skills/gtm/launch-planning/SKILL.md) | Tiering a launch and sequencing announcements across channels |
 | [`sales-enablement`](skills/gtm/sales-enablement/SKILL.md) | Battlecards, objection handling, and certifying reps on a new pitch |
 | [`channel-and-partnerships`](skills/gtm/channel-and-partnerships/SKILL.md) | Evaluating resellers, integrations, marketplaces, and co-marketing deals |
+| [`gtm-demand-generation`](skills/gtm/gtm-demand-generation/SKILL.md) | Proving one demand channel against a baseline before adding a second |
+| [`gtm-customer-references`](skills/gtm/gtm-customer-references/SKILL.md) | Turning a satisfied customer into an approved, dated reference |
 
-### Organization (org)
+### Yazhi Organization (org)
+
+How to work inside Yazhi: ethos (அறம் / அன்பு / அகம்), doc authoring in three colors, healthy code, impactful PRs, releases, and the cross-repo workflows — audits, triage, contract sequencing, plan resets, service boundaries. Per-repo state stays in `repos/`; these skills own the seams between repos and the internal ways of working.
 
 | Skill | Covers |
 | --- | --- |
-| [`yazhi-org-status`](skills/org/yazhi-org-status/SKILL.md) | Current status, vision, and next actions across all nine yazhi-lem repos |
+| [`yazhi-org-status`](skills/org/yazhi-org-status/SKILL.md) | Current status, vision, and next actions across all Yazhi repos |
+| [`org-ethos`](skills/org/org-ethos/SKILL.md) | The five அறம் rules, அன்பு in craft and review, and அகம்/புறம் chambers for private vs public work |
+| [`org-doc-authoring`](skills/org/org-doc-authoring/SKILL.md) | Green, blue and orange docs: which color, header, expiry, and promotion path |
+| [`org-healthy-code`](skills/org/org-healthy-code/SKILL.md) | Writing code that stays reviewable: small diffs, local-first, honest tests |
+| [`org-impactful-pr`](skills/org/org-impactful-pr/SKILL.md) | PRs that land in 48h: scope, evidence, Tamil-string review, honest status |
+| [`org-release`](skills/org/org-release/SKILL.md) | Releasing under எண்ணித் துணிக: runbook, rollback, child-safety and DPDP gates |
+| [`yazhi-ops`](skills/org/yazhi-ops/SKILL.md) | The four operating loops — daily, weekly, monthly, quarterly — plus the escalation ladder |
+| [`yazhi-daily-rhythm`](skills/org/yazhi-daily-rhythm/SKILL.md) | The engineer's day: digest, deep work, review window, close, and the recovery path |
+| [`org-repo-audit`](skills/org/org-repo-audit/SKILL.md) | Report-only audits of stale, duplicate, or unhealthy docs and task artifacts across repos |
+| [`org-issue-triage`](skills/org/org-issue-triage/SKILL.md) | Validating open issues and PRs after a strategy reset without discarding contributor work |
+| [`org-cross-repo-change`](skills/org/org-cross-repo-change/SKILL.md) | Sequencing a proto, data, or doc contract change across producer and consumer repos |
+| [`org-plan-reset-recovery`](skills/org/org-plan-reset-recovery/SKILL.md) | Checking source authority when an old roadmap or dated issue resurfaces |
+| [`org-service-boundaries`](skills/org/org-service-boundaries/SKILL.md) | Deciding which repo owns a new capability under the no-weights/local-first rules |
 
 ### Repositories (repos)
 
@@ -120,6 +163,8 @@ One skill per public yazhi-lem repository — its own layer map, workflow, next 
 | [`deployment-runbook`](skills/fde/deployment-runbook/SKILL.md) | Repeatable pre-flight, rollback, and sign-off procedure for customer deployments |
 | [`enterprise-integration`](skills/fde/enterprise-integration/SKILL.md) | Integrating with customer SSO, data pipelines, legacy APIs, and IT access processes |
 | [`stakeholder-reporting`](skills/fde/stakeholder-reporting/SKILL.md) | Reporting cadence and format for technical and non-technical stakeholders |
+| [`fde-support-escalation`](skills/fde/fde-support-escalation/SKILL.md) | Triaging and escalating production failures at a customer site |
+| [`fde-data-migration`](skills/fde/fde-data-migration/SKILL.md) | Idempotent, reversible, verifiable customer data moves |
 
 ### AI/ML (ai-ml)
 
@@ -170,6 +215,9 @@ One skill per public yazhi-lem repository — its own layer map, workflow, next 
 | [`tamil-input-methods`](skills/tamil/tamil-input-methods/SKILL.md) | Keyboard/IME design: Tamil99, phonetic input, auto-pulli, and backspace behavior |
 | [`tamil-swaram-notation`](skills/tamil/tamil-swaram-notation/SKILL.md) | Encoding Carnatic swaram notation (ஸ ரி க ம ப த நி) as searchable Unicode text |
 | [`tamil-morphology-nlp`](skills/tamil/tamil-morphology-nlp/SKILL.md) | Agglutinative morphology, sandhi, and lemma-level matching for NLP and search |
+| [`tamil-tani-tamil`](skills/tamil/tamil-tani-tamil/SKILL.md) | தனித்தமிழ்: the per-term native/loanword/English decision and register rules |
+| [`tamil-purity-scoring`](skills/tamil/tamil-purity-scoring/SKILL.md) | Measuring Grantha-free and English-free text, and the two known gaps in the shipped metrics |
+| [`tamil-technical-terms`](skills/tamil/tamil-technical-terms/SKILL.md) | The established glossary (கணினி, மின்னஞ்சல், கைப்பேசி) and the coinage procedure |
 
 ### Computer Use (computer-use)
 
@@ -187,6 +235,8 @@ One skill per public yazhi-lem repository — its own layer map, workflow, next 
 | [`cli-tool-design`](skills/tools/cli-tool-design/SKILL.md) | Flags, defaults, output modes, exit codes, and help text for CLIs |
 | [`api-design`](skills/tools/api-design/SKILL.md) | Resource naming, versioning, pagination, and backward compatibility |
 | [`skill-authoring`](skills/tools/skill-authoring/SKILL.md) | The frontmatter contract and quality bar for SKILL.md files in this repo |
+| [`technical-documentation`](skills/tools/technical-documentation/SKILL.md) | Uniform Markdown structure, status labels and archive rules for yazhi-lem docs |
+| [`google-style-adoption`](skills/tools/google-style-adoption/SKILL.md) | Which Google style guide applies, how it is enforced, and where deviations live |
 
 ### Yazh Life Skills (yazh-life)
 
