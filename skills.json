@@ -457,7 +457,7 @@
       "name": "tamil-purity-scoring",
       "category": "tamil",
       "path": "skills/tamil/tamil-purity-scoring/SKILL.md",
-      "description": "Use when measuring how pure a Tamil text or corpus is — scoring model output, filtering a pretraining corpus, or verifying a \"pure Tamil\" claim in a report. Helps you use the real purity formula and token classifier, and avoid the two known gaps that make both overstate purity."
+      "description": "Use when measuring how pure a Tamil text or corpus is — scoring model output, filtering a pretraining corpus, or verifying a \"pure Tamil\" claim in a report. Helps you use the real purity formula and token classifier, and avoid the remaining gap that makes both overstate vocabulary purity."
     },
     {
       "name": "tamil-swaram-notation",

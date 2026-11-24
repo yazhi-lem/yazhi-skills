@@ -16,7 +16,7 @@ Yazhi's review gate is a second human within 48 hours, and it only works if the 
 
 ## Workflow
 
-1. **Read the repo's own conventions first** — `CONTEXT.md` for yazhi-api, `docs/DEV.md` for adhan, the Rust core docs for illakiya. Yazhi repos differ on test naming and config: adhan collects `<module>_tests.py`, not `test_*.py`, so a correctly-written test can silently never run.
+1. **Read the repo's own conventions first** — `CONTEXT.md` for yazhi-api, `docs/DEV.md` for adhan, the Rust core docs for illakiya. Yazhi repos differ on test naming and config: adhan's `pyproject.toml` collects `*_tests.py`, `test_*.py` and `*_test.py`, but its convention is `<module>_tests.py` — match the convention so the suite stays navigable, and check the pattern before assuming a new test runs.
 2. **Split the change by layer before writing it.** One PR for the contract, one for the implementation, one for the wiring. A 2,000-line PR that mixes all three cannot be reviewed in 48 hours and will be rubber-stamped.
 3. **Keep the default path offline.** Add any network or model call behind an explicit flag with a documented fallback. If a feature cannot work offline, say so in the PR instead of quietly calling a foreign endpoint.
 4. **Write the failing test first, then make it pass.** A test that asserts nothing, or asserts only that no exception was raised, is worse than no test — it certifies the bug. For long jobs, run the sanity gate (`--overfit-batch` in adhan) before the full run.
@@ -30,7 +30,7 @@ Yazhi's review gate is a second human within 48 hours, and it only works if the 
 - **A test that only checks for no exception.** Certifies broken behavior and blocks the next person from finding the real bug.
 - **`except Exception: pass` in a pipeline.** Turns a data-loss bug into a green run; the corpus quietly loses rows.
 - **Mixing a refactor with a behavior change.** Reviewer cannot tell which line changed behavior, so the 48-hour gate becomes a formality.
-- **Naming a test `test_*.py` in adhan.** Silently not collected by that repo's pytest convention; the suite is green and the test never ran.
+- **Assuming a test file is collected without checking the pattern.** adhan's `python_files` accepts three patterns, but a repo with a narrower one will silently skip a correctly-written test; read the config before debugging a green suite that proves nothing.
 - **Training on a GPU-only config on a CPU box.** The nano CPU config and the default configs are not interchangeable; the run fails hours in or produces garbage.
 
 Follow `org-ethos` for the அறம் gates; `org-impactful-pr` for the PR that carries this code; `org-cross-repo-change` for contract changes; `org-service-boundaries` for where a capability belongs; `llm-security-review` for model-facing risk.
