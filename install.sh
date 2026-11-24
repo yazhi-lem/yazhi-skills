@@ -26,8 +26,8 @@ Options:
   -d, --dest DIR       Install into DIR (default: ~/.claude/skills)
   -p, --project        Shorthand for --dest ./.claude/skills
   -c, --category NAME  Install only this category (repeatable).
-                       One of: ai-ml computer-use fde gtm org repos security
-                               social-media sovereign tamil tools yazh-life
+                       One of: agentic ai-ml computer-use fde gtm org repos
+                               security social-media sovereign tamil tools yazh-life
   -m, --mode MODE      symlink (default) or copy
   -f, --force          Overwrite existing entries with the same name
   -n, --dry-run        Print what would happen, change nothing

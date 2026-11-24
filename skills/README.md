@@ -7,11 +7,12 @@ Canonical skill catalog for yazhi-lem. Layout: `skills/<category>/<skill-name>/S
 | Category | Covers |
 |---|---|
 | `ai-ml/`, `sovereign/`, `security/` | Model, deployment and security technique |
+| `agentic/` | Agents that run unattended: reliability (idempotency, bounded loops) and security (prompt injection, least privilege) |
 | `tamil/`, `yazh-life/`, `social-media/` | Tamil language and audience work |
-| `fde/`, `gtm/`, `org/` | Customer, launch and org context |
-| `org/` | Internal ways of working: ethos, doc colors, healthy code, PRs, releases, and cross-repo workflows |
+| `fde/`, `gtm/` | Customer engagements, support, and go-to-market |
+| `org/` | Internal ways of working: ethos, doc colors, healthy code, PRs, releases, operating rhythm, and cross-repo workflows |
 | `repos/` | Per-repo status skills (one per public repo) |
-| `tools/` | `skill-authoring` (contract), `technical-documentation` (doc contract), API/CLI/MCP design |
+| `tools/` | `skill-authoring` (contract), `technical-documentation` (doc contract), Google style adoption, API/CLI/MCP design |
 
 Contribution rules live in
 [`tools/skill-authoring/SKILL.md`](tools/skill-authoring/SKILL.md); new docs

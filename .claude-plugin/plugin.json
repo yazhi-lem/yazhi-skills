@@ -23,6 +23,7 @@
     "kids"
   ],
   "skills": [
+    "./skills/agentic/",
     "./skills/ai-ml/",
     "./skills/computer-use/",
     "./skills/fde/",
