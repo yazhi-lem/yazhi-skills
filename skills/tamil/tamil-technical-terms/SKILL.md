@@ -21,6 +21,15 @@ Illakiya's writing prompts already set the rule: prefer a common Tamil word wher
 | dashboard | தகவல்பலகை | Coinage; confirm with native reviewer |
 | login | உள்நுழைவு | Established; never லாகின் in formal copy |
 | privacy | தனியுரிமை | Established in policy registers |
+| telephone | தொலைபேசி | Established native coinage (தொலை + பேசி) |
+| radio | வானொலி | Established native coinage (வான் + ஒலி) |
+| television | தொலைக்காட்சி | Established native coinage |
+| hospital | மருத்துவமனை | Native; ஹாஸ்பிடல் is speech-only |
+| university | பல்கலைக்கழகம் | Established native coinage |
+| library | நூலகம் | Established native coinage |
+| freedom | விடுதலை | Preferred over சுதந்திரம் in modern registers |
+| problem | சிக்கல் | Native; பிரச்சனை is colloquial |
+| happiness | மகிழ்ச்சி | Native; சந்தோஷம் is colloquial |
 
 ## The coinage procedure
 
@@ -38,6 +47,7 @@ Illakiya's writing prompts already set the rule: prefer a common Tamil word wher
 - **Translating brand names.** Breaks search, support, and the model's own training signal; keep them in Latin script.
 - **One term per screen.** Inconsistent terminology makes help text unsearchable and reads as unreviewed.
 - **Skipping native-speaker review of a new coinage.** A coinage that is grammatical but connotes the wrong thing is worse than the loanword.
+- **Replacing a loanword with a Sanskrit stem.** சுதந்திரம் → விடுதலை is the right direction; சுதந்திரம் → a new Sanskritized noun is not தனித்தமிழ் at all.
 - **Recording the decision nowhere.** The next contributor re-decides, and the glossary never becomes authoritative.
 - **Using a formal term in casual copy.** கைத்தொலைபேசி in an Instagram caption reads as a government notice; match the register.
 
