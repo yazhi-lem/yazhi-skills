@@ -21,10 +21,10 @@ Adhan is Yazhi's Tamil-first language model, built from scratch rather than fine
 
 ## Workflow
 
-1. **Read `ROADMAP_JAX_SLM.md` for the phase you're touching** before writing code — it has the week-by-week scope and the "why this pivot" rationale for the swaram-token design.
+1. **Read [`docs/README.md`](https://github.com/yazhi-lem/adhan/blob/main/docs/README.md) for the current phase** before writing code. The old week-by-week `ROADMAP_JAX_SLM.md` was retired on 2026-11-21; the README and docs index are now the status owners.
 2. **Test the tokenizer with no JAX installed first**: `PYTHONPATH=src python -m adhan_slm.tokenizer.swaram_tokenizer "<text>"` — this is the fastest sanity check and needs zero heavy deps.
 3. **Prefer the CPU training path unless you have CUDA 12 on Linux.** `pip install -e ".[dev,jax,tamil-nlp]"` gets a working CPU stack on macOS/Windows/CI; only add `jax-gpu` when you actually have the hardware.
-4. **Sanity-gate any training change with `--overfit-batch` before a real run** — one batch, loss must collapse — per `docs/CPU_TRAINING.md`. Skipping this wastes a full training budget on a wiring bug.
+4. **Sanity-gate any training change with `--overfit-batch` before a real run** — one batch, loss must collapse — per `docs/training/CPU_TRAINING.md`. Skipping this wastes a full training budget on a wiring bug.
 5. **Use `scripts/prepare_slm_corpus.py` to freeze the tokenizer and pack shards** before training; don't hand-roll corpus prep — vocab size (12,000 default) and sequence length (1,024 default) are baked into the frozen tokenizer.
 6. **Keep tests at `<module>_tests.py`, one file per module under test** — this is a repo-specific convention, distinct from the singular `<module>_test.py` form used in the yazhi-api repo.
 7. **Run `python scripts/run_scraper.py --strategy modern --max-records 80000`** for corpus builds; check `src/data_scraper/merge_corpora.py` before writing a new merge step — one already exists.
@@ -33,7 +33,7 @@ Adhan is Yazhi's Tamil-first language model, built from scratch rather than fine
 
 1. Finish Phase 3: pretrain `adhan-nano` end-to-end on the CPU nano config (`adhan_slm_nano_cpu.yaml`) with gradient accumulation.
 2. Move into Phase 4 — Tamil-specific eval probes via `adhan_slm.eval.run_eval`.
-3. Track progress against `docs/COMPLETION_TRACKER.md`, not memory — it's updated in real time; `docs/PHASE_A_TRACKER.md` is closed and historical only.
+3. Track progress against the repo README and `docs/README.md`, not memory; retired trackers were removed on 2026-11-21 and survive only in git history.
 4. Keep `src/core/` shared constants as the single source for anything used across tokenizer, training, and eval — don't reintroduce per-module copies.
 
 ## Anti-patterns
