@@ -5,7 +5,7 @@
   "license": "GPL-3.0-or-later",
   "skillFormat": "SKILL.md with YAML frontmatter (name, description)",
   "generatedBy": "scripts/build_index.py — do not edit by hand",
-  "count": 99,
+  "count": 102,
   "categories": [
     {
       "id": "org",
@@ -84,6 +84,12 @@
       "title": "Social Media",
       "path": "skills/social-media",
       "count": 8
+    },
+    {
+      "id": "yazhi-code",
+      "title": "Yazhi Code",
+      "path": "skills/yazhi-code",
+      "count": 3
     }
   ],
   "skills": [
@@ -680,6 +686,24 @@
       "category": "social-media",
       "path": "skills/social-media/tone-of-voice-application/SKILL.md",
       "description": "Use when writing or reviewing any social media copy that must match a specific brand voice — captions, posts, reel scripts, or repurposed content. Applies a brand's tone rules consistently and flags when no brand voice reference is available."
+    },
+    {
+      "name": "yazhi-code-frame",
+      "category": "yazhi-code",
+      "path": "skills/yazhi-code/yazhi-code-frame/SKILL.md",
+      "description": "Use when starting a new piece of work or turning a vague idea into a clear, buildable intent. Helps you write the one-sentence outcome, explicit out-of-scope, and the main risk so implementation stays small and reviewable."
+    },
+    {
+      "name": "yazhi-code-handoff",
+      "category": "yazhi-code",
+      "path": "skills/yazhi-code/yazhi-code-handoff/SKILL.md",
+      "description": "Use when a change is complete for its stated intent and you are ready to commit or share it for review. Helps you perform a cold local review, write an honest commit or PR description, and hand off work that another developer can continue without extra context."
+    },
+    {
+      "name": "yazhi-code-implement",
+      "category": "yazhi-code",
+      "path": "skills/yazhi-code/yazhi-code-implement/SKILL.md",
+      "description": "Use when implementing a framed change in small working slices, especially when using an AI coding assistant. Helps you keep the tree runnable, verify each slice locally, and write prompts that produce usable results on the first or second try."
     }
   ]
 }

@@ -13,6 +13,7 @@ Canonical skill catalog for yazhi-lem. Layout: `skills/<category>/<skill-name>/S
 | `org/` | Internal ways of working: ethos, doc colors, healthy code, PRs, releases, operating rhythm, and cross-repo workflows |
 | `repos/` | Per-repo status skills (one per public repo) |
 | `tools/` | `skill-authoring` (contract), `technical-documentation` (doc contract), Google style adoption, API/CLI/MCP design |
+| `yazhi-code/` | Framing a change, implementing it in working slices, and handing it off for review |
 
 Contribution rules live in
 [`tools/skill-authoring/SKILL.md`](tools/skill-authoring/SKILL.md); new docs

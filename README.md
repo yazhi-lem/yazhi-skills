@@ -16,7 +16,7 @@ This is the portable [Agent Skills](https://code.claude.com/docs/en/skills) form
 /plugin install yazhi-skills@yazhi-skills
 ```
 
-All 99 skills load namespaced as `yazhi-skills:<name>` — Claude picks them up automatically when relevant, or you invoke one directly with `/yazhi-skills:tamil-aksharas`. Update later with `/plugin marketplace update yazhi-skills`.
+All 102 skills load namespaced as `yazhi-skills:<name>` — Claude picks them up automatically when relevant, or you invoke one directly with `/yazhi-skills:tamil-aksharas`. Update later with `/plugin marketplace update yazhi-skills`.
 
 Non-interactively:
 
@@ -67,12 +67,12 @@ A `.skill` file is a zip archive containing **exactly one `SKILL.md`, at its roo
 
 | File | Contains | Use it for |
 | --- | --- | --- |
-| [`dist/yazhi-skills.skill`](dist/yazhi-skills.skill) | A generated router `SKILL.md` at the root, plus all 99 skills as reference files under `references/<category>/<name>.md` | Importing the whole collection as one skill |
+| [`dist/yazhi-skills.skill`](dist/yazhi-skills.skill) | A generated router `SKILL.md` at the root, plus all 102 skills as reference files under `references/<category>/<name>.md` | Importing the whole collection as one skill |
 | `dist/skills/<name>.skill` | One skill, its own `SKILL.md` at the archive root, and nothing else | Importing a single skill on its own |
 
-The collection bundle's root `SKILL.md` is a router, not a copy: it carries a trigger line and bundled path per skill, and instructs the reader to open the matching file before acting. That keeps the index small while the full procedural detail stays in the 99 reference files.
+The collection bundle's root `SKILL.md` is a router, not a copy: it carries a trigger line and bundled path per skill, and instructs the reader to open the matching file before acting. That keeps the index small while the full procedural detail stays in the 102 reference files.
 
-Those 99 files are deliberately renamed away from `SKILL.md` on the way in. Shipping them at their repo paths would put 99 `SKILL.md` files in one archive, which is not a valid skill — the builder asserts the one-`SKILL.md` invariant, and CI re-checks it on every bundle.
+Those 102 files are deliberately renamed away from `SKILL.md` on the way in. Shipping them at their repo paths would put 102 `SKILL.md` files in one archive, which is not a valid skill — the builder asserts the one-`SKILL.md` invariant, and CI re-checks it on every bundle.
 
 Rebuild them after changing any skill:
 
@@ -98,7 +98,7 @@ python3 scripts/build_index.py      # rewrite skills.json + .claude-plugin/plugi
 python3 scripts/validate_skills.py  # check every SKILL.md against the repo contract
 ```
 
-## Catalog (99 skills)
+## Catalog (102 skills)
 
 ### Agentic (agentic)
 
@@ -271,6 +271,16 @@ Life skills pitched at a ~12-year-old — how to help one learn, decide, stay sa
 | [`hashtag-and-platform-strategy`](skills/social-media/hashtag-and-platform-strategy/SKILL.md) | Finalizing hashtags and posting notes for social media copy |
 | [`content-quality-review`](skills/social-media/content-quality-review/SKILL.md) | Catching repetition, generic phrasing, and weak hooks before final output |
 | [`tamil-social-content`](skills/social-media/tamil-social-content/SKILL.md) | Adapting social media content into idiomatic Tamil, avoiding literal translations |
+
+### Yazhi Code (yazhi-code)
+
+Framing a change, implementing it in working slices, and handing it off for review.
+
+| Skill | Covers |
+| --- | --- |
+| [`yazhi-code-frame`](skills/yazhi-code/yazhi-code-frame/SKILL.md) | Writing a one-sentence outcome, explicit out-of-scope, and the main risk before implementation starts |
+| [`yazhi-code-implement`](skills/yazhi-code/yazhi-code-implement/SKILL.md) | Implementing a framed change in small working slices with tight AI prompts |
+| [`yazhi-code-handoff`](skills/yazhi-code/yazhi-code-handoff/SKILL.md) | Cold local review, named checks, and an honest commit or PR description |
 
 ## Contributing
 

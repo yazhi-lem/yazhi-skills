@@ -6,7 +6,7 @@ Documentation index for the yazhi-skills repository.
 
 | Document | Covers |
 |---|---|
-| [`../README.md`](../README.md) | Install, catalog (99 skills), contribution workflow |
+| [`../README.md`](../README.md) | Install, catalog (102 skills), contribution workflow |
 | [`pi.md`](./pi.md) | Installing and invoking the skills in the Pi coding agent |
 | [`../brand-voice-reference.md`](../brand-voice-reference.md) | Brand tone-of-voice reference |
 | [`../skills/README.md`](../skills/README.md) | Local skills structure and central catalog |
