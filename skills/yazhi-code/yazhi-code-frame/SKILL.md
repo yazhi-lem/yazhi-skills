@@ -36,6 +36,15 @@ Main risk: <one or two sentences>
 Related skills checked: <names or “none”>
 ```
 
+## Frame quality check
+
+| Field | Ready to start when | Not ready when |
+| --- | --- | --- |
+| Outcome | One observable behaviour someone else could test | Uses words like “improve”, “clean up”, or “support” |
+| Out of scope | Two or three named exclusions a reasonable person would expect | “Nothing, it is small” |
+| Main risk | Names the concrete blocker and the fallback | “It might be hard” |
+| Related skills | At least one checked, or an explicit “none” | Not looked at yet |
+
 ## Anti-patterns
 
 - **Starting to code before the outcome sentence exists.** The first implementation usually solves the wrong problem.

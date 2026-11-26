@@ -24,6 +24,15 @@ The handoff is where speed is protected or lost. A clean local review and an hon
 5. **Integrate only after agreed checks pass.**  
    Address review substance without expanding scope unless the original intent was wrong.
 
+## What each artifact must answer
+
+| Artifact | Must answer | Fails review when |
+| --- | --- | --- |
+| Commit or PR title | What changed, in the imperative | “fix stuff”, “wip”, “updates” |
+| Description | Why the change exists and what it affects | Only restates the diff |
+| Verification | Which command or check ran, and its result | “Tests pass” with no named command |
+| Open points | What is deliberately left for later | Follow-up debt left silent |
+
 ## Checklist before sharing
 
 - [ ] Diff reviewed cold; no unrelated changes.
