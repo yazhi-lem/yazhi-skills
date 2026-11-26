@@ -35,6 +35,7 @@
     "./skills/sovereign/",
     "./skills/tamil/",
     "./skills/tools/",
-    "./skills/yazh-life/"
+    "./skills/yazh-life/",
+    "./skills/yazhi-code/"
   ]
 }
