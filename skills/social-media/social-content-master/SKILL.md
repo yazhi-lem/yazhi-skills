@@ -1,6 +1,6 @@
 ---
 name: social-content-master
-description: Use when a request asks to create, draft, rewrite, or repurpose content for social media — posts, captions, reel/short-form video scripts, or turning one long-form asset into multiple platform posts. Orchestrates the social-media skill set (tone, captions, reel scripts, repurposing, hashtags) into one end-to-end content generation workflow.
+description: Use when one social-media request spans more than one output — several platform posts, a caption plus a reel, or a long-form asset repurposed into a batch — and needs the skills sequenced end to end. Helps you build the brief, route each piece to the right format skill, and deliver one quality-checked block per platform; for a single caption or reel, use that format skill directly.
 ---
 
 This orchestrator skill routes a content request through the right combination of the social-media skill set below, in order, rather than duplicating their logic here. It acts as the entry point for all end-to-end content generation workflows.

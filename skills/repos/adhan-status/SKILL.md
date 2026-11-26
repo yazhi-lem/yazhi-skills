@@ -42,6 +42,6 @@ Adhan is Yazhi's Tamil-first language model, built from scratch rather than fine
 - **Skipping the `--overfit-batch` sanity gate** before a full training run — a silent wiring bug (bad loss masking, wrong shard order) burns hours of CPU/GPU time before surfacing.
 - **Hand-writing a new corpus merge script** instead of extending `src/data_scraper/merge_corpora.py` — duplicates logic that already handles the merge contract.
 - **Training against a GPU-only config on a CPU box** (or vice versa) without checking the config file's `--device` flag — the nano CPU config and default configs are not interchangeable.
-- **Naming a test `test_*.py`** instead of `<module>_tests.py` — it silently won't be collected by this repo's pytest convention.
+- **Treating `test_*.py` as a silent skip.** This repo's pytest config collects `*_tests.py`, `test_*.py` and `*_test.py`; the convention is `<module>_tests.py` for colocated module tests, but a `test_*.py` file still runs. The failure is convention drift, not non-collection.
 
 Cross-reference `yazhi-org-status` for how Adhan fits the rest of the ecosystem, `fine-tuning-workflow` for general pretrain/fine-tune tradeoffs, and `illakiya-status` for the sibling swaram/akshara-level Tamil-input work.

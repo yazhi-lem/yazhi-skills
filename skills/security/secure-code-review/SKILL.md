@@ -1,6 +1,6 @@
 ---
 name: secure-code-review
-description: Use when reviewing a pull request or diff that touches authentication, data input handling, deserialization, or dependencies — before merge, not after. Helps you systematically catch injection, broken authorization, and unsafe dependency changes that functional review tends to miss.
+description: Use when reviewing a normal pull request or diff that touches authentication, data input handling, deserialization, or dependencies — before merge, not after. Helps you systematically catch injection, broken authorization, and unsafe dependency changes; use pr-loophole-review only when a control looks bypassed and codebase-vulnerability-audit for legacy code.
 ---
 
 Security-focused code review is a distinct pass from functional/style review — it assumes every input is hostile and every boundary is a place authorization can be forgotten. Run it on any diff touching input parsing, auth/authz, serialization, external calls, or third-party dependencies, before merge.

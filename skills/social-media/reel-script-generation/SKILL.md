@@ -1,6 +1,6 @@
 ---
 name: reel-script-generation
-description: Use when scripting a short-form video for Instagram Reels, YouTube Shorts, or TikTok from a topic or brief. Produces a timestamped script with visual cues, on-screen text, and a hook designed to work with sound off. Helps you keep beats short and the call to action at the end.
+description: Use when scripting a single short-form video for Instagram Reels, YouTube Shorts, or TikTok from a topic or brief. Produces a timestamped, shootable script with visual cues, on-screen text, and a sound-off hook; for a multi-piece batch use social-content-master instead. Helps you keep beats short and the call to action at the end.
 ---
 
 This skill converts a topic or brief into a structured short-form video script that a video editor or presenter can shoot from directly. It ensures timing, visual cues, and on-screen text are spelled out clearly for production. The output is a shootable script, not a paragraph of ideas — every segment has a time range, a visual, and a line.

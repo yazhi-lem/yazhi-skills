@@ -67,6 +67,17 @@ discovery. Set `disable-model-invocation: true` in a skill's frontmatter to make
 it command-only — not used here, because every skill in this repo is meant to be
 selectable by the model.
 
+## Yazhi extension
+
+The repo ships a small [Yazhi extension](../extensions/yazhi/README.md) that queues `/skill:yazhi-code-orient`, `/skill:yazhi-purpose-gate`, and `/skill:yazhi-review` through `/yazhi-start`, `/yazhi-purpose`, and `/yazhi-review`. It also confirms dangerous shell commands, blocks writes to protected paths, and warns before switching sessions with uncommitted work.
+
+```bash
+mkdir -p ~/.pi/agent/extensions
+ln -s "$PWD/extensions/yazhi" ~/.pi/agent/extensions/yazhi
+```
+
+Run `/reload` after installing. Project-local copies load only after project trust is granted; the extension does not make project agents or extensions safe.
+
 ## The daily rhythm in Pi
 
 Two skills form the day loop and are designed to be invoked explicitly:

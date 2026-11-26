@@ -1,6 +1,6 @@
 ---
 name: yazhi-ops
-description: Use when setting or running Yazhi's operating cadence — the daily digest, weekly review, monthly gate, and quarterly reset — or when work is slipping and you need to know which ritual was skipped. Helps you run the rhythm as a system instead of improvising each week.
+description: Use when setting or running Yazhi's operating cadence — the daily digest, weekly review, monthly gate, and quarterly reset — or when work is slipping and you need to know which ritual was skipped. Helps you run the rhythm as a system; for the hour-by-hour day itself use yazhi-daily-rhythm.
 ---
 
 Yazhi runs on a cadence, not a backlog. The cadence is four loops — daily, weekly, monthly, quarterly — each with one owner, one artefact, and one gate. Capitol is the read model over Linear and GitHub, so a number means the same thing on the console, in the Slack digest, and in the `/capitol` command. When work slips, the question is never "who is slow" but "which loop was skipped". This skill owns the loops; `yazhi-daily-rhythm` owns the engineer's day inside them.

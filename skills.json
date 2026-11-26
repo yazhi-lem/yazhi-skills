@@ -5,7 +5,7 @@
   "license": "GPL-3.0-or-later",
   "skillFormat": "SKILL.md with YAML frontmatter (name, description)",
   "generatedBy": "scripts/build_index.py — do not edit by hand",
-  "count": 99,
+  "count": 117,
   "categories": [
     {
       "id": "org",
@@ -23,7 +23,7 @@
       "id": "repos",
       "title": "Repositories",
       "path": "skills/repos",
-      "count": 6
+      "count": 5
     },
     {
       "id": "gtm",
@@ -84,6 +84,30 @@
       "title": "Social Media",
       "path": "skills/social-media",
       "count": 8
+    },
+    {
+      "id": "design",
+      "title": "Design",
+      "path": "skills/design",
+      "count": 1
+    },
+    {
+      "id": "yazhi-code",
+      "title": "Yazhi Code",
+      "path": "skills/yazhi-code",
+      "count": 11
+    },
+    {
+      "id": "yazhi-purpose",
+      "title": "Yazhi Purpose",
+      "path": "skills/yazhi-purpose",
+      "count": 2
+    },
+    {
+      "id": "indic",
+      "title": "Indic & Multicultural",
+      "path": "skills/indic",
+      "count": 5
     }
   ],
   "skills": [
@@ -97,7 +121,7 @@
       "name": "org-doc-authoring",
       "category": "org",
       "path": "skills/org/org-doc-authoring/SKILL.md",
-      "description": "Use when writing a new Yazhi doc and you need to pick its color — green for living state, blue for a frozen contract, orange for provisional work — and set its header, expiry, and promotion path. Helps you stop the three-way drift where status, specs, and drafts all look equally authoritative."
+      "description": "Use when writing a new Yazhi doc and you need to pick its color — green for living state, blue for a frozen contract, orange for provisional work — and set its promotion path. Helps you stop three-way drift; file placement, size, and archive rules belong to technical-documentation."
     },
     {
       "name": "org-ethos",
@@ -151,13 +175,13 @@
       "name": "yazhi-daily-rhythm",
       "category": "org",
       "path": "skills/org/yazhi-daily-rhythm/SKILL.md",
-      "description": "Use when starting a Yazhi engineering day or when a day has gone sideways and you need to recover the rhythm. Gives the hour-by-hour block plan — digest, deep work, review window, close — and the checks at each block boundary."
+      "description": "Use when starting a Yazhi engineering day or when a day has gone sideways and you need the hour-by-hour recovery. Gives the four blocks, three boundaries, and close checks; for weekly/monthly cadence or escalation use yazhi-ops instead."
     },
     {
       "name": "yazhi-ops",
       "category": "org",
       "path": "skills/org/yazhi-ops/SKILL.md",
-      "description": "Use when setting or running Yazhi's operating cadence — the daily digest, weekly review, monthly gate, and quarterly reset — or when work is slipping and you need to know which ritual was skipped. Helps you run the rhythm as a system instead of improvising each week."
+      "description": "Use when setting or running Yazhi's operating cadence — the daily digest, weekly review, monthly gate, and quarterly reset — or when work is slipping and you need to know which ritual was skipped. Helps you run the rhythm as a system; for the hour-by-hour day itself use yazhi-daily-rhythm."
     },
     {
       "name": "yazhi-org-status",
@@ -194,12 +218,6 @@
       "category": "repos",
       "path": "skills/repos/open-sangam-status/SKILL.md",
       "description": "Use when working in the open-sangam repository — the Sangam-era Tamil literature reader, its corpus pipeline, or the சங்க அவை (Sangam Avai) agent assembly. Helps you find the current phase and horizon before proposing scope, and avoid re-scraping or re-translating work already tracked."
-    },
-    {
-      "name": "styleguide-status",
-      "category": "repos",
-      "path": "skills/repos/styleguide-status/SKILL.md",
-      "description": "Use when asked to change, sync, or reference the styleguide repository — a fork of google/styleguide. Helps you recognize it as an upstream reference rather than a place to author new conventions, and route Yazhi-specific style decisions elsewhere."
     },
     {
       "name": "yazh-unity-status",
@@ -391,7 +409,7 @@
       "name": "secure-code-review",
       "category": "security",
       "path": "skills/security/secure-code-review/SKILL.md",
-      "description": "Use when reviewing a pull request or diff that touches authentication, data input handling, deserialization, or dependencies — before merge, not after. Helps you systematically catch injection, broken authorization, and unsafe dependency changes that functional review tends to miss."
+      "description": "Use when reviewing a normal pull request or diff that touches authentication, data input handling, deserialization, or dependencies — before merge, not after. Helps you systematically catch injection, broken authorization, and unsafe dependency changes; use pr-loophole-review only when a control looks bypassed and codebase-vulnerability-audit for legacy code."
     },
     {
       "name": "secure-design-patterns",
@@ -547,7 +565,7 @@
       "name": "technical-documentation",
       "category": "tools",
       "path": "skills/tools/technical-documentation/SKILL.md",
-      "description": "Use when writing, rewriting, reviewing, or retiring a Markdown doc in any yazhi-lem repository. Enforces one doc structure, status labels, naming, link checks, and archive rules so docs stay navigable instead of multiplying as stale snapshots."
+      "description": "Use when writing, rewriting, reviewing, or retiring a Markdown doc in any yazhi-lem repository and you need the file contract — header, placement, size budget, link checks, archive rules. Enforces one structure; the green/blue/orange color decision belongs to org-doc-authoring."
     },
     {
       "name": "age-appropriate-explaining",
@@ -655,19 +673,19 @@
       "name": "reel-script-generation",
       "category": "social-media",
       "path": "skills/social-media/reel-script-generation/SKILL.md",
-      "description": "Use when scripting a short-form video for Instagram Reels, YouTube Shorts, or TikTok from a topic or brief. Produces a timestamped script with visual cues, on-screen text, and a hook designed to work with sound off. Helps you keep beats short and the call to action at the end."
+      "description": "Use when scripting a single short-form video for Instagram Reels, YouTube Shorts, or TikTok from a topic or brief. Produces a timestamped, shootable script with visual cues, on-screen text, and a sound-off hook; for a multi-piece batch use social-content-master instead. Helps you keep beats short and the call to action at the end."
     },
     {
       "name": "social-caption-writing",
       "category": "social-media",
       "path": "skills/social-media/social-caption-writing/SKILL.md",
-      "description": "Use when drafting a social media post or caption for Instagram, LinkedIn, X/Twitter, or Facebook from a topic, brief, or idea. Applies platform-specific length limits and a Hook-Value-CTA structure to produce publish-ready copy."
+      "description": "Use when drafting a single social media post or caption for Instagram, LinkedIn, X/Twitter, or Facebook from a topic, brief, or idea. Applies platform-specific length limits and a Hook-Value-CTA structure; for a multi-piece batch use social-content-master instead."
     },
     {
       "name": "social-content-master",
       "category": "social-media",
       "path": "skills/social-media/social-content-master/SKILL.md",
-      "description": "Use when a request asks to create, draft, rewrite, or repurpose content for social media — posts, captions, reel/short-form video scripts, or turning one long-form asset into multiple platform posts. Orchestrates the social-media skill set (tone, captions, reel scripts, repurposing, hashtags) into one end-to-end content generation workflow."
+      "description": "Use when one social-media request spans more than one output — several platform posts, a caption plus a reel, or a long-form asset repurposed into a batch — and needs the skills sequenced end to end. Helps you build the brief, route each piece to the right format skill, and deliver one quality-checked block per platform; for a single caption or reel, use that format skill directly."
     },
     {
       "name": "tamil-social-content",
@@ -680,6 +698,120 @@
       "category": "social-media",
       "path": "skills/social-media/tone-of-voice-application/SKILL.md",
       "description": "Use when writing or reviewing any social media copy that must match a specific brand voice — captions, posts, reel scripts, or repurposed content. Applies a brand's tone rules consistently and flags when no brand voice reference is available."
+    },
+    {
+      "name": "visual-design",
+      "category": "design",
+      "path": "skills/design/visual-design/SKILL.md",
+      "description": "Use when designing or reviewing a screen, component, or visual asset and you need concrete decisions on hierarchy, spacing, typography, color/contrast, and interaction states. Helps you ship a layout that reads at real sizes instead of relying on taste; for Tamil glyph shaping use tamil-localization."
+    },
+    {
+      "name": "yazhi-code-debug",
+      "category": "yazhi-code",
+      "path": "skills/yazhi-code/yazhi-code-debug/SKILL.md",
+      "description": "Use when a Yazhi repo's build, test, or runtime behavior is wrong and the cause is unknown — reproduce, isolate, fix, and add a regression check. Helps you debug in small checkpoints instead of rewriting code blindly; security compromise goes to incident-response."
+    },
+    {
+      "name": "yazhi-code-deliver",
+      "category": "yazhi-code",
+      "path": "skills/yazhi-code/yazhi-code-deliver/SKILL.md",
+      "description": "Use when a merged yazhi-code change must reach a client or release channel — package it, deploy it, verify it in the target environment, and close the feedback loop. Helps you move from \"merged\" to \"working for the user\" without skipping rollback or localization checks; internal releases use org-release."
+    },
+    {
+      "name": "yazhi-code-design",
+      "category": "yazhi-code",
+      "path": "skills/yazhi-code/yazhi-code-design/SKILL.md",
+      "description": "Use when a framed yazhi-code change needs an implementation design before code — module boundaries, data flow, interface shape, and test strategy. Helps you turn the outcome sentence into a small, reviewable plan; visual hierarchy belongs to visual-design and Tamil copy to tamil-localization."
+    },
+    {
+      "name": "yazhi-code-frame",
+      "category": "yazhi-code",
+      "path": "skills/yazhi-code/yazhi-code-frame/SKILL.md",
+      "description": "Use when starting a new piece of work or turning a vague idea into a clear, buildable intent. Helps you write the one-sentence outcome, explicit out-of-scope, and the main risk so implementation stays small and reviewable."
+    },
+    {
+      "name": "yazhi-code-handoff",
+      "category": "yazhi-code",
+      "path": "skills/yazhi-code/yazhi-code-handoff/SKILL.md",
+      "description": "Use when a change is complete for its stated intent and you are ready to commit or share it for review. Helps you perform a cold local review, write an honest commit or PR description, and hand off work that another developer can continue without extra context."
+    },
+    {
+      "name": "yazhi-code-implement",
+      "category": "yazhi-code",
+      "path": "skills/yazhi-code/yazhi-code-implement/SKILL.md",
+      "description": "Use when implementing a framed change in small working slices, especially when using an AI coding assistant. Helps you keep the tree runnable, verify each slice locally, and write prompts that produce usable results on the first or second try."
+    },
+    {
+      "name": "yazhi-code-improve",
+      "category": "yazhi-code",
+      "path": "skills/yazhi-code/yazhi-code-improve/SKILL.md",
+      "description": "Use when recurring Yazhi friction should become a reusable improvement — a script, prompt template, skill, extension, or documented check in any repo. Helps you baseline the pain, choose the smallest artifact, and measure adoption; SKILL.md formatting belongs to skill-authoring."
+    },
+    {
+      "name": "yazhi-code-maintain",
+      "category": "yazhi-code",
+      "path": "skills/yazhi-code/yazhi-code-maintain/SKILL.md",
+      "description": "Use when running a routine health pass on one Yazhi repo — generated artifacts, CI, test gates, dated status docs, and toolchain drift — and you need a dated note with one next improvement. Helps you keep repos runnable between features; org cadence is yazhi-ops and security scoring is security-posture-health-check."
+    },
+    {
+      "name": "yazhi-code-orient",
+      "category": "yazhi-code",
+      "path": "skills/yazhi-code/yazhi-code-orient/SKILL.md",
+      "description": "Use when entering an unfamiliar Yazhi repo or task and you need a read-only map before framing any change. Helps you find the current source of truth, build gates, conventions, and trust boundaries; for ecosystem status use yazhi-org-status, not this skill."
+    },
+    {
+      "name": "yazhi-code-refactor",
+      "category": "yazhi-code",
+      "path": "skills/yazhi-code/yazhi-code-refactor/SKILL.md",
+      "description": "Use when changing code structure without intending to change behavior — extracting a helper, moving a boundary, removing duplication, or renaming across a Yazhi repo. Helps you keep behavior constant with characterization checks and small reviewable steps; feature work goes to yazhi-code-implement."
+    },
+    {
+      "name": "yazhi-code-standards",
+      "category": "yazhi-code",
+      "path": "skills/yazhi-code/yazhi-code-standards/SKILL.md",
+      "description": "Use when writing, refactoring, or reviewing Yazhi code before you push it, and you want one shared better-code standard instead of style-by-opinion. Helps you apply Google-leaning naming, error, test, and review rules; google-style-adoption owns which language guide applies."
+    },
+    {
+      "name": "yazhi-purpose-gate",
+      "category": "yazhi-purpose",
+      "path": "skills/yazhi-purpose/yazhi-purpose-gate/SKILL.md",
+      "description": "Use when deciding whether a proposed Yazhi feature fits our purpose — sovereign, Tamil-native, and open by default — before it is framed or reviewed. Helps you prove those three defaults with evidence instead of slogans; the merge-time three-axis check is yazhi-review."
+    },
+    {
+      "name": "yazhi-review",
+      "category": "yazhi-purpose",
+      "path": "skills/yazhi-purpose/yazhi-review/SKILL.md",
+      "description": "Use when reviewing a Yazhi change before merge or release and you need one verdict across security, code, and Tamil language, plus sovereign/native/open evidence. Helps you route each axis to its owning skill and return a single pass/fail note; early feature-fit belongs to yazhi-purpose-gate."
+    },
+    {
+      "name": "indic-cultural-context",
+      "category": "indic",
+      "path": "skills/indic/indic-cultural-context/SKILL.md",
+      "description": "Use when content, product behavior, or research across Indian languages needs cultural review — names, regions, festivals, food, family terms, caste/community references, or humor. Helps you keep a living, sourced context register instead of relying on stereotypes; Tamil cultural accuracy stays with org-ethos."
+    },
+    {
+      "name": "indic-localization",
+      "category": "indic",
+      "path": "skills/indic/indic-localization/SKILL.md",
+      "description": "Use when adapting a UI for more than one Indian language — fonts, shaping, text expansion, plurals, numbers, dates, and keyboard input. Helps you avoid layouts that only work in English or one script; Tamil-specific font and string rules belong to tamil-localization."
+    },
+    {
+      "name": "indic-multilingual-content",
+      "category": "indic",
+      "path": "skills/indic/indic-multilingual-content/SKILL.md",
+      "description": "Use when producing or reviewing content in more than one Indian language — translations, bilingual UI copy, code-mixed social posts, or a single campaign across regions. Helps you keep meaning and register consistent without flattening languages into literal translation; original Tamil copy stays with tamil-content-writing."
+    },
+    {
+      "name": "indic-script-fundamentals",
+      "category": "indic",
+      "path": "skills/indic/indic-script-fundamentals/SKILL.md",
+      "description": "Use when code handles text in more than one Indic script — Devanagari, Bengali, Tamil, Telugu, Kannada, Malayalam, Gurmukhi, and others — and grapheme, encoding, or normalization bugs appear. Helps you treat clusters as units; Tamil-specific glyph work belongs to tamil-text-processing."
+    },
+    {
+      "name": "indic-transliteration",
+      "category": "indic",
+      "path": "skills/indic/indic-transliteration/SKILL.md",
+      "description": "Use when converting between Indic scripts and Latin romanization, or between Indic scripts, for search, slugs, voice input, or user-generated \"Hinglish/Tanglish\" text. Helps you choose a scheme and keep ambiguity visible; Tamil-specific romanization belongs to tamil-transliteration."
     }
   ]
 }

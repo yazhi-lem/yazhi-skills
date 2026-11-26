@@ -33,8 +33,9 @@ Options:
       --pi-project     Install into ./.pi/skills (Pi project skills)
       --agents         Install into ~/.agents/skills (Agent Skills spec)
   -c, --category NAME  Install only this category (repeatable).
-                       One of: agentic ai-ml computer-use fde gtm org repos
+                       One of: agentic ai-ml computer-use design fde gtm indic org repos
                                security social-media sovereign tamil tools yazh-life
+                               yazhi-code yazhi-purpose
   -m, --mode MODE      symlink (default) or copy
   -f, --force          Overwrite existing entries with the same name
   -n, --dry-run        Print what would happen, change nothing

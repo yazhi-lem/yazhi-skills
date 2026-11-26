@@ -30,7 +30,7 @@ Three bugs in the character formula were fixed in adhan PR #130: the Grantha set
 ## Anti-patterns
 
 - **Quoting "pure Tamil" from the character formula alone.** It measures script, not vocabulary — a Sanskrit stem in Tamil letters scores 1.0, and a report claiming purity is wrong.
-- **Using the code's Grantha set without ஶ.** Systematically overstates purity on ஶ்ரீ, ஶிவா, and any name using that letter.
+- **Quoting pre-#130 purity numbers as current.** The old Grantha set omitted ஶ and counted க/pulli as Grantha; those scores are not comparable with post-fix numbers.
 - **Confusing token-level and document-level purity.** A document made of 95% pure tokens can be 40% mixed documents; the two numbers answer different questions.
 - **Comparing runs with different thresholds.** A 0.95 threshold and a 0.80 threshold produce different "pure" corpora; always cite the threshold.
 - **Scoring a sample and calling it the corpus.** `--docs 20000` is a stride-derived sample; say so, or run `--all`.

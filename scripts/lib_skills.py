@@ -29,6 +29,10 @@ CATEGORY_TITLES: Dict[str, str] = {
     "tools": "Tools",
     "yazh-life": "Yazh Life Skills",
     "social-media": "Social Media",
+    "design": "Design",
+    "yazhi-code": "Yazhi Code",
+    "yazhi-purpose": "Yazhi Purpose",
+    "indic": "Indic & Multicultural",
 }
 
 FRONTMATTER_KEYS = ("name", "description")

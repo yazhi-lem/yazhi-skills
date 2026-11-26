@@ -18,7 +18,7 @@ Each public repo has a dedicated status skill with a fuller layer map and workfl
 | `illakiya` | Native Tamil keyboard + Sarvam-powered writing web app | Web app live; Rust/Kotlin core pre-1.0. See `illakiya/docs/README.md` | `illakiya-status` |
 | yazhi-dev | Public community site + `/chat` demo | 3D site shipped; chat streams through yazhi-api. See [docs/README.md](https://github.com/yazhi-lem/yazhi-dev/blob/main/docs/README.md) | `yazhi-dev-status` |
 | `capitol` | Local Linear/GitHub/Slack operator console | Live tooling with a 2026-10-03 data snapshot; see `capitol/README.md` | private |
-| `styleguide` | Fork of Google style guides | Upstream reference, last synced 2025-11-13 — not Yazhi policy | `styleguide-status` |
+| `styleguide` | Fork of Google style guides | Upstream reference, last synced 2025-11-13 — not Yazhi policy | `google-style-adoption` |
 | `yazhi-skills` | Shared skill catalog | 99 skills, including `technical-documentation` and the `org/` ways-of-working skills | — |
 | `books`, `yazh-kutty` | Placeholder repos | No commits or code yet; founder-gated scope | — |
 
@@ -47,4 +47,4 @@ Each public repo has a dedicated status skill with a fuller layer map and workfl
 - **Overriding the ruff baseline wholesale.** Run `scripts/ruff_baseline.py`, not `ruff check --fix`.
 - **Re-deriving corpus stats by hand.** Run `python -m ai.translate_with_gemini --status` from `open-sangam/backend/python/`.
 
-Cross-reference the per-repo skills above for detail below ecosystem level, the `eco/` skills for work that spans repos, `technical-documentation` for the shared doc contract, and `sovereign-cloud-architecture` / `airgapped-llm-deployment` for the zero-cloud posture.
+Cross-reference the per-repo skills above for detail below ecosystem level, the `org/` skills for work that spans repos, `technical-documentation` for the shared doc contract, and `sovereign-cloud-architecture` / `airgapped-llm-deployment` for the zero-cloud posture.

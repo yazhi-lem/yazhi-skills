@@ -28,6 +28,7 @@ from lib_skills import (  # noqa: E402
 )
 
 WORD_MIN, WORD_MAX = 350, 850
+TARGET_MIN, TARGET_MAX = 400, 700  # skill-authoring's stated body target
 DESC_MAX = 1024
 
 
@@ -128,7 +129,13 @@ def main() -> int:
 
         words = skill.word_count
         if not WORD_MIN <= words <= WORD_MAX:
-            warn(rel, f"body is {words} words (target {WORD_MIN}-{WORD_MAX})")
+            warn(rel, f"body is {words} words (hard bounds {WORD_MIN}-{WORD_MAX})")
+        elif words > TARGET_MAX:
+            warn(
+                rel,
+                f"body is {words} words (contract target {TARGET_MIN}-{TARGET_MAX}; "
+                "split reference material into a linked skill or trim)",
+            )
 
         # Cross-references in this repo always read "see `other-skill`" or
         # "per `other-skill`", and no skill name contains a digit. Both filters

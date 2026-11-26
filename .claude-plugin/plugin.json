@@ -3,7 +3,7 @@
   "name": "yazhi-skills",
   "displayName": "Yazhi Skills",
   "version": "1.0.0",
-  "description": "Curated Agent Skills powering Yazhi: forward-deployed engineering, AI/ML, agentic systems, sovereign AI, security, Tamil language and script, computer use, developer tooling, cross-repo ways of working, and life skills for a 12-year-old.",
+  "description": "Curated Agent Skills powering Yazhi: idea-to-client yazhi-code pipeline, visual design, forward-deployed engineering, AI/ML, agentic systems, sovereign AI, security, Tamil language and script, computer use, developer tooling, cross-repo ways of working, and life skills for a 12-year-old.",
   "author": {
     "name": "yazhi-lem",
     "url": "https://github.com/yazhi-lem"
@@ -19,6 +19,8 @@
     "sovereign-ai",
     "forward-deployed-engineering",
     "computer-use",
+    "design",
+    "yazhi-code",
     "life-skills",
     "kids"
   ],
@@ -26,8 +28,10 @@
     "./skills/agentic/",
     "./skills/ai-ml/",
     "./skills/computer-use/",
+    "./skills/design/",
     "./skills/fde/",
     "./skills/gtm/",
+    "./skills/indic/",
     "./skills/org/",
     "./skills/repos/",
     "./skills/security/",
@@ -35,6 +39,8 @@
     "./skills/sovereign/",
     "./skills/tamil/",
     "./skills/tools/",
-    "./skills/yazh-life/"
+    "./skills/yazh-life/",
+    "./skills/yazhi-code/",
+    "./skills/yazhi-purpose/"
   ]
 }

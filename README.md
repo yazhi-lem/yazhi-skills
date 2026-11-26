@@ -1,9 +1,11 @@
 # yazhi-skills
 Curated list of skills powering Yazhi
 
-Current status and the docs map live in [`docs/README.md`](./docs/README.md); cross-repo orientation is in [`yazhi-org-status`](skills/org/yazhi-org-status/SKILL.md).
+Current status and the docs map live in [`docs/README.md`](./docs/README.md); cross-repo orientation is in [`yazhi-org-status`](skills/org/yazhi-org-status/SKILL.md). For a human-facing split by audience and domain, see [`collections/`](collections/README.md).
 
 Each skill lives at `skills/<category>/<skill-name>/SKILL.md` and follows a common contract: YAML frontmatter with a `name` (matching its directory) and a `description` starting with "Use when...", followed by a procedural, checklist-driven body. See [`skill-authoring`](skills/tools/skill-authoring/SKILL.md) for the contribution guide and [`technical-documentation`](skills/tools/technical-documentation/SKILL.md) for the docs contract used across yazhi-lem repos. Repo-local skills are indexed in [`skills/README.md`](skills/README.md).
+
+New here? Start with [Choose a skill](docs/choose-a-skill.md) — it routes by task and audience (Yazhi maintainers, developers, designers, commons) instead of by category. The [2026-11-27 skills audit](docs/skills-audit-2026-11-27.md) records what is duplicated, inconsistent, or still being consolidated.
 
 This is the portable [Agent Skills](https://code.claude.com/docs/en/skills) format, so the same files work in Claude Code, Claude Desktop, Pi, and any other tool that reads `SKILL.md`. See [Install](#install) for how to import them; Pi users can jump to [`docs/pi.md`](docs/pi.md).
 
@@ -16,7 +18,7 @@ This is the portable [Agent Skills](https://code.claude.com/docs/en/skills) form
 /plugin install yazhi-skills@yazhi-skills
 ```
 
-All 99 skills load namespaced as `yazhi-skills:<name>` — Claude picks them up automatically when relevant, or you invoke one directly with `/yazhi-skills:tamil-aksharas`. Update later with `/plugin marketplace update yazhi-skills`.
+All 117 skills load namespaced as `yazhi-skills:<name>` — Claude picks them up automatically when relevant, or you invoke one directly with `/yazhi-skills:tamil-aksharas`. Update later with `/plugin marketplace update yazhi-skills`.
 
 Non-interactively:
 
@@ -67,12 +69,12 @@ A `.skill` file is a zip archive containing **exactly one `SKILL.md`, at its roo
 
 | File | Contains | Use it for |
 | --- | --- | --- |
-| [`dist/yazhi-skills.skill`](dist/yazhi-skills.skill) | A generated router `SKILL.md` at the root, plus all 99 skills as reference files under `references/<category>/<name>.md` | Importing the whole collection as one skill |
+| [`dist/yazhi-skills.skill`](dist/yazhi-skills.skill) | A generated router `SKILL.md` at the root, plus all 117 skills as reference files under `references/<category>/<name>.md` | Importing the whole collection as one skill |
 | `dist/skills/<name>.skill` | One skill, its own `SKILL.md` at the archive root, and nothing else | Importing a single skill on its own |
 
-The collection bundle's root `SKILL.md` is a router, not a copy: it carries a trigger line and bundled path per skill, and instructs the reader to open the matching file before acting. That keeps the index small while the full procedural detail stays in the 99 reference files.
+The collection bundle's root `SKILL.md` is a router, not a copy: it carries a trigger line and bundled path per skill, and instructs the reader to open the matching file before acting. That keeps the index small while the full procedural detail stays in the 117 reference files.
 
-Those 99 files are deliberately renamed away from `SKILL.md` on the way in. Shipping them at their repo paths would put 99 `SKILL.md` files in one archive, which is not a valid skill — the builder asserts the one-`SKILL.md` invariant, and CI re-checks it on every bundle.
+Those 117 files are deliberately renamed away from `SKILL.md` on the way in. Shipping them at their repo paths would put 117 `SKILL.md` files in one archive, which is not a valid skill — the builder asserts the one-`SKILL.md` invariant, and CI re-checks it on every bundle.
 
 Rebuild them after changing any skill:
 
@@ -98,7 +100,7 @@ python3 scripts/build_index.py      # rewrite skills.json + .claude-plugin/plugi
 python3 scripts/validate_skills.py  # check every SKILL.md against the repo contract
 ```
 
-## Catalog (99 skills)
+## Catalog (117 skills)
 
 ### Agentic (agentic)
 
@@ -152,7 +154,6 @@ One skill per public yazhi-lem repository — its own layer map, workflow, next 
 | [`yazh-unity-status`](skills/repos/yazh-unity-status/SKILL.md) | The AR/XR Tamil pet app: endless-runner pivot, on-device inference, store blockers |
 | [`illakiya-status`](skills/repos/illakiya-status/SKILL.md) | The Rust + Kotlin Tamil Android keyboard: layout, dictionary, sandhi engine |
 | [`yazhi-dev-status`](skills/repos/yazhi-dev-status/SKILL.md) | The yazhi.dev site and `/chat` demo: backend contract, design history |
-| [`styleguide-status`](skills/repos/styleguide-status/SKILL.md) | The google/styleguide fork: when (not) to edit it |
 
 ### Forward-Deployed Engineering (fde)
 
@@ -271,6 +272,55 @@ Life skills pitched at a ~12-year-old — how to help one learn, decide, stay sa
 | [`hashtag-and-platform-strategy`](skills/social-media/hashtag-and-platform-strategy/SKILL.md) | Finalizing hashtags and posting notes for social media copy |
 | [`content-quality-review`](skills/social-media/content-quality-review/SKILL.md) | Catching repetition, generic phrasing, and weak hooks before final output |
 | [`tamil-social-content`](skills/social-media/tamil-social-content/SKILL.md) | Adapting social media content into idiomatic Tamil, avoiding literal translations |
+
+### Design (design)
+
+Visual decisions made explicit: hierarchy, spacing, type, contrast, states, and real-content checks. Tamil glyph behavior stays in `tamil/`.
+
+| Skill | Covers |
+| --- | --- |
+| [`visual-design`](skills/design/visual-design/SKILL.md) | Designing or reviewing screens and components with concrete hierarchy, spacing, type, contrast, and state defaults |
+
+### Yazhi Code (yazhi-code)
+
+Idea-to-client pipeline plus a support loop for any Yazhi repo: orient → frame → design → implement → handoff → deliver, with `standards` as the shared checklist and `debug` / `refactor` / `maintain` / `improve` feeding the next frame.
+
+| Skill | Covers |
+| --- | --- |
+| [`yazhi-code-orient`](skills/yazhi-code/yazhi-code-orient/SKILL.md) | Read-only repo map: source of truth, gates, boundaries, and trust surface before framing |
+| [`yazhi-code-frame`](skills/yazhi-code/yazhi-code-frame/SKILL.md) | Writing a one-sentence outcome, explicit out-of-scope, and the main risk before implementation starts |
+| [`yazhi-code-design`](skills/yazhi-code/yazhi-code-design/SKILL.md) | Turning the frame into module boundaries, interface shape, data flow, and a falsifiable proof |
+| [`yazhi-code-standards`](skills/yazhi-code/yazhi-code-standards/SKILL.md) | Google-leaning better-code checklist for writing, review, and the pre-push gate |
+| [`yazhi-code-implement`](skills/yazhi-code/yazhi-code-implement/SKILL.md) | Implementing a framed change in small working slices with tight AI prompts |
+| [`yazhi-code-debug`](skills/yazhi-code/yazhi-code-debug/SKILL.md) | Reproduce, isolate, instrument, fix, and regression-check ordinary code failures in checkpoints |
+| [`yazhi-code-refactor`](skills/yazhi-code/yazhi-code-refactor/SKILL.md) | Behavior-preserving structural changes with characterization checks and boring diffs |
+| [`yazhi-code-handoff`](skills/yazhi-code/yazhi-code-handoff/SKILL.md) | Cold local review, named checks, and an honest commit or PR description |
+| [`yazhi-code-deliver`](skills/yazhi-code/yazhi-code-deliver/SKILL.md) | Moving merged code to a working client with environment proof and rollback |
+| [`yazhi-code-maintain`](skills/yazhi-code/yazhi-code-maintain/SKILL.md) | Dated single-repo health pass over gates, generated artifacts, docs dates, and toolchain drift |
+| [`yazhi-code-improve`](skills/yazhi-code/yazhi-code-improve/SKILL.md) | Turning recurring friction into a small owned artifact with a baseline and adoption path |
+
+### Yazhi Purpose (yazhi-purpose)
+
+Purpose fit and the merge-time verdict: sovereign defaults, Tamil-native craft, and open by default, routed to existing security/code/language owners.
+
+| Skill | Covers |
+| --- | --- |
+| [`yazhi-purpose-gate`](skills/yazhi-purpose/yazhi-purpose-gate/SKILL.md) | Proving a proposed feature is sovereign, Tamil-native, and open by default before framing |
+| [`yazhi-review`](skills/yazhi-purpose/yazhi-review/SKILL.md) | One pre-merge verdict across security, code, and language with purpose evidence |
+
+### Indic & Multicultural (indic)
+
+An evolving side-collection for multilingual Indic and cross-cultural work, beside the mature Tamil category.
+
+| Skill | Covers |
+| --- | --- |
+| [`indic-script-fundamentals`](skills/indic/indic-script-fundamentals/SKILL.md) | Cross-script Unicode, grapheme, normalization, and legacy-encoding rules |
+| [`indic-transliteration`](skills/indic/indic-transliteration/SKILL.md) | Romanization and cross-script mapping with ambiguity preserved |
+| [`indic-multilingual-content`](skills/indic/indic-multilingual-content/SKILL.md) | Original-language drafting, register, code-mixing, and batch review |
+| [`indic-localization`](skills/indic/indic-localization/SKILL.md) | Fonts, shaping, expansion, plurals, numbers, and input across Indic locales |
+| [`indic-cultural-context`](skills/indic/indic-cultural-context/SKILL.md) | Living, sourced register for region/community context and cultural review |
+
+A thin [Pi extension](extensions/yazhi/README.md) adds `/yazhi-start`, `/yazhi-purpose`, and `/yazhi-review`, plus conservative safety gates.
 
 ## Contributing
 

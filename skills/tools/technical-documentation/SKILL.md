@@ -1,6 +1,6 @@
 ---
 name: technical-documentation
-description: Use when writing, rewriting, reviewing, or retiring a Markdown doc in any yazhi-lem repository. Enforces one doc structure, status labels, naming, link checks, and archive rules so docs stay navigable instead of multiplying as stale snapshots.
+description: Use when writing, rewriting, reviewing, or retiring a Markdown doc in any yazhi-lem repository and you need the file contract — header, placement, size budget, link checks, archive rules. Enforces one structure; the green/blue/orange color decision belongs to org-doc-authoring.
 ---
 
 Yazhi docs fail when they drift out of sync with the code or when three "current status" notes disagree. One short, dated doc per topic beats a pile of plausible snapshots. This skill applies to authored Markdown; generated corpus exports such as open-sangam's `obsidian-vault/` are data, not docs.

@@ -1,6 +1,6 @@
 ---
 name: social-caption-writing
-description: Use when drafting a social media post or caption for Instagram, LinkedIn, X/Twitter, or Facebook from a topic, brief, or idea. Applies platform-specific length limits and a Hook-Value-CTA structure to produce publish-ready copy.
+description: Use when drafting a single social media post or caption for Instagram, LinkedIn, X/Twitter, or Facebook from a topic, brief, or idea. Applies platform-specific length limits and a Hook-Value-CTA structure; for a multi-piece batch use social-content-master instead.
 ---
 
 This skill turns a raw topic or brief into a platform-correct post using a consistent Hook → Value → CTA structure. It respects each platform's real length and style constraints so that the generated copy is ready to publish without breaking layout or feed previews.

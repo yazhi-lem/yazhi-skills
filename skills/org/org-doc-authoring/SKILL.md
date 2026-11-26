@@ -1,6 +1,6 @@
 ---
 name: org-doc-authoring
-description: Use when writing a new Yazhi doc and you need to pick its color — green for living state, blue for a frozen contract, orange for provisional work — and set its header, expiry, and promotion path. Helps you stop the three-way drift where status, specs, and drafts all look equally authoritative.
+description: Use when writing a new Yazhi doc and you need to pick its color — green for living state, blue for a frozen contract, orange for provisional work — and set its promotion path. Helps you stop three-way drift; file placement, size, and archive rules belong to technical-documentation.
 ---
 
 Yazhi docs fail when a draft, a contract, and a status page all look the same on the page. Color is the fix: it tells a reader how much authority a doc has before they read a word. Green describes the present and changes in place; blue is frozen and changes only by version; orange is provisional and must expire. `technical-documentation` owns the file contract and archive rules; this skill owns the color decision and the promotion path between colors.
@@ -9,9 +9,9 @@ Yazhi docs fail when a draft, a contract, and a status page all look the same on
 
 | Color | Meaning | Header | Lifetime | Typical kinds |
 |---|---|---|---|---|
-| Green | Living — describes how things are now | `Status: current`, `Owner:`, `Verified: YYYY-MM-DD + commit` | Updated in place; re-verify on every change | Current state, runbooks, guides, READMEs |
-| Blue | Frozen — a contract or record | `Status: frozen`, `Version:`, `Owner:`, `Verified:` | Immutable once published; supersede, never edit | Architecture contracts, ADRs, versioned references, evidence reports |
-| Orange | Provisional — in flight | `Status: draft`, `Expires: YYYY-MM-DD`, `Owner:` | Time-boxed; must be promoted or archived by the expiry | Spikes, experiments, known-issues, pre-decision explorations |
+| Green | Living — describes how things are now | `Status: current`, `Owner:`, `Scope:`, `Verified: YYYY-MM-DD + commit` | Updated in place; re-verify on every change | Current state, runbooks, guides, READMEs |
+| Blue | Frozen — a contract or record | `Status: frozen`, `Version:`, `Owner:`, `Scope:`, `Verified:` | Immutable once published; supersede, never edit | Architecture contracts, ADRs, versioned references, evidence reports |
+| Orange | Provisional — in flight | `Status: draft`, `Expires: YYYY-MM-DD`, `Owner:`, `Scope:` | Time-boxed; must be promoted or archived by the expiry | Spikes, experiments, known-issues, pre-decision explorations |
 
 ## Promotion path
 
@@ -23,12 +23,12 @@ Yazhi docs fail when a draft, a contract, and a status page all look the same on
 ## Workflow
 
 1. **Ask what the reader needs to do with the doc.** Change behavior now → green. Implement against it → blue. Decide whether to proceed → orange. No answer means the doc is not ready to be written.
-2. **Check for an existing owner first.** Search `README.md`, `CONTEXT.md`, `docs/README.md`, and `archives/` for the topic; update the owner instead of adding a second source of truth.
-3. **Write the header before the body.** Green gets `Status/Owner/Verified`; blue gets `Status/Version/Owner/Verified`; orange gets `Status/Expires/Owner`. A doc without its header is unclassified and will be trusted wrongly.
+2. **Check for an existing owner first.** `technical-documentation` owns the search order (`README.md`, `CONTEXT.md`, docs index, `archives/`); update the owner instead of adding a second source of truth.
+3. **Write the header before the body.** `technical-documentation` owns the base fields (`Status`, `Owner`, `Verified`, `Scope`); color adds `Version` for blue or `Expires` for orange. An unclassified header will be trusted wrongly.
 4. **Set the orange expiry to a real date** — default 14 days for a spike, 30 for a known-issues page — and put the promotion decision in the doc's first paragraph so the expiry owner knows what to do.
 5. **Keep blue immutable.** If a frozen contract needs a change, publish a new version and mark the old one `superseded by vN` in the archive; editing a blue doc in place breaks every code comment that cites its section.
-6. **Place by kind and register it.** `docs/architecture/`, `docs/guides/`, `docs/reference/`, `docs/decisions/`, `docs/reports/`; add one row to `docs/README.md` with its color in the same change.
-7. **Verify the links and the color mechanically.** Check relative links from the doc's own directory, confirm the header fields are present, and confirm no orange doc has passed its expiry without a promotion decision.
+6. **Place by kind and register it.** `technical-documentation` owns the directory map and `docs/README.md` row; add the color to that row in the same change.
+7. **Verify links and color mechanically.** `technical-documentation` owns link/header checks; this skill adds one check: no orange doc past its expiry without a promotion decision.
 
 ## Anti-patterns
 

@@ -11,7 +11,7 @@ Claude accepts for an uploaded skill. Two shapes are produced:
                                  the archive root. Built with --per-skill.
 
 A bundle must contain exactly one SKILL.md — the one at its root that defines
-the skill. So in the collection bundle the 51 skill bodies ship as reference
+the skill. So in the collection bundle every skill body ships as a reference
 files under references/<category>/<name>.md, not under their repo paths, which
 would put one further SKILL.md file per skill in the archive and make it invalid.
 

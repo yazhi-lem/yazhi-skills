@@ -1,6 +1,6 @@
 ---
 name: yazhi-daily-rhythm
-description: Use when starting a Yazhi engineering day or when a day has gone sideways and you need to recover the rhythm. Gives the hour-by-hour block plan — digest, deep work, review window, close — and the checks at each block boundary.
+description: Use when starting a Yazhi engineering day or when a day has gone sideways and you need the hour-by-hour recovery. Gives the four blocks, three boundaries, and close checks; for weekly/monthly cadence or escalation use yazhi-ops instead.
 ---
 
 A Yazhi engineering day has four blocks and three boundaries. The boundaries are the only places you change context. Most lost days are not lazy days — they are days where a block was never protected. This is the day-level companion to `yazhi-ops`, which owns the weekly and monthly loops.

@@ -1,8 +1,10 @@
 # skills/
 
-Status: current · Verified: 2026-11-20
+Status: current · Verified: 2026-11-27
 
 Canonical skill catalog for yazhi-lem. Layout: `skills/<category>/<skill-name>/SKILL.md`.
+
+Not sure which one to use? [`docs/choose-a-skill.md`](../docs/choose-a-skill.md) routes by task/audience; [`docs/skills-audit-2026-11-27.md`](../docs/skills-audit-2026-11-27.md) explains the current overlap and consolidation plan.
 
 | Category | Covers |
 |---|---|
@@ -13,6 +15,10 @@ Canonical skill catalog for yazhi-lem. Layout: `skills/<category>/<skill-name>/S
 | `org/` | Internal ways of working: ethos, doc colors, healthy code, PRs, releases, operating rhythm, and cross-repo workflows |
 | `repos/` | Per-repo status skills (one per public repo) |
 | `tools/` | `skill-authoring` (contract), `technical-documentation` (doc contract), Google style adoption, API/CLI/MCP design |
+| `design/` | `visual-design` — hierarchy, spacing, type, contrast, states, real-content checks |
+| `yazhi-code/` | Idea-to-client pipeline (`orient` → `frame` → `design` → `implement` → `handoff` → `deliver`), shared `standards`, and support loop (`debug`, `refactor`, `maintain`, `improve`) |
+| `yazhi-purpose/` | `purpose-gate` (sovereign, Tamil-native, open by default) and `yazhi-review` (security/code/language verdict) |
+| `indic/` | Evolving multilingual/multicultural skills: scripts, transliteration, content, localization, cultural register |
 
 Contribution rules live in
 [`tools/skill-authoring/SKILL.md`](tools/skill-authoring/SKILL.md); new docs
