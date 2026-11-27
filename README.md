@@ -100,7 +100,7 @@ python3 scripts/build_index.py      # rewrite skills.json + .claude-plugin/plugi
 python3 scripts/validate_skills.py  # check every SKILL.md against the repo contract
 ```
 
-## Catalog (117 skills)
+## Catalog (118 skills)
 
 ### Agentic (agentic)
 
@@ -142,6 +142,7 @@ How to work inside Yazhi: ethos (அறம் / அன்பு / அகம்),
 | [`org-cross-repo-change`](skills/org/org-cross-repo-change/SKILL.md) | Sequencing a proto, data, or doc contract change across producer and consumer repos |
 | [`org-plan-reset-recovery`](skills/org/org-plan-reset-recovery/SKILL.md) | Checking source authority when an old roadmap or dated issue resurfaces |
 | [`org-service-boundaries`](skills/org/org-service-boundaries/SKILL.md) | Deciding which repo owns a new capability under the no-weights/local-first rules |
+| [`yazhi-agency`](skills/org/yazhi-agency/SKILL.md) | Routing work across the nine agents: owner, dispatch mode, handoff contract, verification |
 
 ### Repositories (repos)
 

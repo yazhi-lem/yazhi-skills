@@ -5,13 +5,13 @@
   "license": "GPL-3.0-or-later",
   "skillFormat": "SKILL.md with YAML frontmatter (name, description)",
   "generatedBy": "scripts/build_index.py — do not edit by hand",
-  "count": 117,
+  "count": 118,
   "categories": [
     {
       "id": "org",
       "title": "Yazhi Organization",
       "path": "skills/org",
-      "count": 13
+      "count": 14
     },
     {
       "id": "agentic",
@@ -170,6 +170,12 @@
       "category": "org",
       "path": "skills/org/org-service-boundaries/SKILL.md",
       "description": "Use when deciding where a new capability belongs in the Yazhi stack — yazhi-api, Adhan, Illakiya, open-sangam, or a client — and a sovereign or local-first constraint is at stake. Helps you keep model weights, external APIs, and Tamil NLP logic in their owning repos."
+    },
+    {
+      "name": "yazhi-agency",
+      "category": "org",
+      "path": "skills/org/yazhi-agency/SKILL.md",
+      "description": "Use when delegating a task to one or more Yazhi agents, or when a request spans several domains and needs routing. Helps you pick the right agent, sequence the handoffs, and avoid dispatching a read-only auditor to patch code."
     },
     {
       "name": "yazhi-daily-rhythm",
