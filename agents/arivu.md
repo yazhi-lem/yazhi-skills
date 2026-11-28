@@ -54,9 +54,9 @@ the output is reproducible from a single command, and no source file was overwri
 
 ## Operating context
 
-- Workspace: `/home/zrya/Yazhi`
+- Workspace: `<workspace>`
 - Corpus engine: `apps/yazhi-corpus-engine/`
-- Adhan model and data: `repos/yazhi-lem/adhan/`
+- Model and data: `<repos>/<model>/`
 - Sangam design: `library/sangam/DESIGN.md`
 - Universal context: `knowledge/AGENT-KB.md`
 - Disk is limited: report dataset sizes and clean up intermediates.

@@ -1,11 +1,11 @@
 ---
 name: yazhi-purpose-gate
-description: Use when deciding whether a proposed Yazhi feature fits our purpose — sovereign, Tamil-native, and open by default — before it is framed or reviewed. Helps you prove those three defaults with evidence instead of slogans; the merge-time three-axis check is yazhi-review.
+description: Use when deciding whether a proposed feature fits our purpose — sovereign, Tamil-native, and open by default — before it is framed or reviewed. Helps you prove those three defaults with evidence instead of slogans; the merge-time three-axis check is yazhi-review.
 ---
 
-# Yazhi Purpose Gate
+# Purpose Gate
 
-Yazhi features are not neutral. They either reduce or increase dependence on foreign clouds, English-first interfaces, and closed vendors. This gate turns three claims — sovereign, native, open by default — into questions with evidence. It sits before `yazhi-code-frame`; `yazhi-review` checks the same claims again at merge time with code and language evidence. `org-ethos` owns the underlying values; this skill owns the feature-fit decision.
+Features are not neutral. They either reduce or increase dependence on foreign clouds, English-first interfaces, and closed vendors. This gate turns three claims — sovereign, native, open by default — into questions with evidence. It sits before `yazhi-code-frame`; `yazhi-review` checks the same claims again at merge time with code and language evidence. `org-ethos` owns the underlying values; this skill owns the feature-fit decision.
 
 ## Workflow
 
@@ -34,4 +34,4 @@ Yazhi features are not neutral. They either reduce or increase dependence on for
 - **Hiding a waiver in chat.** A foreign API exception or private chamber decision needs an owner and a written reason in the repo.
 - **Gating after implementation.** Discovering a residency or child-safety blocker in review wastes the whole build.
 
-Map to: `yazhi-code-frame` (constraints), `yazhi-review` (merge-time check), `org-ethos` (values), `org-release` (hard gates), `yazhi-org-status` (repo context).
+Map to: `yazhi-code-frame` (constraints), `yazhi-review` (merge-time check), `org-ethos` (values), `org-release` (hard gates), `yazhi-work-start` (repo context).

@@ -53,10 +53,10 @@ ratios are measured, and Tamil text has been tested at the real lengths.
 
 ## Operating context
 
-- Workspace: `/home/zrya/Yazhi`
+- Workspace: `<workspace>`
 - Design work: `apps/oviya/`
-- Keyboard UI: `apps/illakiya/` (`web/`, Android layouts)
-- Site and web: `site/`, `web/`, `repos/yazhi-lem/yazhi-dev/`
+- Keyboard UI: `apps/<app>/` (`web/`, Android layouts)
+- Site and web: `site/`, `web/`, `<repos>/<site>/`
 - Universal context: `knowledge/AGENT-KB.md`
 
 ## Working method

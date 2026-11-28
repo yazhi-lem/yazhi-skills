@@ -1,19 +1,19 @@
 ---
 name: org-plan-reset-recovery
-description: Use when an old roadmap, dated issue, or archived plan resurfaces after a Yazhi strategy reset and someone is about to act on it. Helps you verify what is current, cite the retirement source, and avoid resurrecting plans the founders deliberately cleared.
+description: Use when an old roadmap, dated issue, or archived plan resurfaces after a strategy reset and someone is about to act on it. Helps you verify what is current, cite the retirement source, and avoid resurrecting plans the team deliberately cleared.
 ---
 
-Yazhi has reset direction more than once (most recently around 2026-11-20/21), and old plans survive in issues, archived docs, local clones, and agent memory. They are convincing because they are detailed and often have hard dates. This skill owns the "is this still current?" check before scope is set. It does not decide strategy; it decides which source has authority today and how to retire the rest without losing history.
+A strategy reset leaves old plans alive in issues, archived docs, local clones, and agent memory. They are convincing because they are detailed and often have hard dates. This skill owns the "is this still current?" check before scope is set. It does not decide strategy; it decides which source has authority today and how to retire the rest without losing history.
 
 ## Source authority
 
 | Source | Authority | How to use it |
 |---|---|---|
 | Repo `README.md` + `docs/README.md` (`Status/Owner/Verified`) | Current for that repo | Read first; the verified date is part of the claim |
-| `CONTEXT.md` in `yazhi-api` | Current for central service constraints | Overrides older architecture notes |
-| `archives/` and retired-plan banners | History only | Cite as "why we stopped"; never as a task list |
+| `CONTEXT.md` in the owning repo | Current for that repo's constraints | Overrides older architecture notes |
+| `archives/` and retirement records | History only | Cite as "why we stopped"; never as a task list |
 | Dated roadmap or `NEXT_ACTION.md` | Superseded unless linked from a current index | Verify before acting |
-| Old session notes / issue import | Hint only | Re-check against the current repo state |
+| Old session notes or issue import | Hint only | Re-check against the current repo state |
 
 ## Workflow
 
@@ -28,9 +28,9 @@ Yazhi has reset direction more than once (most recently around 2026-11-20/21), a
 ## Anti-patterns
 
 - **Treating detail as authority.** A 40-row roadmap with exit criteria can still be dead; authority comes from the current index and reset notes.
-- **Resurrecting a retired model or stack "just for a quick test."** The Adhan PyTorch/LoRA pipeline and old API V2 plans were deliberately retired; rebuilding them forks project direction.
+- **Resurrecting a retired model or stack "just for a quick test."** A retired architecture was retired for a reason; rebuilding it forks project direction.
 - **Deleting the archive to clean up.** Archives are the evidence that a reset happened; keep a compressed copy and link to it from the current docs.
 - **Silently ignoring an old issue.** Someone will act on it in a later session; close or rewrite it with the retirement source instead.
 - **Declaring a reset from memory.** Verify against the repo's docs and git history first — an assumed reset can retire real work.
 
-For the stale-file classification see `org-repo-audit`; for issue-level decisions see `org-issue-triage`; for the ecosystem map see `yazhi-org-status`; for archive and header rules see `technical-documentation`.
+For the stale-file classification see `org-repo-audit`; for issue-level decisions see `org-issue-triage`; for archive and header rules see `technical-documentation`.

@@ -50,8 +50,8 @@ recommendation is one sentence, and the document has a path.
 
 ## Operating context
 
-- Workspace: `/home/zrya/Yazhi`
-- Products: `apps/illakiya/`, `repos/yazhi-lem/adhan/`, `apps/yazhi-auth/`
+- Workspace: `<workspace>`
+- Products: `apps/<app>/`, `<repos>/<model>/`, `apps/<auth>/`
 - Enterprise stack: `docs/AGAM_ENTERPRISE_SPEC.yz`
 - Existing research: `research/`, `docs/strategy/`
 - Universal context: `knowledge/AGENT-KB.md`

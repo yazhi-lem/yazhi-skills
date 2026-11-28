@@ -1,9 +1,9 @@
 ---
 name: yazhi-code-debug
-description: Use when a Yazhi repo's build, test, or runtime behavior is wrong and the cause is unknown — reproduce, isolate, fix, and add a regression check. Helps you debug in small checkpoints instead of rewriting code blindly; security compromise goes to incident-response.
+description: Use when a repository's build, test, or runtime behavior is wrong and the cause is unknown — reproduce, isolate, fix, and add a regression check. Helps you debug in small checkpoints instead of rewriting code blindly; security compromise goes to incident-response.
 ---
 
-# Yazhi Code — Debug in Small Checkpoints
+# Debug in Small Checkpoints
 
 Debugging is a search problem, not a license to edit everything. This skill owns the unknown-cause loop for ordinary code failures: reproduce, narrow, instrument, fix one cause, and prove it stays fixed. A suspected exploit, leak, or compromised credential is not a debug task — hand it to `incident-response` immediately.
 

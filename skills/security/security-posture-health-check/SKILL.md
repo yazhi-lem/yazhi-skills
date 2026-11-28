@@ -14,7 +14,7 @@ A one-time security review (`threat-modeling` at design time, `secure-code-revie
 | Secrets hygiene | All secrets in a vault, rotated on schedule | Some plaintext env vars, no rotation schedule | Secrets in source control or shared documents |
 | Logging & alerting | Auth failures, privilege escalation, and data exports are logged and alerted | Logged but not alerted on | Not logged — an incident would be invisible until reported externally |
 | Patch/update cadence | OS, runtime, and framework versions current within one major version | One version behind | Multiple major versions behind or end-of-life |
-| Security debt backlog | Findings tracked, triaged, and closed within SLA | Tracked but no SLA, backlog grows | Findings live in old tickets/Slack threads, no tracking system |
+| Security debt backlog | Findings tracked, triaged, and closed within SLA | Tracked but no SLA, backlog grows | Findings live in old tickets/chat threads, no tracking system |
 
 ## Workflow
 

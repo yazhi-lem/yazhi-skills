@@ -1,9 +1,9 @@
 ---
 name: org-repo-audit
-description: Use when auditing docs, task files, or configuration across multiple yazhi-lem repositories for stale, duplicate, or unhealthy content and the team wants a reduction plan before any edits. Helps you produce a dated, evidence-backed inventory and proposal instead of deleting a live source of truth.
+description: Use when auditing docs, task files, or configuration across multiple repositories for stale, duplicate, or unhealthy content and the team wants a reduction plan before any edits. Helps you produce a dated, evidence-backed inventory and proposal instead of deleting a live source of truth.
 ---
 
-Cross-repo audits fail in two opposite ways: the report is a vague "docs are bloated" complaint, or someone starts deleting files before anyone has agreed what is canonical. This skill owns the *report-only* audit pass across Yazhi repos. It turns a sprawl of READMEs, docs indexes, `NEXT_ACTION.md`/`factory/` remnants, and duplicate guides into a classification with an explicit owner and a proposed action per item. Read-only by default: act only when the requester says to act.
+Cross-repo audits fail in two opposite ways: the report is a vague "docs are bloated" complaint, or someone starts deleting files before anyone has agreed what is canonical. This skill owns the *report-only* audit pass across repositories. It turns a sprawl of READMEs, docs indexes, `NEXT_ACTION.md`/`factory/` remnants, and duplicate guides into a classification with an explicit owner and a proposed action per item. Read-only by default: act only when the requester says to act.
 
 ## What to inventory
 
@@ -33,4 +33,4 @@ Cross-repo audits fail in two opposite ways: the report is a vague "docs are blo
 - **Reporting duplicates without naming the winner.** Two docs with no chosen owner get both edited and drift again within a week.
 - **Re-deriving repo state from memory or old session notes.** Read each repo's current `README.md`, `docs/README.md`, and `CONTEXT.md`; the previous session's snapshot is a hint, not evidence.
 
-For the classification of issues and PRs rather than files see `org-issue-triage`; for what counts as current after a reset see `org-plan-reset-recovery`; for the doc header and archive rules see `technical-documentation`; for the repo map see `yazhi-org-status`.
+For the classification of issues and PRs rather than files see `org-issue-triage`; for what counts as current after a reset see `org-plan-reset-recovery`; for the doc header and archive rules see `technical-documentation`.

@@ -5,25 +5,19 @@
   "license": "GPL-3.0-or-later",
   "skillFormat": "SKILL.md with YAML frontmatter (name, description)",
   "generatedBy": "scripts/build_index.py — do not edit by hand",
-  "count": 118,
+  "count": 117,
   "categories": [
     {
       "id": "org",
       "title": "Yazhi Organization",
       "path": "skills/org",
-      "count": 14
+      "count": 15
     },
     {
       "id": "agentic",
       "title": "Agentic",
       "path": "skills/agentic",
       "count": 2
-    },
-    {
-      "id": "repos",
-      "title": "Repositories",
-      "path": "skills/repos",
-      "count": 5
     },
     {
       "id": "gtm",
@@ -95,7 +89,7 @@
       "id": "yazhi-code",
       "title": "Yazhi Code",
       "path": "skills/yazhi-code",
-      "count": 11
+      "count": 14
     },
     {
       "id": "yazhi-purpose",
@@ -115,85 +109,91 @@
       "name": "org-cross-repo-change",
       "category": "org",
       "path": "skills/org/org-cross-repo-change/SKILL.md",
-      "description": "Use when one change must land in two or more Yazhi repositories — a proto/API contract, shared Tamil logic, a data schema, or a doc contract — and merge order matters. Helps you sequence producers before consumers and keep every repo buildable after each merge."
+      "description": "Use when one change must land in two or more repositories — a proto/API contract, shared language logic, a data schema, or a doc contract — and merge order matters. Helps you sequence producers before consumers and keep every repo buildable after each merge."
     },
     {
       "name": "org-doc-authoring",
       "category": "org",
       "path": "skills/org/org-doc-authoring/SKILL.md",
-      "description": "Use when writing a new Yazhi doc and you need to pick its color — green for living state, blue for a frozen contract, orange for provisional work — and set its promotion path. Helps you stop three-way drift; file placement, size, and archive rules belong to technical-documentation."
+      "description": "Use when writing a new doc and you need to pick its color — green for living state, blue for a frozen contract, orange for provisional work — and set its promotion path. Helps you stop three-way drift; file placement, size, and archive rules belong to technical-documentation."
     },
     {
       "name": "org-ethos",
       "category": "org",
       "path": "skills/org/org-ethos/SKILL.md",
-      "description": "Use when a Yazhi decision, doc, PR, or release needs a values check — child safety, data residency, Tamil cultural accuracy, or whether work belongs in the private அகம் chamber or the public புறம் one. Helps you apply the five அறம் rules and the அன்பு standard of care instead of rediscovering them per project."
+      "description": "Use when a decision, doc, PR, or release needs a values check — child safety, data residency, language accuracy, or whether work belongs in the private chamber or the public one. Helps you apply the five gates and the standard of care instead of rediscovering them per project."
     },
     {
       "name": "org-healthy-code",
       "category": "org",
       "path": "skills/org/org-healthy-code/SKILL.md",
-      "description": "Use when writing or reviewing code in a Yazhi repo and the change risks becoming unreviewable — a 2,000-line diff, a silent fallback, a test that asserts nothing, or a shortcut that sends data to a foreign API. Helps you keep diffs small, local-first, and honest so the 48-hour review gate actually works."
+      "description": "Use when writing or reviewing code and the change risks becoming unreviewable — a 2,000-line diff, a silent fallback, a test that asserts nothing, or a shortcut that sends data to a foreign API. Helps you keep diffs small, local-first, and honest so the 48-hour review gate actually works."
     },
     {
       "name": "org-impactful-pr",
       "category": "org",
       "path": "skills/org/org-impactful-pr/SKILL.md",
-      "description": "Use when opening or reviewing a pull request in a Yazhi repo and you want it to land within the 48-hour gate without rework — especially when the PR touches Tamil strings, child-facing code, or another repo's contract. Helps you write the scope, evidence, and honest status that a reviewer can verify instead of trust."
+      "description": "Use when opening or reviewing a pull request in a repository and you want it to land within the 48-hour gate without rework — especially when the PR touches localized strings, child-facing code, or another repo's contract. Helps you write the scope, evidence, and honest status that a reviewer can verify instead of trust."
     },
     {
       "name": "org-issue-triage",
       "category": "org",
       "path": "skills/org/org-issue-triage/SKILL.md",
-      "description": "Use when validating open issues and PRs across yazhi-lem repos after a strategy reset — aged planning imports, duplicate titles, hard dates, or PRs claiming to close issues. Helps you decide close, keep, or rewrite with evidence without silently discarding contributor work."
+      "description": "Use when validating open issues and PRs across repositories after a strategy reset — aged planning imports, duplicate titles, hard dates, or PRs claiming to close issues. Helps you decide close, keep, or rewrite with evidence without silently discarding contributor work."
     },
     {
       "name": "org-plan-reset-recovery",
       "category": "org",
       "path": "skills/org/org-plan-reset-recovery/SKILL.md",
-      "description": "Use when an old roadmap, dated issue, or archived plan resurfaces after a Yazhi strategy reset and someone is about to act on it. Helps you verify what is current, cite the retirement source, and avoid resurrecting plans the founders deliberately cleared."
+      "description": "Use when an old roadmap, dated issue, or archived plan resurfaces after a strategy reset and someone is about to act on it. Helps you verify what is current, cite the retirement source, and avoid resurrecting plans the team deliberately cleared."
     },
     {
       "name": "org-release",
       "category": "org",
       "path": "skills/org/org-release/SKILL.md",
-      "description": "Use when shipping a Yazhi release — a store build, a service deploy, a model checkpoint, or a public doc set — and the எண்ணித் துணிக rule requires a plan, an approved runbook, and a human confirm before anything changes. Helps you gate the release on child safety, DPDP, and rollback instead of discovering a blocker at submission."
+      "description": "Use when shipping a release — a store build, a service deploy, a model checkpoint, or a public doc set — and the think-then-act rule requires a plan, an approved runbook, and a human confirm before anything changes. Helps you gate the release on safety, data residency, and rollback instead of discovering a blocker at submission."
     },
     {
       "name": "org-repo-audit",
       "category": "org",
       "path": "skills/org/org-repo-audit/SKILL.md",
-      "description": "Use when auditing docs, task files, or configuration across multiple yazhi-lem repositories for stale, duplicate, or unhealthy content and the team wants a reduction plan before any edits. Helps you produce a dated, evidence-backed inventory and proposal instead of deleting a live source of truth."
+      "description": "Use when auditing docs, task files, or configuration across multiple repositories for stale, duplicate, or unhealthy content and the team wants a reduction plan before any edits. Helps you produce a dated, evidence-backed inventory and proposal instead of deleting a live source of truth."
     },
     {
       "name": "org-service-boundaries",
       "category": "org",
       "path": "skills/org/org-service-boundaries/SKILL.md",
-      "description": "Use when deciding where a new capability belongs in the Yazhi stack — yazhi-api, Adhan, Illakiya, open-sangam, or a client — and a sovereign or local-first constraint is at stake. Helps you keep model weights, external APIs, and Tamil NLP logic in their owning repos."
+      "description": "Use when deciding where a new capability belongs across a multi-repo stack — service, model, app, content, client, or site — and a local-first or sovereignty constraint is at stake. Helps you keep model weights, external APIs, and language logic in their owning repos instead of duplicating them in a client."
     },
     {
       "name": "yazhi-agency",
       "category": "org",
       "path": "skills/org/yazhi-agency/SKILL.md",
-      "description": "Use when delegating a task to one or more Yazhi agents, or when a request spans several domains and needs routing. Helps you pick the right agent, sequence the handoffs, and avoid dispatching a read-only auditor to patch code."
+      "description": "Use when delegating a task to one or more specialist agents or roles, or when a request spans several domains and needs routing. Helps you pick the right owner, sequence the handoffs, and avoid dispatching a read-only auditor to patch code."
     },
     {
       "name": "yazhi-daily-rhythm",
       "category": "org",
       "path": "skills/org/yazhi-daily-rhythm/SKILL.md",
-      "description": "Use when starting a Yazhi engineering day or when a day has gone sideways and you need the hour-by-hour recovery. Gives the four blocks, three boundaries, and close checks; for weekly/monthly cadence or escalation use yazhi-ops instead."
+      "description": "Use when starting an engineering day or when a day has gone sideways and you need the hour-by-hour recovery. Gives the four blocks, three boundaries, and close checks; for weekly/monthly cadence or escalation use yazhi-ops instead."
     },
     {
       "name": "yazhi-ops",
       "category": "org",
       "path": "skills/org/yazhi-ops/SKILL.md",
-      "description": "Use when setting or running Yazhi's operating cadence — the daily digest, weekly review, monthly gate, and quarterly reset — or when work is slipping and you need to know which ritual was skipped. Helps you run the rhythm as a system; for the hour-by-hour day itself use yazhi-daily-rhythm."
+      "description": "Use when setting or running the operating cadence — the daily digest, weekly review, monthly gate, and quarterly reset — or when work is slipping and you need to know which ritual was skipped. Helps you run the rhythm as a system; for the hour-by-hour day itself use yazhi-daily-rhythm."
     },
     {
-      "name": "yazhi-org-status",
+      "name": "yazhi-work-start",
       "category": "org",
-      "path": "skills/org/yazhi-org-status/SKILL.md",
-      "description": "Use when starting work in any yazhi-lem repository, planning cross-repo work, or briefing someone (human or agent) on where the Yazhi ecosystem stands. Helps you orient quickly to the current status, vision, and near-term priorities of each project without re-deriving them from eleven repos."
+      "path": "skills/org/yazhi-work-start/SKILL.md",
+      "description": "Use when an individual contributor starts a session and needs their identity, repository, and task focus settled before touching code. Reads the Plane tracker and repository metadata to produce one start brief and one first move; it does not edit code or change tracker state."
+    },
+    {
+      "name": "yazhi-work-status",
+      "category": "org",
+      "path": "skills/org/yazhi-work-status/SKILL.md",
+      "description": "Use when starting a work day, preparing the digest, or asking what is open and what needs attention across all repos. Produces a dated PR/issue queue with a ten-minute light review on relevance, quality, testing, readability, and size, plus a JSON handoff for `yazhi-code-action`; the scan itself never posts, labels, or merges."
     },
     {
       "name": "agentic-reliability",
@@ -206,36 +206,6 @@
       "category": "agentic",
       "path": "skills/agentic/agentic-security/SKILL.md",
       "description": "Use when an agent can call tools, read untrusted content, or act on the user's behalf — and you need to stop prompt injection, privilege escalation, and data exfiltration before the agent ships. Helps you separate the agent's instructions from untrusted input and bound what a compromised agent can do."
-    },
-    {
-      "name": "adhan-status",
-      "category": "repos",
-      "path": "skills/repos/adhan-status/SKILL.md",
-      "description": "Use when working in the adhan repository — the from-scratch Tamil small language model — whether on the tokenizer, the JAX training loop, corpus scraping, or evaluation. Helps you place work in the current phase instead of resuming a pipeline the project already retired."
-    },
-    {
-      "name": "illakiya-status",
-      "category": "repos",
-      "path": "skills/repos/illakiya-status/SKILL.md",
-      "description": "Use when working in the illakiya repository — the Rust + Kotlin native Tamil Android keyboard — on the layout engine, dictionary, sandhi rules, or the IME UI. Helps you extend the existing engine instead of duplicating logic that already exists across the Rust/Kotlin boundary."
-    },
-    {
-      "name": "open-sangam-status",
-      "category": "repos",
-      "path": "skills/repos/open-sangam-status/SKILL.md",
-      "description": "Use when working in the open-sangam repository — the Sangam-era Tamil literature reader, its corpus pipeline, or the சங்க அவை (Sangam Avai) agent assembly. Helps you find the current phase and horizon before proposing scope, and avoid re-scraping or re-translating work already tracked."
-    },
-    {
-      "name": "yazh-unity-status",
-      "category": "repos",
-      "path": "skills/repos/yazh-unity-status/SKILL.md",
-      "description": "Use when working in the yazh-unity repository — the Tamil AR/XR pet app — on gameplay, the on-device Tamil inference engine, or release packaging. Helps you distinguish the runner pivot, placeholder model files, and founder-gated store credentials from real engineering work."
-    },
-    {
-      "name": "yazhi-dev-status",
-      "category": "repos",
-      "path": "skills/repos/yazhi-dev-status/SKILL.md",
-      "description": "Use when working in the yazhi-dev repository — the yazhi.dev marketing/community site and its /chat demo. Helps you keep the chat UI's backend contract intact and avoid re-designing a site that already went through one full visual pivot."
     },
     {
       "name": "channel-and-partnerships",
@@ -481,7 +451,7 @@
       "name": "tamil-purity-scoring",
       "category": "tamil",
       "path": "skills/tamil/tamil-purity-scoring/SKILL.md",
-      "description": "Use when measuring how pure a Tamil text or corpus is — scoring model output, filtering a pretraining corpus, or verifying a \"pure Tamil\" claim in a report. Helps you use the real purity formula and token classifier, and avoid the remaining gap that makes both overstate vocabulary purity."
+      "description": "Use when measuring how pure a Tamil text or corpus is — scoring model output, filtering a pretraining corpus, or verifying a \"pure Tamil\" claim in a report. Helps you use a character formula and a token classifier honestly, and avoid the remaining gap that makes both overstate vocabulary purity."
     },
     {
       "name": "tamil-swaram-notation",
@@ -505,7 +475,7 @@
       "name": "tamil-technical-terms",
       "category": "tamil",
       "path": "skills/tamil/tamil-technical-terms/SKILL.md",
-      "description": "Use when rendering a technical concept in Tamil — UI strings, docs, model prompts, or a glossary — and you must decide between a native Tamil coinage, a transliterated loanword, or the English term in Latin script. Helps you reuse established Yazhi terms and coin new ones without inventing words nobody reads."
+      "description": "Use when rendering a technical concept in Tamil — UI strings, docs, model prompts, or a glossary — and you must decide between a native Tamil coinage, a transliterated loanword, or the English term in Latin script. Helps you reuse established terms and coin new ones without inventing words nobody reads."
     },
     {
       "name": "tamil-text-processing",
@@ -553,7 +523,7 @@
       "name": "google-style-adoption",
       "category": "tools",
       "path": "skills/tools/google-style-adoption/SKILL.md",
-      "description": "Use when deciding which Google style guide applies to a Yazhi repo, enforcing it in review or lint, or adding a Yazhi-specific deviation on top of it. Helps you cite the right guide, keep the fork read-only, and document deviations where they belong."
+      "description": "Use when deciding which Google style guide applies to a repository, enforcing it in review or lint, or documenting a local deviation. Helps you cite the right guide, keep the upstream fork read-only, and put deviations where the consuming repo can find them."
     },
     {
       "name": "mcp-server-development",
@@ -571,7 +541,7 @@
       "name": "technical-documentation",
       "category": "tools",
       "path": "skills/tools/technical-documentation/SKILL.md",
-      "description": "Use when writing, rewriting, reviewing, or retiring a Markdown doc in any yazhi-lem repository and you need the file contract — header, placement, size budget, link checks, archive rules. Enforces one structure; the green/blue/orange color decision belongs to org-doc-authoring."
+      "description": "Use when writing, rewriting, reviewing, or retiring a Markdown doc in any repository and you need the file contract — header, placement, size budget, link checks, archive rules. Enforces one structure; the green/blue/orange color decision belongs to org-doc-authoring."
     },
     {
       "name": "age-appropriate-explaining",
@@ -712,10 +682,16 @@
       "description": "Use when designing or reviewing a screen, component, or visual asset and you need concrete decisions on hierarchy, spacing, typography, color/contrast, and interaction states. Helps you ship a layout that reads at real sizes instead of relying on taste; for Tamil glyph shaping use tamil-localization."
     },
     {
+      "name": "yazhi-code-action",
+      "category": "yazhi-code",
+      "path": "skills/yazhi-code/yazhi-code-action/SKILL.md",
+      "description": "Use when a `yazhi-work-status` report is ready and its findings must become real GitHub actions — sanitize the review comments, post and verify them idempotently, apply labels, open follow-ups, and route code work. Helps you act on a review without publishing raw model output or re-triaging from scratch; merge, approve, and destructive actions stay human."
+    },
+    {
       "name": "yazhi-code-debug",
       "category": "yazhi-code",
       "path": "skills/yazhi-code/yazhi-code-debug/SKILL.md",
-      "description": "Use when a Yazhi repo's build, test, or runtime behavior is wrong and the cause is unknown — reproduce, isolate, fix, and add a regression check. Helps you debug in small checkpoints instead of rewriting code blindly; security compromise goes to incident-response."
+      "description": "Use when a repository's build, test, or runtime behavior is wrong and the cause is unknown — reproduce, isolate, fix, and add a regression check. Helps you debug in small checkpoints instead of rewriting code blindly; security compromise goes to incident-response."
     },
     {
       "name": "yazhi-code-deliver",
@@ -751,43 +727,55 @@
       "name": "yazhi-code-improve",
       "category": "yazhi-code",
       "path": "skills/yazhi-code/yazhi-code-improve/SKILL.md",
-      "description": "Use when recurring Yazhi friction should become a reusable improvement — a script, prompt template, skill, extension, or documented check in any repo. Helps you baseline the pain, choose the smallest artifact, and measure adoption; SKILL.md formatting belongs to skill-authoring."
+      "description": "Use when recurring friction should become a reusable improvement — a script, prompt template, skill, extension, or documented check in any repo. Helps you baseline the pain, choose the smallest artifact, and measure adoption; SKILL.md formatting belongs to skill-authoring."
     },
     {
       "name": "yazhi-code-maintain",
       "category": "yazhi-code",
       "path": "skills/yazhi-code/yazhi-code-maintain/SKILL.md",
-      "description": "Use when running a routine health pass on one Yazhi repo — generated artifacts, CI, test gates, dated status docs, and toolchain drift — and you need a dated note with one next improvement. Helps you keep repos runnable between features; org cadence is yazhi-ops and security scoring is security-posture-health-check."
+      "description": "Use when running a routine health pass on one repository — generated artifacts, CI, test gates, dated status docs, and toolchain drift — and you need a dated note with one next improvement. Helps you keep repos runnable between features; org cadence is yazhi-ops and security scoring is security-posture-health-check."
     },
     {
       "name": "yazhi-code-orient",
       "category": "yazhi-code",
       "path": "skills/yazhi-code/yazhi-code-orient/SKILL.md",
-      "description": "Use when entering an unfamiliar Yazhi repo or task and you need a read-only map before framing any change. Helps you find the current source of truth, build gates, conventions, and trust boundaries; for ecosystem status use yazhi-org-status, not this skill."
+      "description": "Use when entering an unfamiliar repository or task and you need a read-only map before framing any change. Helps you find the current source of truth, build gates, conventions, and trust boundaries; for contributor and task setup use `yazhi-work-start` first."
+    },
+    {
+      "name": "yazhi-code-prune",
+      "category": "yazhi-code",
+      "path": "skills/yazhi-code/yazhi-code-prune/SKILL.md",
+      "description": "Use when a repository has accumulated dead code, unused dependencies, duplicate helpers, stale flags, or oversized modules and you need a safe prune-and-refactor pass. Helps you prove what is unused, remove it in small reversible commits, measure the reduction, and hand the remaining structure to `yazhi-code-refactor`; feature work stays out."
     },
     {
       "name": "yazhi-code-refactor",
       "category": "yazhi-code",
       "path": "skills/yazhi-code/yazhi-code-refactor/SKILL.md",
-      "description": "Use when changing code structure without intending to change behavior — extracting a helper, moving a boundary, removing duplication, or renaming across a Yazhi repo. Helps you keep behavior constant with characterization checks and small reviewable steps; feature work goes to yazhi-code-implement."
+      "description": "Use when changing code structure without intending to change behavior — extracting a helper, moving a boundary, removing duplication, or renaming across a repository. Helps you keep behavior constant with characterization checks and small reviewable steps; feature work goes to yazhi-code-implement."
     },
     {
       "name": "yazhi-code-standards",
       "category": "yazhi-code",
       "path": "skills/yazhi-code/yazhi-code-standards/SKILL.md",
-      "description": "Use when writing, refactoring, or reviewing Yazhi code before you push it, and you want one shared better-code standard instead of style-by-opinion. Helps you apply Google-leaning naming, error, test, and review rules; google-style-adoption owns which language guide applies."
+      "description": "Use when writing, refactoring, or reviewing code before you push it, and you want one shared better-code standard instead of style-by-opinion. Helps you apply Google-leaning naming, error, test, and review rules; google-style-adoption owns which language guide applies."
+    },
+    {
+      "name": "yazhi-code-writeup",
+      "category": "yazhi-code",
+      "path": "skills/yazhi-code/yazhi-code-writeup/SKILL.md",
+      "description": "Use when drafting or creating a GitHub issue or pull request for any repository, including from Pi via `/yazhi-issue` or `/yazhi-pr`. Helps you write a contentful, evidence-backed body with acceptance criteria, scope, test plan, and honest status; the PR body contract stays with `org-impactful-pr`."
     },
     {
       "name": "yazhi-purpose-gate",
       "category": "yazhi-purpose",
       "path": "skills/yazhi-purpose/yazhi-purpose-gate/SKILL.md",
-      "description": "Use when deciding whether a proposed Yazhi feature fits our purpose — sovereign, Tamil-native, and open by default — before it is framed or reviewed. Helps you prove those three defaults with evidence instead of slogans; the merge-time three-axis check is yazhi-review."
+      "description": "Use when deciding whether a proposed feature fits our purpose — sovereign, Tamil-native, and open by default — before it is framed or reviewed. Helps you prove those three defaults with evidence instead of slogans; the merge-time three-axis check is yazhi-review."
     },
     {
       "name": "yazhi-review",
       "category": "yazhi-purpose",
       "path": "skills/yazhi-purpose/yazhi-review/SKILL.md",
-      "description": "Use when reviewing a Yazhi change before merge or release and you need one verdict across security, code, and Tamil language, plus sovereign/native/open evidence. Helps you route each axis to its owning skill and return a single pass/fail note; early feature-fit belongs to yazhi-purpose-gate."
+      "description": "Use when reviewing a change before merge or release and you need one verdict across security, code, and Tamil language, plus sovereign/native/open evidence. Helps you route each axis to its owning skill and return a single pass/fail note; early feature-fit belongs to yazhi-purpose-gate."
     },
     {
       "name": "indic-cultural-context",

@@ -3,7 +3,7 @@ name: yazhi-code-deliver
 description: Use when a merged yazhi-code change must reach a client or release channel — package it, deploy it, verify it in the target environment, and close the feedback loop. Helps you move from "merged" to "working for the user" without skipping rollback or localization checks; internal releases use org-release.
 ---
 
-# Yazhi Code — Deliver to the Client
+# Deliver to the Client
 
 Merge is not delivery. This skill covers the last leg of the pipeline: turning reviewed code into a working change in the environment the user actually touches, then closing the loop with evidence. It owns the client-facing path; `org-release` owns internal release gates and `deployment-runbook` owns the customer-site procedure.
 

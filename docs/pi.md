@@ -1,6 +1,6 @@
 # Using yazhi-skills with Pi
 
-Status: current · Owner: Vajra · Verified: 2026-11-25 against `main`
+Status: current · Owner: Vajra · Verified: 2026-11-28 against `main`
 Scope: How to install and invoke these skills in the Pi coding agent.
 
 Every skill here is a plain directory containing `SKILL.md`, which is the
@@ -33,7 +33,7 @@ Add the skills directory to your Pi settings. User settings live in
 
 ```json
 {
-  "skills": ["~/Yazhi/repos/yazhi-lem/yazhi-skills/skills"]
+  "skills": ["<path-to-yazhi-skills>/skills"]
 }
 ```
 
@@ -69,7 +69,7 @@ selectable by the model.
 
 ## Yazhi extension
 
-The repo ships a small [Yazhi extension](../extensions/yazhi/README.md) that queues `/skill:yazhi-code-orient`, `/skill:yazhi-purpose-gate`, and `/skill:yazhi-review` through `/yazhi-start`, `/yazhi-purpose`, and `/yazhi-review`. It also confirms dangerous shell commands, blocks writes to protected paths, and warns before switching sessions with uncommitted work.
+The repo ships a small [Yazhi extension](../extensions/yazhi/README.md) that queues `/skill:yazhi-work-start`, `/skill:yazhi-purpose-gate`, `/skill:yazhi-review`, and `/skill:yazhi-code-writeup` through `/yazhi-start`, `/yazhi-purpose`, `/yazhi-review`, `/yazhi-issue`, and `/yazhi-pr`. It also confirms dangerous shell commands, blocks writes to protected paths, and warns before switching sessions with uncommitted work.
 
 ```bash
 mkdir -p ~/.pi/agent/extensions
@@ -80,18 +80,26 @@ Run `/reload` after installing. Project-local copies load only after project tru
 
 ## The daily rhythm in Pi
 
-Two skills form the day loop and are designed to be invoked explicitly:
+Five skills carry the contributor session, daily queue, its actions, and the weekly cadence, and are designed to be invoked explicitly:
 
 | Skill | When | What it gives you |
 |---|---|---|
+| `yazhi-work-start` | Start of a contributor session | Your Plane member, task, repo, and first move |
 | `yazhi-daily-rhythm` | Start of day, or when a day goes sideways | Four blocks, three boundaries, the recovery path |
+| `yazhi-work-status` | Before the digest, across all repos | Dated PR/issue queue and JSON handoff |
+| `yazhi-code-action` | After the queue is reviewed | Sanitized comments and routed next actions |
 | `yazhi-ops` | Weekly review, monthly gate, or when work slips | The four loops and the escalation ladder |
 
 A typical morning in Pi:
 
 ```text
+/yazhi-start
+confirm your person, task, repo, and first move
+/skill:yazhi-work-status
+read the queue and approve the action plan
+/skill:yazhi-code-action
 /skill:yazhi-daily-rhythm
-read the digest and set today's one outcome
+set today's one outcome
 ```
 
 Then work the deep block, and at the end of the day:
@@ -99,6 +107,19 @@ Then work the deep block, and at the end of the day:
 ```text
 /skill:yazhi-daily-rhythm
 close the day: update status, set tomorrow's first move
+```
+
+## Issues and PRs in Pi
+
+Use `/yazhi-issue` or `/yazhi-pr` with a short prompt. The command queues
+`/skill:yazhi-code-writeup` in the editor with `issue` or `pr` as the mode, so
+you can edit the prompt before submitting. The skill drafts the body to a file,
+shows it for confirmation, and only then runs `gh issue create` or
+`gh pr create --body-file`. It never creates on its own.
+
+```text
+/yazhi-issue login fails on the Tamil keyboard after three seconds
+/yazhi-pr fix the sandhi join in the Rust core
 ```
 
 ## Notes and limits

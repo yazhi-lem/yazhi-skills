@@ -2,7 +2,7 @@
  * Yazhi Pi extension.
  *
  * Thin harness adapter for the yazhi-purpose / yazhi-code skills. It does not
- * auto-commit, auto-push, or change tool permissions by itself. It adds three
+ * auto-commit, auto-push, or change tool permissions by itself. It adds five
  * commands that queue the matching skills and a few conservative safety gates
  * that follow the patterns in Pi's own examples.
  */
@@ -13,10 +13,17 @@ import {
   type ExtensionContext,
 } from "@earendil-works/pi-coding-agent";
 
-const SKILL_COMMANDS: Record<string, string> = {
-  "yazhi-start": "yazhi-code-orient",
-  "yazhi-purpose": "yazhi-purpose-gate",
-  "yazhi-review": "yazhi-review",
+type SkillCommand = {
+  skill: string;
+  mode?: string;
+};
+
+const SKILL_COMMANDS: Record<string, SkillCommand> = {
+  "yazhi-start": { skill: "yazhi-work-start" },
+  "yazhi-purpose": { skill: "yazhi-purpose-gate" },
+  "yazhi-review": { skill: "yazhi-review" },
+  "yazhi-issue": { skill: "yazhi-code-writeup", mode: "issue" },
+  "yazhi-pr": { skill: "yazhi-code-writeup", mode: "pr" },
 };
 
 const DANGEROUS_BASH = [
@@ -47,17 +54,17 @@ function protectedReason(path: string): string | undefined {
 }
 
 export default function yazhiExtension(pi: ExtensionAPI) {
-  for (const [name, skill] of Object.entries(SKILL_COMMANDS)) {
+  for (const [name, command] of Object.entries(SKILL_COMMANDS)) {
     pi.registerCommand(name, {
-      description: `Queue /skill:${skill} from the yazhi-skills collection`,
+      description: `Queue /skill:${command.skill}${command.mode ? ` (${command.mode} mode)` : ""} from the yazhi-skills collection`,
       handler: async (args, ctx) => {
         if (!ctx.hasUI) {
           ctx.ui.notify(`${name} needs interactive mode to queue a skill`, "error");
           return;
         }
-        const suffix = args.trim() ? ` ${args.trim()}` : "";
-        ctx.ui.setEditorText(`/skill:${skill}${suffix}`);
-        ctx.ui.notify(`${skill} queued — submit to load it`, "info");
+        const suffix = [command.mode, args.trim()].filter(Boolean).join(" ");
+        ctx.ui.setEditorText(`/skill:${command.skill}${suffix ? ` ${suffix}` : ""}`);
+        ctx.ui.notify(`${command.skill} queued — submit to load it`, "info");
       },
     });
   }

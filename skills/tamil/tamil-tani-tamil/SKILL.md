@@ -3,13 +3,13 @@ name: tamil-tani-tamil
 description: Use when writing Tamil copy that should be தனித்தமிழ் — replacing வடமொழி (Sanskrit) loanwords, Grantha letters, and English code-switching with native Tamil while keeping the sentence grammatical. Helps you pick the right native word per term and avoid the calque phrasing that makes translated Tamil obvious.
 ---
 
-தனித்தமிழ் (tani-tamil, "pure Tamil") is the movement associated with Maraimalai Adigal and பாரதிதாசன்: write Tamil with Tamil words, not Sanskrit borrowings. In practice it is not a blanket ban — it is a per-term decision about வடமொழி loanwords (தர்மம், யுத்தம், சந்தோஷம்), Grantha letters (ஜ ஶ ஷ ஸ ஹ), and English code-switching. Adhan's Aram harness tests it as "Linguistic Purity" and Illakiya's writing prompt states the rule directly. This skill owns the Tamil-specific decision; `tamil-purity-scoring` owns the measurement.
+தனித்தமிழ் (tani-tamil, "pure Tamil") is the movement associated with Maraimalai Adigal and பாரதிதாசன்: write Tamil with Tamil words, not Sanskrit borrowings. In practice it is not a blanket ban — it is a per-term decision about வடமொழி loanwords (தர்மம், யுத்தம், சந்தோஷம்), Grantha letters (ஜ ஶ ஷ ஸ ஹ), and English code-switching. A product prompt can test it as "Linguistic Purity"; the writing decision stays the same. This skill owns the Tamil-specific decision; `tamil-purity-scoring` owns the measurement.
 
 ## The three substitutions that actually matter
 
 | Pattern | Common borrowing | தனித்தமிழ் form | Note |
 |---|---|---|---|
-| Sanskrit abstract noun | தர்மம் | அறம் | The flagship case — Yazhi's own five rules use அறம் |
+| Sanskrit abstract noun | தர்மம் | அறம் | The flagship case — a native term often displaces a Sanskrit abstract noun |
 | Sanskrit abstract noun | சந்தோஷம் | மகிழ்ச்சி | Both are understood; மகிழ்ச்சி is the native register |
 | Sanskrit abstract noun | பிரச்சனை | சிக்கல் | பிரச்சனை is colloquial; சிக்கல் reads as edited Tamil |
 | Sanskrit abstract noun | யுத்தம் | போர் | Same for சமாதானம் → அமைதி |
@@ -31,7 +31,7 @@ description: Use when writing Tamil copy that should be தனித்தமி
 2. **Scan for the three markers** — Grantha letters, Sanskrit stems ending in -ம்/-த்துவம், and Latin-script English nouns. Each hit is a candidate, not automatically a defect.
 3. **Swap with the substitution table above**, then rebuild the sentence. If the swap leaves the verb agreeing with a different noun, rewrite the clause.
 4. **Re-check புணர்ச்சி and வல்லினம்** at every join you touched; borrowed nouns rarely trigger the doubling native Tamil expects.
-5. **Keep proper nouns and brands.** யாழி, Adhan, Illakiya, and Firebase are names, not loanwords — never translate them.
+5. **Keep proper nouns and brands.** Product names, company names, and third-party brands are names, not loanwords — never translate them.
 6. **Have a native speaker read the result aloud.** A sentence can be pure and still wrong; the ear catches what the word list cannot.
 7. **Record the decision** in the glossary owned by `tamil-technical-terms` so the next document does not re-litigate it.
 
@@ -44,4 +44,4 @@ description: Use when writing Tamil copy that should be தனித்தமி
 - **Treating தனித்தமிழ் as anti-Sanskrit politics.** The goal is clearer Tamil for the reader, not a purity score; a sentence that reads worse after the swap should be reverted.
 - **Asserting purity without a measurement.** "Pure Tamil" is a claim; `tamil-purity-scoring` turns it into a number, and the two shipped measures both overstate it.
 
-For the word list see `tamil-technical-terms`; for the numbers see `tamil-purity-scoring`; for register and general copy quality see `tamil-content-writing`; for the model's own purity gate see `org-ethos` and `adhan-status`.
+For the word list see `tamil-technical-terms`; for the numbers see `tamil-purity-scoring`; for register and general copy quality see `tamil-content-writing`; for the values gate see `org-ethos`.

@@ -1,9 +1,9 @@
 ---
 name: technical-documentation
-description: Use when writing, rewriting, reviewing, or retiring a Markdown doc in any yazhi-lem repository and you need the file contract — header, placement, size budget, link checks, archive rules. Enforces one structure; the green/blue/orange color decision belongs to org-doc-authoring.
+description: Use when writing, rewriting, reviewing, or retiring a Markdown doc in any repository and you need the file contract — header, placement, size budget, link checks, archive rules. Enforces one structure; the green/blue/orange color decision belongs to org-doc-authoring.
 ---
 
-Yazhi docs fail when they drift out of sync with the code or when three "current status" notes disagree. One short, dated doc per topic beats a pile of plausible snapshots. This skill applies to authored Markdown; generated corpus exports such as open-sangam's `obsidian-vault/` are data, not docs.
+Docs fail when they drift out of sync with the code or when three "current status" notes disagree. One short, dated doc per topic beats a pile of plausible snapshots. This skill applies to authored Markdown; generated corpus exports and eval reports are data, not docs.
 
 ## Size budget
 
@@ -17,7 +17,7 @@ A doc that needs a table of contents to find its point is too long for the live 
 4. **Place it by kind:** `docs/architecture/`, `docs/guides/`, `docs/reference/`, `docs/decisions/`, `docs/reports/`. Use lowercase kebab-case for runbooks and guides; UPPER_SNAKE_CASE for topic/decision docs. Add one row to `docs/README.md` in the same change.
 5. **Write current state once.** Put live status in `CONTEXT.md` or `docs/README.md`; other docs link to it. When a fact changes, edit that owner and every link stays valid. Never copy a status table into a second doc.
 6. **Retire, don't annotate.** A superseded doc moves to `archives/YYYY-MM-DD-digest.md` as a compressed entry, is deleted from `docs/`, and all inbound links are fixed in the same PR. A "superseded" banner in a live doc is a failure, not a process.
-7. **Verify mechanically.** Check relative links from the doc's own directory, confirm the H1/header, and make sure generated files carry a "generated — do not edit" banner. For Tamil text, use `tamil-content-writing` before calling a string final.
+7. **Verify mechanically.** Check relative links from the doc's own directory, confirm the H1/header, and make sure generated files carry a "generated — do not edit" banner. For language-specific copy, use the relevant language skill before calling a string final.
 
 | Kind | Location | Rule |
 |---|---|---|
@@ -34,8 +34,8 @@ A doc that needs a table of contents to find its point is too long for the live 
 - **Book as a doc.** A 100 KB spec for an unbuilt subsystem, or a 25-chapter plan with six-week deadlines, is not current documentation — archive it and keep a one-page status.
 - **Status snapshot as a doc.** "Complete delivery", "current as of" and "7 scripts" claims rot immediately; point to a dated status owner instead.
 - **Banner-managed obsolescence.** Leaving "superseded" text in the live tree makes readers guess which section is true.
-- **Deleting a doc without fixing inbound links.** This is how the `factory/` cleanup broke 30 links across seven repos.
-- **Treating generated output as authored docs.** Obsidian vault exports and eval reports drift when hand-edited.
+- **Deleting a doc without fixing inbound links.** A cleanup that breaks links across repos is not a cleanup.
+- **Treating generated output as authored docs.** Corpus exports and eval reports drift when hand-edited.
 - **Copying the same table into two repos.** Keep one canonical table and link to it, as `skill-authoring` requires for overlapping skills.
 
-Follow `skill-authoring` for the file contract, and refresh `yazhi-org-status`, `adhan-status`, `illakiya-status`, and `yazh-unity-status` whenever a repo's status owner changes.
+Follow `skill-authoring` for the skill-file contract, and refresh the owning repo's `docs/README.md` whenever a doc owner or status page changes.

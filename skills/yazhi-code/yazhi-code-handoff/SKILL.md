@@ -3,7 +3,7 @@ name: yazhi-code-handoff
 description: Use when a change is complete for its stated intent and you are ready to commit or share it for review. Helps you perform a cold local review, write an honest commit or PR description, and hand off work that another developer can continue without extra context.
 ---
 
-# Yazhi Code — Local Proof and Handoff
+# Local Proof and Handoff
 
 The handoff is where speed is protected or lost. A clean local review and an honest description let the next person (or the 48-hour review gate) move quickly. This skill owns the final verification and sharing steps.
 
@@ -16,7 +16,7 @@ The handoff is where speed is protected or lost. A clean local review and an hon
    Prefer the smallest set that proves the outcome and protects existing behavior. Note what you ran and the result.
 
 3. **Write the commit or PR description.**  
-   State the intent (why) and the effect (what). Include how it was verified and any remaining open points. Follow `org-impactful-pr` for scope, evidence, and honest status.
+   State the intent (why) and the effect (what). Include how it was verified and any remaining open points. Follow `org-impactful-pr` for scope, evidence, and honest status; use `yazhi-code-writeup` for the issue/PR body and the `gh` create flow.
 
 4. **Confirm the handoff stands alone.**  
    Someone who has not seen the conversation can understand what was done, how it was checked, and what is still open. If the change is user-facing, name the client-delivery checks that `yazhi-code-deliver` will run after merge.
@@ -65,4 +65,4 @@ Do not rely on "as discussed above"; a compacted or new session will not have it
 - **Deferring all verification to CI.** Slows the feedback loop and often hides local-only issues.
 - **Expanding scope while addressing review comments.** Turns a focused change into an open-ended one.
 
-Map to: `yazhi-code-standards` (best-code push gate), `yazhi-code-deliver` (merged code to a working client), `org-impactful-pr` (48-hour reviewable PRs with evidence), `org-healthy-code` (small, honest, local-first diffs), `yazhi-daily-rhythm` (close the day with clear status), `org-release` (if the change is on a release path), `yazhi-code-frame` and `yazhi-code-implement` (the earlier steps this handoff completes).
+Map to: `yazhi-code-standards` (best-code push gate), `yazhi-code-writeup` (issue/PR body and create flow), `yazhi-code-deliver` (merged code to a working client), `org-impactful-pr` (48-hour reviewable PRs with evidence), `org-healthy-code` (small, honest, local-first diffs), `yazhi-daily-rhythm` (close the day with clear status), `org-release` (if the change is on a release path), `yazhi-code-frame` and `yazhi-code-implement` (the earlier steps this handoff completes).

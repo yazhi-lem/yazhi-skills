@@ -1,11 +1,11 @@
 ---
 name: yazhi-review
-description: Use when reviewing a Yazhi change before merge or release and you need one verdict across security, code, and Tamil language, plus sovereign/native/open evidence. Helps you route each axis to its owning skill and return a single pass/fail note; early feature-fit belongs to yazhi-purpose-gate.
+description: Use when reviewing a change before merge or release and you need one verdict across security, code, and Tamil language, plus sovereign/native/open evidence. Helps you route each axis to its owning skill and return a single pass/fail note; early feature-fit belongs to yazhi-purpose-gate.
 ---
 
-# Yazhi Review — Security, Code, Language
+# Review — Security, Code, Language
 
-Yazhi review is one verdict, not three contradictory conversations. This skill runs a final pass across security, code craft, and language, then checks that the feature still fits sovereign/native/open defaults. It orchestrates existing owners; it does not replace `secure-code-review`, `yazhi-code-standards`, or the Tamil domain skills. `yazhi-purpose-gate` owns the earlier feature-fit decision.
+Review is one verdict, not three contradictory conversations. This skill runs a final pass across security, code craft, and language, then checks that the feature still fits sovereign/native/open defaults. It orchestrates existing owners; it does not replace `secure-code-review`, `yazhi-code-standards`, or the Tamil domain skills. `yazhi-purpose-gate` owns the earlier feature-fit decision.
 
 ## Workflow
 

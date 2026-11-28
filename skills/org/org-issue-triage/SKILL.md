@@ -1,6 +1,6 @@
 ---
 name: org-issue-triage
-description: Use when validating open issues and PRs across yazhi-lem repos after a strategy reset — aged planning imports, duplicate titles, hard dates, or PRs claiming to close issues. Helps you decide close, keep, or rewrite with evidence without silently discarding contributor work.
+description: Use when validating open issues and PRs across repositories after a strategy reset — aged planning imports, duplicate titles, hard dates, or PRs claiming to close issues. Helps you decide close, keep, or rewrite with evidence without silently discarding contributor work.
 ---
 
 A planning import can leave a repo with dozens of open issues that no longer describe any current plan, while real work sits in PRs that "close" issues they never actually fix. This skill owns the *validation* pass: for each issue or PR, decide whether it is actionable today, needs a rewrite, or should be closed with a reason. The default is to close stale planning artifacts, not to close work a contributor is still doing.
@@ -33,4 +33,4 @@ A planning import can leave a repo with dozens of open issues that no longer des
 - **Closing an issue whose hard date passed but whose goal is still in the current plan.** Rewrite the date away instead of dropping the work.
 - **Silent triage.** Closing without a category-level reason leaves authors unable to tell a deliberate reset from neglect; always comment with the source of truth.
 
-For the file-side equivalent see `org-repo-audit`; for deciding what is current after a reset see `org-plan-reset-recovery`; for cross-repo sequencing once an issue becomes work see `org-cross-repo-change`.
+For the file-side equivalent see `org-repo-audit`; for the GitHub write pass that executes these decisions see `yazhi-code-action`; for deciding what is current after a reset see `org-plan-reset-recovery`; for cross-repo sequencing once an issue becomes work see `org-cross-repo-change`.

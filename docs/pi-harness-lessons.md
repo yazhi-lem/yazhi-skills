@@ -3,9 +3,9 @@
 Status: current · Owner: Vajra · Verified: 2026-11-27
 Scope: What the Pi coding agent harness actually does, and which `yazhi-code` skill owns each lesson.
 
-Sources read from `/home/zrya/.npm-global/lib/node_modules/@earendil-works/pi-coding-agent/`: `README.md`; `docs/skills.md`, `how-pi-works.md`, `sessions.md`, `compaction.md`, `security.md`, `codemode.md`, `prompt-templates.md`, `sdk.md`; and the `examples/extensions/` implementations for git checkpoints, permission gates, plan mode, subagents, dirty-repo guards, confirm-destructive, and handoff.
+Sources read from `<pi-package>/`: `README.md`; `docs/skills.md`, `how-pi-works.md`, `sessions.md`, `compaction.md`, `security.md`, `codemode.md`, `prompt-templates.md`, `sdk.md`; and the `examples/extensions/` implementations for git checkpoints, permission gates, plan mode, subagents, dirty-repo guards, confirm-destructive, and handoff.
 
-Pi ships a small core on purpose: model requests, tool calls, sessions, and resources. Subagents, plan mode, and extra safety gates are examples/packages, not defaults. Yazhi should copy the patterns, not assume the features exist.
+Pi ships a small core on purpose: model requests, tool calls, sessions, and resources. Subagents, plan mode, and extra safety gates are examples/packages, not defaults. We should copy the patterns, not assume the features exist.
 
 ## What Pi does
 

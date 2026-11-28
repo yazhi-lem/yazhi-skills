@@ -31,6 +31,19 @@ WORD_MIN, WORD_MAX = 350, 850
 TARGET_MIN, TARGET_MAX = 400, 700  # skill-authoring's stated body target
 DESC_MAX = 1024
 
+# Skills must stay portable: no machine-specific paths, internal repo names,
+# employee/tool internals, or the retired tracker. Warnings, so an intentional
+# domain example can still be justified in review.
+GENERIC_FORBIDDEN = [
+    (re.compile(r"/home/[^\s`)]+"), "absolute home path"),
+    (re.compile(r"~/"), "home-relative path"),
+    (re.compile(r"\byazhi-lem\b", re.I), "internal org name"),
+    (re.compile(r"\b(?:yazhi-api|open-sangam|yazh-unity|yazhi-dev|capitol)\b", re.I), "internal repo/tool name"),
+    (re.compile(r"\b(?:adhan|illakiya)\b", re.I), "internal repo name"),
+    (re.compile(r"\bLinear\b|\blin_issues\b|\blin_projects\b|\bLEM-\d+\b"), "retired tracker reference; use Plane"),
+    (re.compile(r"\b(?:Slack|Jira|Confluence|Notion)\b"), "vendor tool reference; use generic chat or tracker"),
+]
+
 
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
@@ -102,6 +115,15 @@ def main() -> int:
             )
 
         body = skill.body
+        for pattern, label in GENERIC_FORBIDDEN:
+            match = pattern.search(skill.description + "\n" + body)
+            if match:
+                error(
+                    rel,
+                    f"non-generic reference ({label}): {match.group(0)!r}; "
+                    "use a placeholder or Plane",
+                )
+
         if not re.search(r"^\|.*\|.*$", body, re.M):
             error(rel, "body has no Markdown table")
         steps = re.findall(r"^\s*\d+\.\s+\S", body, re.M)

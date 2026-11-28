@@ -5,13 +5,14 @@ Scope: How to keep a skill short enough to load, specific enough to route, and d
 
 A skill is prompt context, not documentation. Every extra paragraph competes with the task the agent is trying to do. The contract in [`skill-authoring`](../skills/tools/skill-authoring/SKILL.md) is mandatory; this guide is the efficiency layer on top of it.
 
-## The five rules
+## The six rules
 
 1. **One trigger, one outcome, one boundary.** The `description` says when to load the skill, what it produces, and which neighbouring skill owns the overlapping case. If two skills fire on the same sentence without a boundary, fix the descriptions before adding content.
 2. **Stay under 700 words.** `validate_skills.py` warns above 700 and errors only outside 350–850. Use a table for lookup data, numbered steps for procedure, and a cross-reference for anything another skill already owns.
 3. **Write for a cold reader.** The model sees the description at startup and the body only after a match. The first two sentences must explain why this matters now; the workflow must be executable without the conversation that led here.
 4. **Date every status claim.** A phase, version, blocker, or sync date needs `verified YYYY-MM-DD` and a owning doc. Otherwise link to the repo's current index instead of copying the snapshot.
 5. **Keep frontmatter portable.** Only `name` and `description`. Audience/task tags belong in generated catalogs, not in `SKILL.md`.
+6. **Stay generic.** No absolute or local paths, internal repo names, employee names, or tracker internals. Use `<repo>`, `<workspace>`, `<org>`, and the current tracker's public API (Plane).
 
 ## Drift control
 

@@ -3,7 +3,7 @@ name: yazhi-code-frame
 description: Use when starting a new piece of work or turning a vague idea into a clear, buildable intent. Helps you write the one-sentence outcome, explicit out-of-scope, and the main risk so implementation stays small and reviewable.
 ---
 
-# Yazhi Code — Frame the Work
+# Frame the Work
 
 A clear frame is the fastest way to avoid rework. This skill turns an idea into a short, shared statement of intent that another developer (or an AI assistant) can act on without extra context. It owns the framing step; implementation and handoff live in the sibling skills.
 

@@ -64,7 +64,7 @@ Then restart `pi` or run `/reload`.
 Ask the main agent:
 
 ```text
-Use thozhar to add the sandhi rule tests to apps/illakiya
+Use thozhar to add the sandhi rule tests to apps/<app>
 Run kaaval and anbu in parallel: secret scan, then roster drift check
 Use a chain: vajra plans the Circle IAM cutover, thozhar implements step 1
 ```

@@ -1,9 +1,9 @@
 ---
 name: yazhi-code-maintain
-description: Use when running a routine health pass on one Yazhi repo — generated artifacts, CI, test gates, dated status docs, and toolchain drift — and you need a dated note with one next improvement. Helps you keep repos runnable between features; org cadence is yazhi-ops and security scoring is security-posture-health-check.
+description: Use when running a routine health pass on one repository — generated artifacts, CI, test gates, dated status docs, and toolchain drift — and you need a dated note with one next improvement. Helps you keep repos runnable between features; org cadence is yazhi-ops and security scoring is security-posture-health-check.
 ---
 
-# Yazhi Code — Maintain One Repo
+# Maintain One Repo
 
 Repos rot between features: a generated index goes stale, a status page keeps a dead date, a test command silently stops being run. This skill owns the repeatable, read-mostly health pass for a single repo. It is narrower than `yazhi-ops` (the organization's cadence) and `security-posture-health-check` (security scoring), and it does not delete or rewrite docs — that is `org-repo-audit`.
 
@@ -15,7 +15,7 @@ Repos rot between features: a generated index goes stale, a status page keeps a 
 4. **Inspect drift in dependencies and toolchain.** Compare the declared runtime/tool versions with what CI actually uses, and look for a lockfile or generated file that changed without a source change. Do not upgrade anything in this pass — record the drift as a candidate improvement.
 5. **Batch the mechanical checks.** Group independent reads and searches; save long command output to a file and quote the failing lines. This is the Pi `codemode` pattern: filter before the result reaches the model or the note.
 6. **Write one dated health note.** Use the table below, name one owner for each red/amber row, and choose exactly one next improvement. More than one next step is a plan reset, not maintenance.
-7. **Hand the improvement forward.** If the next step changes code structure, open a `yazhi-code-improve` or `yazhi-code-refactor` frame. If it is a security finding, use `security-posture-health-check` / `incident-response`. Do not silently fix it here.
+7. **Hand the improvement forward.** If the next step changes code structure, open a `yazhi-code-improve` or `yazhi-code-refactor` frame; use `yazhi-code-prune` when the finding is accumulated dead weight. If it is a security finding, use `security-posture-health-check` / `incident-response`. Do not silently fix it here.
 
 ## Health note shape
 

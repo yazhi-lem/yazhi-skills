@@ -3,7 +3,7 @@ name: yazhi-code-implement
 description: Use when implementing a framed change in small working slices, especially when using an AI coding assistant. Helps you keep the tree runnable, verify each slice locally, and write prompts that produce usable results on the first or second try.
 ---
 
-# Yazhi Code — Implement in Working Slices
+# Implement in Working Slices
 
 Implementation stays fast when each step leaves the code in a working state and the AI is given tight, constrained prompts. This skill owns the coding loop; framing and final handoff are in the sibling skills.
 

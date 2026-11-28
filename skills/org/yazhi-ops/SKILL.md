@@ -1,15 +1,15 @@
 ---
 name: yazhi-ops
-description: Use when setting or running Yazhi's operating cadence — the daily digest, weekly review, monthly gate, and quarterly reset — or when work is slipping and you need to know which ritual was skipped. Helps you run the rhythm as a system; for the hour-by-hour day itself use yazhi-daily-rhythm.
+description: Use when setting or running the operating cadence — the daily digest, weekly review, monthly gate, and quarterly reset — or when work is slipping and you need to know which ritual was skipped. Helps you run the rhythm as a system; for the hour-by-hour day itself use yazhi-daily-rhythm.
 ---
 
-Yazhi runs on a cadence, not a backlog. The cadence is four loops — daily, weekly, monthly, quarterly — each with one owner, one artefact, and one gate. Capitol is the read model over Linear and GitHub, so a number means the same thing on the console, in the Slack digest, and in the `/capitol` command. When work slips, the question is never "who is slow" but "which loop was skipped". This skill owns the loops; `yazhi-daily-rhythm` owns the engineer's day inside them.
+The team runs on a cadence, not a backlog. The cadence is four loops — daily, weekly, monthly, quarterly — each with one owner, one artefact, and one gate. The task tracker (Plane) and GitHub are the read models, so a number means the same thing on the console and in the chat digest. When work slips, the question is never "who is slow" but "which loop was skipped". This skill owns the loops; `yazhi-daily-rhythm` owns the engineer's day inside them.
 
 ## The four loops
 
 | Loop | When | Owner | Artefact | Gate |
 |---|---|---|---|---|
-| Daily | 08:45 IST, Mon–Sat | Rotating duty engineer | Slack digest (status, overdue, this week, PRs) | PRs older than 24h flagged |
+| Daily | 08:45 IST, Mon–Sat | Rotating duty engineer | Chat digest (status, overdue, this week, PRs) | PRs older than 24h flagged |
 | Weekly | Monday 10:00 IST | Guild master | Week brief: 3 headlines, 3 questions, owners | PRs older than 48h blocked |
 | Monthly | First Monday | Guild master + counsel | Launch gate review, quest close | Store credentials, child safety |
 | Quarterly | Start of quarter | Founders | Reset or continue; retire dated plans | Plan-reset note in `docs/` |
@@ -19,8 +19,8 @@ Yazhi runs on a cadence, not a backlog. The cadence is four loops — daily, wee
 1. **Read the digest, not the backlog.** The digest has four blocks: status, overdue, what lands this week, and PRs with a warning marker. Read those four; everything else is optional.
 2. **Clear the ageing PRs first.** Anything over 24h gets a review or a comment today; the 48h limit is a hard gate, not a target.
 3. **Check your own overdue items.** Overdue means a due date passed — not "I have not started". A moved due date is honest; a silent one is not.
-4. **Protect one deep block.** No meetings, no digest, no Slack in the deep block; the daily loop is 30 minutes, the deep block is the rest.
-5. **Close the day by updating status, not by reporting.** Move the Linear issue to its real state and leave a one-line note on what changed. A status update is a fact; a standup sentence is a story.
+4. **Protect one deep block.** No meetings, no digest, no chat in the deep block; the daily loop is 30 minutes, the deep block is the rest.
+5. **Close the day by updating status, not by reporting.** Move the Plane issue to its real state and leave a one-line note on what changed. A status update is a fact; a standup sentence is a story.
 
 ## Weekly loop
 
@@ -56,4 +56,4 @@ Yazhi runs on a cadence, not a backlog. The cadence is four loops — daily, wee
 - **Quarterly reset without a retirement note.** The old plan resurfaces in an issue and someone acts on it (`org-plan-reset-recovery`).
 - **No duty rotation.** One person always reads the digest, so the cadence dies when they are away.
 
-For the engineer's hour-by-hour day see `yazhi-daily-rhythm`; for the PR contract see `org-impactful-pr`; for the gates see `org-ethos` and `org-release`; for the repo state see `yazhi-org-status`.
+For the engineer's hour-by-hour day see `yazhi-daily-rhythm`; for the PR contract see `org-impactful-pr`; for the gates see `org-ethos` and `org-release`; for the repo state read `docs/README.md` and `CONTEXT.md`.

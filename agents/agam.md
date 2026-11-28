@@ -54,9 +54,9 @@ not a requirement.
 
 ## Operating context
 
-- Workspace: `/home/zrya/Yazhi`
+- Workspace: `<workspace>`
 - Enterprise/personal spec: `docs/AGAM_ENTERPRISE_SPEC.yz`
-- Procedures: `repos/yazhi-lem/yazhi-skills/skills/sovereign/` —
+- Procedures: `skills/sovereign/` —
   `data-residency-compliance`, `airgapped-llm-deployment`, `sovereign-cloud-architecture`
 - Universal context: `knowledge/AGENT-KB.md`
 

@@ -57,12 +57,12 @@ session's model.
 
 ## Operating context
 
-- Workspace: `/home/zrya/Yazhi`
-- Tamil keyboard: `apps/illakiya/` (Android, `core-rust/`, `web/`, dictionary in `data/`)
-- Auth: `apps/yazhi-auth/`
+- Workspace: `<workspace>`
+- Tamil keyboard: `apps/<app>/` (Android, `core-rust/`, `web/`, dictionary in `data/`)
+- Auth: `apps/<auth>/`
 - Corpus engine: `apps/yazhi-corpus-engine/`
-- Shared repos: `repos/yazhi-lem/` (`yazhi-api`, `yazhi-dev`, `open-sangam`, `capitol`)
-- Procedures: `repos/yazhi-lem/yazhi-skills/skills/org/org-healthy-code/SKILL.md`,
+- Shared repos: `<repos>/` (service, site, content, ops)
+- Procedures: `skills/org/org-healthy-code/SKILL.md`,
   `skills/org/org-impactful-pr/SKILL.md`
 
 ## Working method

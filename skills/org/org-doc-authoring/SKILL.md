@@ -1,9 +1,9 @@
 ---
 name: org-doc-authoring
-description: Use when writing a new Yazhi doc and you need to pick its color — green for living state, blue for a frozen contract, orange for provisional work — and set its promotion path. Helps you stop three-way drift; file placement, size, and archive rules belong to technical-documentation.
+description: Use when writing a new doc and you need to pick its color — green for living state, blue for a frozen contract, orange for provisional work — and set its promotion path. Helps you stop three-way drift; file placement, size, and archive rules belong to technical-documentation.
 ---
 
-Yazhi docs fail when a draft, a contract, and a status page all look the same on the page. Color is the fix: it tells a reader how much authority a doc has before they read a word. Green describes the present and changes in place; blue is frozen and changes only by version; orange is provisional and must expire. `technical-documentation` owns the file contract and archive rules; this skill owns the color decision and the promotion path between colors.
+Docs fail when a draft, a contract, and a status page all look the same on the page. Color is the fix: it tells a reader how much authority a doc has before they read a word. Green describes the present and changes in place; blue is frozen and changes only by version; orange is provisional and must expire. `technical-documentation` owns the file contract and archive rules; this skill owns the color decision and the promotion path between colors.
 
 ## The three colors
 
@@ -32,7 +32,7 @@ Yazhi docs fail when a draft, a contract, and a status page all look the same on
 
 ## Anti-patterns
 
-- **Coloring everything green.** A draft marked `Status: current` is the single most expensive doc defect in Yazhi — it looks authoritative and is wrong within a week.
+- **Coloring everything green.** A draft marked `Status: current` is the single most expensive documentation defect — it looks authoritative and is wrong within a week.
 - **Editing a blue doc in place.** Silently invalidates code comments and ADR citations; supersede with a new version instead.
 - **Orange docs with no expiry.** A "temporary" spike note from six months ago is indistinguishable from a decision; the expiry date is the whole mechanism.
 - **Leaving the promoted draft beside the promoted doc.** Two documents, one topic, guaranteed disagreement within a month.

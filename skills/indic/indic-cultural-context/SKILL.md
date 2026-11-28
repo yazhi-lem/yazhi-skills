@@ -5,7 +5,7 @@ description: Use when content, product behavior, or research across Indian langu
 
 # Indic Cultural Context
 
-India is not one culture, and "Indian user" is not a persona. This skill owns the evolving, sourced register for cultural context across languages and regions. `org-ethos` owns Yazhi's cultural-accuracy gate; this skill supplies the evidence a reviewer can check.
+India is not one culture, and "Indian user" is not a persona. This skill owns the evolving, sourced register for cultural context across languages and regions. `org-ethos` owns the cultural-accuracy gate; this skill supplies the evidence a reviewer can check.
 
 ## Workflow
 

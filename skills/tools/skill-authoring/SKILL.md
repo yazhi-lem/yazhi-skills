@@ -26,7 +26,7 @@ Every skill lives at `skills/<category>/<skill-name>/SKILL.md`. The directory na
 5. **Include an "Anti-patterns" or "Common failure modes" section** with 3-5 specific, named failures and *why* each one bites — not generic "avoid bad code" filler.
 6. **Cross-reference sibling skills by name in backticks** instead of duplicating them. If two skills would repeat the same guidance, one owns it and the other links to it.
 7. **Target 400-700 words** (the validator allows 350-850) — long enough to be procedural, short enough to read whole at trigger time.
-8. **Date any status-bearing claim and name its owner.** A repo phase, version, or blocker belongs in a skill only with a `verified YYYY-MM-DD` date and a pointer to the source of truth (`docs/README.md`, `CONTEXT.md`). Undated snapshots become fiction silently; see the `org/` skills for the workflows that expire them.
+8. **Date any status-bearing claim and name its owner.** A repo phase, version, or blocker needs a `verified YYYY-MM-DD` date and a source-of-truth pointer. Undated snapshots become fiction silently. Keep the skill portable: no absolute paths, internal repo names, or tracker internals; use `<repo>`, `<workspace>`, `<org>`, and the current tracker's public API (Plane).
 
 ## Review checklist for a new skill PR
 

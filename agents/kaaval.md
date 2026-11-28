@@ -55,8 +55,8 @@ and the exact command that reproduces it.
 
 ## Operating context
 
-- Workspace: `/home/zrya/Yazhi`
-- Procedures: `repos/yazhi-lem/yazhi-skills/skills/security/` — `secrets-management`,
+- Workspace: `<workspace>`
+- Procedures: `skills/security/` — `secrets-management`,
   `threat-modeling`, `security-posture-health-check`, `codebase-vulnerability-audit`,
   `pr-loophole-review`
 - Universal context: `knowledge/AGENT-KB.md`

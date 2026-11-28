@@ -3,7 +3,7 @@ name: yazhi-code-design
 description: Use when a framed yazhi-code change needs an implementation design before code — module boundaries, data flow, interface shape, and test strategy. Helps you turn the outcome sentence into a small, reviewable plan; visual hierarchy belongs to visual-design and Tamil copy to tamil-localization.
 ---
 
-# Yazhi Code — Design the Smallest Plan
+# Design the Smallest Plan
 
 A frame says what must be true. This skill decides the smallest structure that can make it true, before any code is written. It is the bridge between `yazhi-code-frame` and `yazhi-code-implement`; it does not replace the domain skills that own API, security, Tamil, or visual decisions.
 

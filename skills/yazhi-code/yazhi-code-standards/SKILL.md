@@ -1,9 +1,9 @@
 ---
 name: yazhi-code-standards
-description: Use when writing, refactoring, or reviewing Yazhi code before you push it, and you want one shared better-code standard instead of style-by-opinion. Helps you apply Google-leaning naming, error, test, and review rules; google-style-adoption owns which language guide applies.
+description: Use when writing, refactoring, or reviewing code before you push it, and you want one shared better-code standard instead of style-by-opinion. Helps you apply Google-leaning naming, error, test, and review rules; google-style-adoption owns which language guide applies.
 ---
 
-# Yazhi Code — Better Code Standard
+# Better Code Standard
 
 This is the craft checklist for `yazhi-code-implement`, `yazhi-code-handoff`, and ordinary development work. It turns best practices from Google engineering guidance and public agent skills into rules an agent or developer can apply in one pass. It defers guide choice to `google-style-adoption`, security to `secure-code-review`, and PR writing to `yazhi-code-handoff`.
 
@@ -11,7 +11,7 @@ This is the craft checklist for `yazhi-code-implement`, `yazhi-code-handoff`, an
 
 1. **Let technical facts beat preference.** Before changing code, write the observable outcome and the exact check that proves it. If the only reason is "I prefer this shape", it is a style opinion, not a defect. Keep the skill trigger narrow: hosts like Pi load a body only after its description matches.
 2. **Keep the change small and complete.** One outcome per diff, related tests in the same diff, and the tree still usable afterwards. Split refactors, generated code, and unrelated fixes into separate changes; a small change is reviewed more thoroughly and rolled back more easily.
-3. **Use the repo's tools, not a substitute.** Run the formatter, linter, and test command the repo already declares. Cite the style-guide section when enforcing a rule; document a deviation in the consuming repo, never in a fork. See `google-style-adoption` for the guide map and `org-healthy-code` for Yazhi's small-diff rules.
+3. **Use the repo's tools, not a substitute.** Run the formatter, linter, and test command the repo already declares. Cite the style-guide section when enforcing a rule; document a deviation in the consuming repo, never in a fork. See `google-style-adoption` for the guide map and `org-healthy-code` for the small-diff rules.
 4. **Write for the next reader.** Use clear, specific names; keep functions focused on one job; keep comments about *why*, not *what*. Avoid speculative abstractions for needs that do not exist yet. For Python, the Google guide's defaults are 4-space indent, 80-character lines, and no bare `except:`.
 5. **Make failure paths explicit.** Prefer built-in exception types, narrow `try` blocks, and errors that name the bad value. Never swallow an error to keep a happy path green; security-relevant failures must fail closed and go to `secure-code-review` when a boundary is involved.
 6. **Review every line before you push.** Check design, functionality, complexity, tests, naming, comments, style, and consistency in that order. Confirm the named checks, hand off through `yazhi-code-handoff`, recheck CI, and address only in-scope comments.

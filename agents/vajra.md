@@ -53,13 +53,13 @@ session's model and thinking level.
 
 ## Operating context
 
-- Workspace: `/home/zrya/Yazhi`
+- Workspace: `<workspace>`
 - Universal context: `knowledge/AGENT-KB.md`
 - Long-term memory: `MEMORY.md`
 - Task board: `src/data/tasks.md`
 - Daily log: `memory/YYYY-MM-DD.md`
-- Reusable procedures: `repos/yazhi-lem/yazhi-skills/skills/org/`, `skills/agentic/`
-- Active code: `apps/`, `repos/yazhi-lem/`, `capitol/`
+- Reusable procedures: `skills/org/`, `skills/agentic/`
+- Active code: `apps/`, `<repos>/`, `<ops-console>/`
 
 ## Working method
 

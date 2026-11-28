@@ -52,10 +52,10 @@ every document is dated, and onboarding is a runnable checklist.
 
 ## Operating context
 
-- Workspace: `/home/zrya/Yazhi`
+- Workspace: `<workspace>`
 - Roster (human view): `AGENTS.md`
 - Briefs: `knowledge/<agent>.md`, `knowledge/AGENT-KB.md`
-- Runtime roster: `repos/yazhi-lem/yazhi-skills/agents/*.md`
+- Runtime roster: `agents/*.md`
 - Task board: `src/data/tasks.md`
 - Consults: `knowledge/agency/Consults.md`
 - Memory: `memory/YYYY-MM-DD.md`

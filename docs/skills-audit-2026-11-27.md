@@ -2,6 +2,7 @@
 
 Status: proposed · Owner: Vajra · Verified: 2026-11-27 against `main`
 Scope: Hard review of all 99 skills, the catalog, validators, installer, and bundles.
+> 2026-11-28: the `repos/*-status` and `yazhi-org-status` skills referenced below are retired; the current catalog is 117 skills and the tracker is Plane.
 
 > Update after `git fetch`: `origin/main` added `yazhi-code-frame`, `yazhi-code-implement`, and `yazhi-code-handoff` (commit `a121f72`); `origin/fix/yazhi-code-required-tables` added the tables their validator needed. Those were integrated, then the pipeline was extended with `yazhi-code-design`, `yazhi-code-deliver`, `yazhi-code-standards` (best practices distilled from Google engineering/style guides and public agent skills), and `design/visual-design`. It was then extended with five Pi-harness-aware support skills (`orient`, `debug`, `refactor`, `maintain`, `improve`). Then `yazhi-purpose` (purpose gate + three-axis review) and the evolving `indic/` side-collection were added, along with `collections/` maps. `styleguide-status` was then retired (rules in `google-style-adoption`, sync date in `yazhi-org-status`). The baseline below is the original 99-skill audit; the current catalog is 117 skills.
 

@@ -1,11 +1,13 @@
 # yazhi-skills
 Curated list of skills powering Yazhi
 
-Current status and the docs map live in [`docs/README.md`](./docs/README.md); cross-repo orientation is in [`yazhi-org-status`](skills/org/yazhi-org-status/SKILL.md). For a human-facing split by audience and domain, see [`collections/`](collections/README.md).
+Current status and the docs map live in [`docs/README.md`](./docs/README.md). For a human-facing split by audience and domain, see [`collections/`](collections/README.md).
 
-Each skill lives at `skills/<category>/<skill-name>/SKILL.md` and follows a common contract: YAML frontmatter with a `name` (matching its directory) and a `description` starting with "Use when...", followed by a procedural, checklist-driven body. See [`skill-authoring`](skills/tools/skill-authoring/SKILL.md) for the contribution guide and [`technical-documentation`](skills/tools/technical-documentation/SKILL.md) for the docs contract used across yazhi-lem repos. Repo-local skills are indexed in [`skills/README.md`](skills/README.md).
+Each skill lives at `skills/<category>/<skill-name>/SKILL.md` and follows a common contract: YAML frontmatter with a `name` (matching its directory) and a `description` starting with "Use when...", followed by a procedural, checklist-driven body. See [`skill-authoring`](skills/tools/skill-authoring/SKILL.md) for the contribution guide and [`technical-documentation`](skills/tools/technical-documentation/SKILL.md) for the docs contract used across repositories. Repo-local skills are indexed in [`skills/README.md`](skills/README.md).
 
-New here? Start with [Choose a skill](docs/choose-a-skill.md) — it routes by task and audience (Yazhi maintainers, developers, designers, commons) instead of by category. The [2026-11-27 skills audit](docs/skills-audit-2026-11-27.md) records what is duplicated, inconsistent, or still being consolidated.
+**Portability:** skills are generic by default. No absolute or local paths, internal repo names, employee names, or tracker internals; use `<repo>`, `<workspace>`, `<org>`, and Plane. `validate_skills.py` fails on violations.
+
+New here? Start with [Choose a skill](docs/choose-a-skill.md) — it routes by task and audience (maintainers, developers, designers, commons) instead of by category. The [2026-11-27 skills audit](docs/skills-audit-2026-11-27.md) records what is duplicated, inconsistent, or still being consolidated.
 
 This is the portable [Agent Skills](https://code.claude.com/docs/en/skills) format, so the same files work in Claude Code, Claude Desktop, Pi, and any other tool that reads `SKILL.md`. See [Install](#install) for how to import them; Pi users can jump to [`docs/pi.md`](docs/pi.md).
 
@@ -40,7 +42,7 @@ Pi reads the same `SKILL.md` tree. Install with the preset, or point Pi at the c
 Or add the checkout to `~/.pi/agent/settings.json` (or `.pi/settings.json`):
 
 ```json
-{ "skills": ["~/Yazhi/repos/yazhi-lem/yazhi-skills/skills"] }
+{ "skills": ["<path-to-yazhi-skills>/skills"] }
 ```
 
 Pi advertises each skill's name and description at startup and loads the body only when the task matches; force one with `/skill:yazhi-daily-rhythm`. Restart `pi` or run `/reload` after installing. Full details in [`docs/pi.md`](docs/pi.md).
@@ -100,7 +102,7 @@ python3 scripts/build_index.py      # rewrite skills.json + .claude-plugin/plugi
 python3 scripts/validate_skills.py  # check every SKILL.md against the repo contract
 ```
 
-## Catalog (118 skills)
+## Catalog (117 skills)
 
 ### Agentic (agentic)
 
@@ -125,36 +127,25 @@ Designing agents that run without a human watching: bounded loops, idempotent si
 
 ### Yazhi Organization (org)
 
-How to work inside Yazhi: ethos (அறம் / அன்பு / அகம்), doc authoring in three colors, healthy code, impactful PRs, releases, and the cross-repo workflows — audits, triage, contract sequencing, plan resets, service boundaries. Per-repo state stays in `repos/`; these skills own the seams between repos and the internal ways of working.
+How to work inside the organization: ethos (அறம் / அன்பு / அகம்), doc authoring in three colors, healthy code, impactful PRs, releases, and the cross-repo workflows — audits, triage, contract sequencing, plan resets, service boundaries. Repo state stays in each repo's own docs; these skills own the seams between repos and the internal ways of working.
 
 | Skill | Covers |
 | --- | --- |
-| [`yazhi-org-status`](skills/org/yazhi-org-status/SKILL.md) | Current status, vision, and next actions across all Yazhi repos |
+| [`yazhi-work-start`](skills/org/yazhi-work-start/SKILL.md) | Contributor session init: resolve the Plane member, focus, task, repo, and first move |
 | [`org-ethos`](skills/org/org-ethos/SKILL.md) | The five அறம் rules, அன்பு in craft and review, and அகம்/புறம் chambers for private vs public work |
 | [`org-doc-authoring`](skills/org/org-doc-authoring/SKILL.md) | Green, blue and orange docs: which color, header, expiry, and promotion path |
 | [`org-healthy-code`](skills/org/org-healthy-code/SKILL.md) | Writing code that stays reviewable: small diffs, local-first, honest tests |
-| [`org-impactful-pr`](skills/org/org-impactful-pr/SKILL.md) | PRs that land in 48h: scope, evidence, Tamil-string review, honest status |
-| [`org-release`](skills/org/org-release/SKILL.md) | Releasing under எண்ணித் துணிக: runbook, rollback, child-safety and DPDP gates |
+| [`org-impactful-pr`](skills/org/org-impactful-pr/SKILL.md) | PRs that land in 48h: scope, evidence, localized-string review, honest status |
+| [`org-release`](skills/org/org-release/SKILL.md) | Releasing under எண்ணித் துணிக: runbook, rollback, safety and data-residency gates |
 | [`yazhi-ops`](skills/org/yazhi-ops/SKILL.md) | The four operating loops — daily, weekly, monthly, quarterly — plus the escalation ladder |
 | [`yazhi-daily-rhythm`](skills/org/yazhi-daily-rhythm/SKILL.md) | The engineer's day: digest, deep work, review window, close, and the recovery path |
+| [`yazhi-work-status`](skills/org/yazhi-work-status/SKILL.md) | Daily read-only queue across all repos: light PR/issue review on relevance, quality, testing, readability, and size |
 | [`org-repo-audit`](skills/org/org-repo-audit/SKILL.md) | Report-only audits of stale, duplicate, or unhealthy docs and task artifacts across repos |
 | [`org-issue-triage`](skills/org/org-issue-triage/SKILL.md) | Validating open issues and PRs after a strategy reset without discarding contributor work |
 | [`org-cross-repo-change`](skills/org/org-cross-repo-change/SKILL.md) | Sequencing a proto, data, or doc contract change across producer and consumer repos |
 | [`org-plan-reset-recovery`](skills/org/org-plan-reset-recovery/SKILL.md) | Checking source authority when an old roadmap or dated issue resurfaces |
 | [`org-service-boundaries`](skills/org/org-service-boundaries/SKILL.md) | Deciding which repo owns a new capability under the no-weights/local-first rules |
-| [`yazhi-agency`](skills/org/yazhi-agency/SKILL.md) | Routing work across the nine agents: owner, dispatch mode, handoff contract, verification |
-
-### Repositories (repos)
-
-One skill per public yazhi-lem repository — its own layer map, workflow, next actions, and anti-patterns.
-
-| Skill | Covers |
-| --- | --- |
-| [`adhan-status`](skills/repos/adhan-status/SKILL.md) | The from-scratch Tamil SLM: JAX/Flax training phases, swaram tokenizer |
-| [`open-sangam-status`](skills/repos/open-sangam-status/SKILL.md) | Sangam-era literature reader + agent assembly: corpus phases, translation pipeline |
-| [`yazh-unity-status`](skills/repos/yazh-unity-status/SKILL.md) | The AR/XR Tamil pet app: endless-runner pivot, on-device inference, store blockers |
-| [`illakiya-status`](skills/repos/illakiya-status/SKILL.md) | The Rust + Kotlin Tamil Android keyboard: layout, dictionary, sandhi engine |
-| [`yazhi-dev-status`](skills/repos/yazhi-dev-status/SKILL.md) | The yazhi.dev site and `/chat` demo: backend contract, design history |
+| [`yazhi-agency`](skills/org/yazhi-agency/SKILL.md) | Routing work across nine roles: owner, dispatch mode, handoff contract, verification |
 
 ### Forward-Deployed Engineering (fde)
 
@@ -237,7 +228,7 @@ One skill per public yazhi-lem repository — its own layer map, workflow, next 
 | [`cli-tool-design`](skills/tools/cli-tool-design/SKILL.md) | Flags, defaults, output modes, exit codes, and help text for CLIs |
 | [`api-design`](skills/tools/api-design/SKILL.md) | Resource naming, versioning, pagination, and backward compatibility |
 | [`skill-authoring`](skills/tools/skill-authoring/SKILL.md) | The frontmatter contract and quality bar for SKILL.md files in this repo |
-| [`technical-documentation`](skills/tools/technical-documentation/SKILL.md) | Uniform Markdown structure, status labels and archive rules for yazhi-lem docs |
+| [`technical-documentation`](skills/tools/technical-documentation/SKILL.md) | Uniform Markdown structure, status labels and archive rules for repository docs |
 | [`google-style-adoption`](skills/tools/google-style-adoption/SKILL.md) | Which Google style guide applies, how it is enforced, and where deviations live |
 
 ### Yazh Life Skills (yazh-life)
@@ -284,7 +275,7 @@ Visual decisions made explicit: hierarchy, spacing, type, contrast, states, and 
 
 ### Yazhi Code (yazhi-code)
 
-Idea-to-client pipeline plus a support loop for any Yazhi repo: orient → frame → design → implement → handoff → deliver, with `standards` as the shared checklist and `debug` / `refactor` / `maintain` / `improve` feeding the next frame.
+Idea-to-client pipeline plus a support loop for any repository: orient → frame → design → implement → handoff → deliver; `standards` is the shared checklist, and `debug` / `refactor` / `prune` / `maintain` / `writeup` / `action` / `improve` feed the next frame. A contributor session starts with `yazhi-work-start`, and daily cross-repo triage with `yazhi-work-status`.
 
 | Skill | Covers |
 | --- | --- |
@@ -295,9 +286,12 @@ Idea-to-client pipeline plus a support loop for any Yazhi repo: orient → frame
 | [`yazhi-code-implement`](skills/yazhi-code/yazhi-code-implement/SKILL.md) | Implementing a framed change in small working slices with tight AI prompts |
 | [`yazhi-code-debug`](skills/yazhi-code/yazhi-code-debug/SKILL.md) | Reproduce, isolate, instrument, fix, and regression-check ordinary code failures in checkpoints |
 | [`yazhi-code-refactor`](skills/yazhi-code/yazhi-code-refactor/SKILL.md) | Behavior-preserving structural changes with characterization checks and boring diffs |
+| [`yazhi-code-prune`](skills/yazhi-code/yazhi-code-prune/SKILL.md) | Proving dead code, unused dependencies, duplication, and oversized modules before a safe reduction |
 | [`yazhi-code-handoff`](skills/yazhi-code/yazhi-code-handoff/SKILL.md) | Cold local review, named checks, and an honest commit or PR description |
 | [`yazhi-code-deliver`](skills/yazhi-code/yazhi-code-deliver/SKILL.md) | Moving merged code to a working client with environment proof and rollback |
 | [`yazhi-code-maintain`](skills/yazhi-code/yazhi-code-maintain/SKILL.md) | Dated single-repo health pass over gates, generated artifacts, docs dates, and toolchain drift |
+| [`yazhi-code-writeup`](skills/yazhi-code/yazhi-code-writeup/SKILL.md) | Drafting contentful issues and PRs with evidence, acceptance criteria, scope, and a Pi creation flow |
+| [`yazhi-code-action`](skills/yazhi-code/yazhi-code-action/SKILL.md) | Turning a work-status report into sanitized, idempotent GitHub comments and routed next actions |
 | [`yazhi-code-improve`](skills/yazhi-code/yazhi-code-improve/SKILL.md) | Turning recurring friction into a small owned artifact with a baseline and adoption path |
 
 ### Yazhi Purpose (yazhi-purpose)
@@ -321,7 +315,11 @@ An evolving side-collection for multilingual Indic and cross-cultural work, besi
 | [`indic-localization`](skills/indic/indic-localization/SKILL.md) | Fonts, shaping, expansion, plurals, numbers, and input across Indic locales |
 | [`indic-cultural-context`](skills/indic/indic-cultural-context/SKILL.md) | Living, sourced register for region/community context and cultural review |
 
-A thin [Pi extension](extensions/yazhi/README.md) adds `/yazhi-start`, `/yazhi-purpose`, and `/yazhi-review`, plus conservative safety gates.
+A thin [Pi extension](extensions/yazhi/README.md) adds `/yazhi-start`, `/yazhi-purpose`, `/yazhi-review`, `/yazhi-issue`, and `/yazhi-pr`, plus conservative safety gates.
+
+### Retired skills
+
+The five per-repo status snapshots and `yazhi-org-status` were retired on 2026-11-28. Repo state lives in each repo's `README.md` / `docs/README.md`; use `yazhi-code-orient` for a repo map and `yazhi-work-start` for the contributor and task brief. Do not recreate per-repo status snapshots.
 
 ## Contributing
 

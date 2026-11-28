@@ -1,19 +1,21 @@
 # Yazhi Pi extension
 
-Status: current · Owner: Vajra · Verified: 2026-11-27
+Status: current · Owner: Vajra · Verified: 2026-11-28
 Scope: A thin Pi harness adapter for the `yazhi-purpose` and `yazhi-code` skills.
 
-This extension does not auto-commit, auto-push, replace tools, or change model settings. It adds three commands and three conservative gates that follow Pi's own examples (`git-checkpoint`, `permission-gate`, `protected-paths`, `dirty-repo-guard`).
+This extension does not auto-commit, auto-push, replace tools, or change model settings. It adds five commands and three conservative gates that follow Pi's own examples (`git-checkpoint`, `permission-gate`, `protected-paths`, `dirty-repo-guard`).
 
 ## Commands
 
 | Command | Queued skill | Use when |
 |---|---|---|
-| `/yazhi-start` | `/skill:yazhi-code-orient` | Entering an unfamiliar Yazhi repo |
+| `/yazhi-start` | `/skill:yazhi-work-start` | Resolving your Plane member, task focus, repo, and first move |
 | `/yazhi-purpose` | `/skill:yazhi-purpose-gate` | Deciding if a feature is sovereign, Tamil-native, and open by default |
 | `/yazhi-review` | `/skill:yazhi-review` | Final security / code / language verdict before merge or release |
+| `/yazhi-issue` | `/skill:yazhi-code-writeup issue` | Draft a contentful, evidence-backed GitHub issue |
+| `/yazhi-pr` | `/skill:yazhi-code-writeup pr` | Draft a contentful PR with scope, evidence, and test plan |
 
-Arguments pass through: `/yazhi-review PR 123` queues `/skill:yazhi-review PR 123`. The prompt is placed in the editor for review; submit it to load the skill. Commands require interactive mode.
+Arguments pass through: `/yazhi-review PR 123` queues `/skill:yazhi-review PR 123`, and `/yazhi-pr fix the sandhi join` queues `/skill:yazhi-code-writeup pr fix the sandhi join`. The prompt is placed in the editor for review; submit it to load the skill. Commands require interactive mode.
 
 ## Gates
 
