@@ -21,6 +21,7 @@ MODE="symlink"
 CATEGORIES=()
 FORCE=0
 DRY_RUN=0
+PI_AGENTS=0
 
 usage() {
   cat <<'EOF'
@@ -32,6 +33,8 @@ Options:
       --pi             Install into ~/.pi/agent/skills (Pi user skills)
       --pi-project     Install into ./.pi/skills (Pi project skills)
       --agents         Install into ~/.agents/skills (Agent Skills spec)
+      --pi-agents      Install the Pi subagent roster (agents/*.md) into
+                       ~/.pi/agent/agents. Requires the subagent extension.
   -c, --category NAME  Install only this category (repeatable).
                        One of: agentic ai-ml computer-use design fde gtm indic org repos
                                security social-media sovereign tamil tools yazh-life
@@ -49,6 +52,7 @@ Examples:
   ./install.sh -c yazh-life -c tamil        # just those two categories
   ./install.sh --project --mode copy        # vendor into this repo's .claude/skills
   ./install.sh --dest ~/my-agent/skills -m copy
+  ./install.sh --pi-agents                  # Yazhi roster -> ~/.pi/agent/agents
 EOF
 }
 
@@ -59,6 +63,7 @@ while [ $# -gt 0 ]; do
     --pi)          DEST="${HOME}/.pi/agent/skills"; shift ;;
     --pi-project)  DEST="$PWD/.pi/skills"; shift ;;
     --agents)      DEST="${HOME}/.agents/skills"; shift ;;
+    --pi-agents)   PI_AGENTS=1; shift ;;
     -c|--category) CATEGORIES+=("$2"); shift 2 ;;
     -m|--mode)     MODE="$2"; shift 2 ;;
     -f|--force)    FORCE=1; shift ;;
@@ -78,6 +83,44 @@ case "$MODE" in
   symlink|copy) ;;
   *) echo "--mode must be 'symlink' or 'copy', got '$MODE'" >&2; exit 2 ;;
 esac
+
+if [ "$PI_AGENTS" -eq 1 ]; then
+  SRC="$REPO_ROOT/agents"
+  DEST="${HOME}/.pi/agent/agents"
+  [ -d "$SRC" ] || { echo "no agents directory at $SRC" >&2; exit 2; }
+  [ "$DRY_RUN" -eq 1 ] || mkdir -p "$DEST"
+  installed=0
+  skipped=0
+  for f in "$SRC"/*.md; do
+    name="$(basename "$f")"
+    [ "$name" = "README.md" ] && continue
+    target="$DEST/$name"
+    if [ -e "$target" ] || [ -L "$target" ]; then
+      if [ "$FORCE" -eq 1 ]; then
+        [ "$DRY_RUN" -eq 1 ] || rm -f "$target"
+      else
+        echo "skip   $name (already exists; use --force to replace)"
+        skipped=$((skipped + 1))
+        continue
+      fi
+    fi
+    if [ "$DRY_RUN" -eq 1 ]; then
+      echo "would $MODE $name -> $target"
+    elif [ "$MODE" = "symlink" ]; then
+      ln -s "$f" "$target"
+    else
+      cp "$f" "$target"
+    fi
+    installed=$((installed + 1))
+  done
+  if [ "$DRY_RUN" -eq 1 ]; then
+    echo "dry run: $installed agent(s) would be installed into $DEST"
+  else
+    echo "installed $installed agent(s) into $DEST ($MODE), skipped $skipped"
+    echo "Pi: restart pi or run /reload; the agents are callable via the subagent tool."
+  fi
+  exit 0
+fi
 
 if [ "${#CATEGORIES[@]}" -eq 0 ]; then
   for d in "$SRC"/*/; do CATEGORIES+=("$(basename "$d")"); done
