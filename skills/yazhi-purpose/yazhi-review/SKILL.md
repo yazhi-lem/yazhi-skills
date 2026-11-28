@@ -16,6 +16,7 @@ Yazhi review is one verdict, not three contradictory conversations. This skill r
 5. **Language axis — require native evidence.** For every user-visible Tamil string, confirm a native-speaker review; route layout/font/input to `tamil-localization` or `tamil-input-methods`, natural copy to `tamil-content-writing`, purity claims to `tamil-purity-scoring`. Machine-fluent Tamil with no named reviewer is a finding, not a nit.
 6. **Re-check the three defaults.** Sovereign: no foreign API on the default path and model license/self-host route named. Native: Tamil strings and glyph behavior reviewed. Open: FLOSS license and public artifact named, or an explicit அகம் reason recorded per `org-ethos`. A waiver needs an owner and a date.
 7. **Return one verdict.** Use the table below. Any block must name the single owner and the exact note/PR that resolves it. Do not silently expand scope while reviewing; open a new `yazhi-code-frame` for that.
+8. **A merged range still owes its gates.** Re-run the repo's blocking commands (`ruff format --check`, the lint baseline, the test command) *before* reading the diff: an unformatted tree or a suite that never executed stays invisible otherwise, and a green run on CI's platform says nothing about the author's.
 
 ## Review verdict
 
@@ -35,5 +36,7 @@ Yazhi review is one verdict, not three contradictory conversations. This skill r
 - **Hiding a residency or license exception in chat.** A waiver without an owner and date is a silent breach of the purpose gate.
 - **Expanding the change during review.** New work belongs in a new frame; otherwise the review target moves and the verdict becomes meaningless.
 - **Returning three verdicts instead of one.** Authors need one decision and one next action, not a committee summary.
+- **Judging a merged series by its diff alone.** Run the gate, not the impression.
+- **Reviewing in another agent's tree.** It sweeps your uncommitted fixes into its commit; branch first.
 
 Map to: `yazhi-purpose-gate` (input note), `org-ethos` (chamber and values), `yazhi-code-standards`, `secure-code-review`, `tamil-content-writing`, `org-release` (release gates), `yazhi-code-handoff` (merge path).
